@@ -1,5 +1,19 @@
 [
   {
+    "id": "my-glamping",
+    "slug": "my-glamping",
+    "name": "My Glamping",
+    "clientName": "My Glamping",
+    "businessType": "Glamping",
+    "plan": "signals",
+    "activePlan": "signals",
+    "status": "active",
+    "accessKey": "lk_Rdrx-apXRvI",
+    "createdAt": "2026-06-12T18:21:21.062Z",
+    "updatedAt": "2026-06-12T18:21:21.062Z",
+    "billingDueInDays": 30
+  },
+  {
     "id": "trica-glamping",
     "slug": "trica-glamping",
     "name": "Trica Glamping",

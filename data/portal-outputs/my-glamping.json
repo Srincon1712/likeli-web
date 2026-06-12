@@ -1,0 +1,1562 @@
+{
+  "outputType": "LIKELI_CLIENT_PORTAL_OUTPUT",
+  "importedAt": "2026-06-12T18:21:27.065Z",
+  "version": "1.0",
+  "portalPlanId": "signals",
+  "output": {
+    "meta": {
+      "outputType": "LIKELI_CLIENT_PORTAL_OUTPUT",
+      "version": "1.0",
+      "language": "es",
+      "generatedAt": "2026-06-11T17:23:27.184Z",
+      "sourceExportType": "LIKELI_CLIENT_OUTPUT_BRIEF"
+    },
+    "clientProfile": {
+      "businessName": "My Glamping",
+      "businessType": "Glamping",
+      "category": "Alojamiento",
+      "location": "San Francisco, Cundinamarca, Colombia",
+      "audience": "Parejas",
+      "objective": "Entender qué funciona para generar reservas por WhatsApp.",
+      "notes": "Negocio muy visual, ticket medio, compra impulsiva, motivo principal de compra: descanso. Red social en etapa empezando."
+    },
+    "plan": {
+      "id": "signals",
+      "label": "Signals",
+      "requiredCounts": {
+        "contentIdeas": 20,
+        "hooks": 20,
+        "captions": 20,
+        "ctas": 20,
+        "trends": 4,
+        "opportunities": 4,
+        "scripts": 0
+      },
+      "enabledSections": {
+        "predictions": false,
+        "likeliScore": false,
+        "benchmarks": false,
+        "calendar": false,
+        "roadmap": false
+      }
+    },
+    "executiveSummary": {
+      "summary": "El análisis compara My Glamping con un grupo altamente similar de glamping/alojamiento en Cundinamarca, con audiencia de parejas, objetivo de reservas y conversión por WhatsApp. La evidencia disponible es útil para orientar pruebas, pero debe tratarse como inicial porque la muestra analizada es pequeña.",
+      "whatWasAnalyzed": "Se analizaron 3 reels de un grupo comparable con matchScore 92, métricas completadas y flags de contenido asociadas a desempeño positivo o débil.",
+      "mainFindings": [
+        "Las señales positivas principales son texto grande en pantalla, hook con curiosidad y tono aspiracional.",
+        "Las combinaciones positivas más repetibles son texto grande + curiosity gap, texto grande + aspiración y curiosity gap + aspiración.",
+        "Los formatos de persona hablando a cámara, apariencia demasiado producida y naturaleza/ambiente sin promesa clara aparecen como señales débiles en esta muestra.",
+        "El mejor contenido de la muestra tuvo scores de atención, conversación, distribución, intención y calidad en 100, con alta señal de envíos y compartidos."
+      ],
+      "mainRecommendation": "Crear contenido corto, visual y aspiracional para parejas, con texto grande desde el primer segundo, curiosidad antes de explicar y CTA directo a WhatsApp.",
+      "evidenceLevel": "low"
+    },
+    "diagnosis": {
+      "strengths": [
+        "My Glamping tiene alta compatibilidad con la evidencia disponible: glamping, alojamiento, Cundinamarca, parejas, descanso, reservas y WhatsApp.",
+        "El negocio es muy visual, lo que permite convertir el lugar en deseo rápido si se usa texto grande y una promesa clara.",
+        "La compra impulsiva favorece CTAs simples de disponibilidad y reserva por WhatsApp.",
+        "La audiencia de parejas permite activar envíos y conversaciones con mensajes tipo 'mándaselo a tu pareja'."
+      ],
+      "weaknesses": [
+        "La evidencia viene de solo 3 reels, por lo que no debe tratarse como verdad definitiva.",
+        "El contenido de naturaleza o ambiente puede volverse genérico si no tiene hook, tensión o beneficio concreto.",
+        "El formato de explicación a cámara puede reducir rendimiento si desplaza el deseo visual.",
+        "Una producción demasiado pulida puede sentirse menos espontánea frente a las señales ganadoras detectadas."
+      ],
+      "risks": [
+        "La muestra puede ser pequeña.",
+        "Las asociaciones no implican causalidad.",
+        "Los resultados aplican principalmente al grupo comparable y deben validarse con publicaciones propias.",
+        "Repetir solo tomas bonitas del lugar sin estructura de hook puede diluir la intención de reserva."
+      ],
+      "evidenceNotes": [
+        "Grupo seleccionado: Prueba 1, matchScore 92, evidenceLevel low.",
+        "Se analizaron 3 reels con métricas completadas.",
+        "confidenceAverage de las señales agregadas: 0.29.",
+        "Las recomendaciones creativas son inferencias estratégicas basadas en patrones del análisis, no métricas nuevas."
+      ]
+    },
+    "trends": [
+      {
+        "id": "trend_001",
+        "title": "Texto grande como ancla de atención",
+        "description": "En la muestra comparable, los contenidos con texto grande en pantalla aparecen asociados a mejor rendimiento, especialmente cuando el valor se entiende rápido.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags[0].key=has_large_text_overlay",
+          "totalSupportCount=2",
+          "confidenceAverage=0.29"
+        ],
+        "strategicImplication": "Abrir más piezas con texto grande, corto y legible en el primer segundo."
+      },
+      {
+        "id": "trend_002",
+        "title": "Curiosidad antes de explicación",
+        "description": "Los hooks que dejan una idea incompleta o abren una pregunta aparecen como señal positiva frente a formatos más explicativos.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags[1].key=hook_uses_curiosity_gap",
+          "topWinningCombos: texto grande + curiosity gap",
+          "confidenceAverage=0.29"
+        ],
+        "strategicImplication": "Priorizar aperturas que inviten a seguir viendo antes de explicar detalles del alojamiento."
+      },
+      {
+        "id": "trend_003",
+        "title": "Aspiración de descanso para parejas",
+        "description": "La señal aspiracional aparece entre los patrones ganadores y encaja con el motivo de compra declarado: descanso para parejas.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags[2].key=evokes_aspiration",
+          "targetBusiness.profile.primaryAudience=Parejas",
+          "targetBusiness.profile.purchaseMotive=Descanso"
+        ],
+        "strategicImplication": "Vender la sensación de pausa y reconexión, no solo las características del lugar."
+      },
+      {
+        "id": "trend_004",
+        "title": "Autenticidad visual sobre producción pulida",
+        "description": "En la muestra, los formatos percibidos como muy producidos y de persona hablando a cámara aparecen asociados a menor rendimiento.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "aggregatedInsights.topWeakFlags: has_person_talking_to_camera",
+          "aggregatedInsights.topWeakFlags: feels_polished_or_professional",
+          "recommendationInputs.whatToAvoid"
+        ],
+        "strategicImplication": "Probar piezas más espontáneas, visuales y directas, evitando convertir el contenido en explicación frontal."
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "opportunity_001",
+        "title": "Convertir la receta ganadora en formato recurrente",
+        "description": "Usar de forma repetida la combinación texto grande + curiosity gap + aspiración en reels y stories.",
+        "whyItMatters": "El grupo comparable muestra esta combinación como señal positiva y el negocio necesita entender qué funciona para reservas.",
+        "recommendedAction": "Crear una serie semanal de escapadas en pareja con apertura curiosa, texto grande y CTA a WhatsApp.",
+        "priority": "high",
+        "evidenceUsed": [
+          "topWinningCombos[0-2]",
+          "recommendationInputs.whatToPrioritize"
+        ]
+      },
+      {
+        "id": "opportunity_002",
+        "title": "Diseñar CTAs para WhatsApp desde el concepto, no solo al final",
+        "description": "El canal de conversión es WhatsApp, por lo que cada pieza debe facilitar el mensaje de reserva.",
+        "whyItMatters": "La compra es impulsiva y el objetivo son reservas; reducir fricción puede transformar interés en conversación.",
+        "recommendedAction": "Usar CTAs de palabra clave como GLAMPING, RESERVA o DISPONIBILIDAD en cierres de reels e historias.",
+        "priority": "high",
+        "evidenceUsed": [
+          "targetBusiness.profile.conversionChannel=WhatsApp",
+          "targetBusiness.profile.purchaseModel=Compra impulsiva",
+          "targetBusiness.profile.primaryAction=Reservas"
+        ]
+      },
+      {
+        "id": "opportunity_003",
+        "title": "Evitar contenido genérico de naturaleza sin tensión narrativa",
+        "description": "La señal de ambiente/naturaleza aparece dentro de patrones débiles cuando no está conectada a una promesa clara.",
+        "whyItMatters": "My Glamping es muy visual, pero las tomas bonitas necesitan hook, aspiración y decisión comercial.",
+        "recommendedAction": "Acompañar cada plano del lugar con una frase de deseo, pregunta o lista; no publicar solo paisajes sueltos.",
+        "priority": "medium",
+        "evidenceUsed": [
+          "aggregatedInsights.topWeakFlags: shows_nature_place_or_environment",
+          "aggregatedInsights.risks"
+        ]
+      },
+      {
+        "id": "opportunity_004",
+        "title": "Probar contenido de pareja con decisión inmediata",
+        "description": "La audiencia principal son parejas y el modelo de compra es impulsivo, ideal para piezas de 'mándaselo a tu pareja'.",
+        "whyItMatters": "El contenido puede generar envíos, conversación y reservas si convierte el deseo en una microacción social.",
+        "recommendedAction": "Crear reels con CTA de compartir y stories con encuestas que lleven a WhatsApp.",
+        "priority": "high",
+        "evidenceUsed": [
+          "targetBusiness.profile.primaryAudience=Parejas",
+          "recommendationInputs.bestEvidence[0].metrics.sends=9470",
+          "recommendationInputs.bestEvidence[0].scores.conversationScore=100"
+        ]
+      }
+    ],
+    "contentIdeas": [
+      {
+        "id": "idea_001",
+        "title": "3 razones para escaparse en pareja a My Glamping",
+        "concept": "Reel corto con texto grande: 3 razones para dormir fuera de la rutina esta semana.",
+        "format": "Reel",
+        "objective": "Generar reservas por WhatsApp",
+        "recommendedAngle": "Lista aspiracional con planos rápidos del espacio, detalles cómodos y cierre de descanso.",
+        "whyItShouldWork": "La combinación lista + texto grande + curiosidad aparece en el reel con mayor score y alta intención.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile",
+          "recommendationInputs.bestEvidence[0].sourceId=cmq9nnswb0008sz2gjhtla2os"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "hook_uses_list_number_or_ranking"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_002",
+        "title": "El plan que no parece plan",
+        "concept": "Reel que abre con una frase de curiosidad: esto no es una salida, es una pausa necesaria.",
+        "format": "Reel",
+        "objective": "Aumentar deseo de reserva impulsiva",
+        "recommendedAngle": "Mostrar momentos simples: llegada, cama, vista, comida o descanso, sin narración a cámara.",
+        "whyItShouldWork": "Conecta con el motivo de compra descanso y usa curiosity gap con texto grande.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_003",
+        "title": "Antes de volver a la rutina",
+        "concept": "Post o reel emocional para parejas que quieren desconectarse antes del lunes.",
+        "format": "Reel",
+        "objective": "Activar intención de escapada cercana",
+        "recommendedAngle": "Usar texto aspiracional sobre imágenes del lugar y cerrar con disponibilidad por WhatsApp.",
+        "whyItShouldWork": "El negocio vende lugar y descanso; las señales aspiracionales aparecen como ganadoras.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_004",
+        "title": "POV: reservaron una noche para no hacer nada",
+        "concept": "Reel tipo POV mostrando descanso, silencio y comodidad, con humor suave.",
+        "format": "Reel",
+        "objective": "Generar identificación en parejas",
+        "recommendedAngle": "Apertura en texto grande y escenas reales, espontáneas, sin producción excesiva.",
+        "whyItShouldWork": "El reel ganador combina autenticidad, valor visual rápido y aspiración.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile",
+          "recommendationInputs.bestEvidence[0].sourceId=cmq9nnswb0008sz2gjhtla2os"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "feels_raw_authentic_or_spontaneous",
+          "visual_value_is_clear_fast"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_005",
+        "title": "Lo que nadie te dice de escaparte cerca",
+        "concept": "Reel con hook de información incompleta y beneficio final: llegar rápido, descansar y reservar fácil.",
+        "format": "Reel",
+        "objective": "Reducir fricción de reserva",
+        "recommendedAngle": "Evitar explicar demasiado; usar cortes visuales y CTA directo a WhatsApp.",
+        "whyItShouldWork": "Reducir objeciones y facilitar la reserva aparecen en las flags del mejor contenido.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "makes_purchase_or_booking_feel_easy",
+          "has_visible_or_implied_cta"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_006",
+        "title": "Una noche que se siente como reinicio",
+        "concept": "Post 4:5 con imagen fuerte y texto grande emocional.",
+        "format": "Post",
+        "objective": "Construir deseo y recordación",
+        "recommendedAngle": "Mensaje corto, aspiracional y visual: descanso como reinicio mental.",
+        "whyItShouldWork": "El patrón aspiracional está asociado a mejor rendimiento en la muestra.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_007",
+        "title": "El checklist de una escapada perfecta",
+        "concept": "Carrusel simple con 5 slides: descanso, privacidad, naturaleza, comodidad y reserva por WhatsApp.",
+        "format": "Carrusel",
+        "objective": "Educar y convertir",
+        "recommendedAngle": "Cada slide con una promesa clara y CTA final sin saturar.",
+        "whyItShouldWork": "El formato lista/ranking aparece en el reel con mayor rendimiento.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "hook_uses_list_number_or_ranking"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_008",
+        "title": "No necesitas vacaciones, necesitas una noche aquí",
+        "concept": "Reel con contraste entre cansancio de ciudad y descanso en glamping.",
+        "format": "Reel",
+        "objective": "Capturar atención rápida",
+        "recommendedAngle": "Texto grande desde el primer segundo y transición a escenas de descanso.",
+        "whyItShouldWork": "Texto grande + curiosity gap + aspiración es la receta positiva principal.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_009",
+        "title": "La pregunta que define tu fin de semana",
+        "concept": "Historia interactiva con encuesta: ¿descanso o rutina? y sticker de WhatsApp.",
+        "format": "Historia",
+        "objective": "Generar respuestas y leads",
+        "recommendedAngle": "Usar copy minimalista y CTA de reserva por DM/WhatsApp.",
+        "whyItShouldWork": "El canal de conversión es WhatsApp y el objetivo principal son reservas.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_010",
+        "title": "Plan pareja sin complicarse",
+        "concept": "Reel que muestra reserva fácil y experiencia clara en pocos segundos.",
+        "format": "Reel",
+        "objective": "Aumentar conversiones",
+        "recommendedAngle": "Enfatizar facilidad de reserva sin convertirlo en tutorial hablado a cámara.",
+        "whyItShouldWork": "Hacer que reservar se sienta fácil aparece entre flags comerciales relevantes.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "makes_purchase_or_booking_feel_easy",
+          "has_visible_or_implied_cta"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_011",
+        "title": "El lugar para desaparecer un rato",
+        "concept": "Reel sensorial con texto grande y planos de detalles del alojamiento.",
+        "format": "Reel",
+        "objective": "Generar deseo aspiracional",
+        "recommendedAngle": "Mostrar detalles vivibles: cama, luz, entrada, ambiente y cierre con WhatsApp.",
+        "whyItShouldWork": "El mejor reel tiene protagonista lugar, valor visual claro y CTA implícito.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile",
+          "recommendationInputs.bestEvidence[0].sourceId=cmq9nnswb0008sz2gjhtla2os"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "feels_raw_authentic_or_spontaneous",
+          "visual_value_is_clear_fast"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_012",
+        "title": "¿Qué harías aquí con tu pareja?",
+        "concept": "Reel o historia con pregunta abierta sobre experiencia en pareja.",
+        "format": "Historia/Reel",
+        "objective": "Estimular conversación",
+        "recommendedAngle": "Usar una escena visual y texto grande para invitar a responder o escribir por WhatsApp.",
+        "whyItShouldWork": "El reel ganador tuvo alta conversationScore y usa curiosidad/aspiración.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_013",
+        "title": "Escapada express en San Francisco",
+        "concept": "Reel con ubicación explícita y beneficio: descanso cerca, sin planear demasiado.",
+        "format": "Reel",
+        "objective": "Captar demanda local/cercana",
+        "recommendedAngle": "Mencionar San Francisco, Cundinamarca, sin inventar tiempos ni distancias.",
+        "whyItShouldWork": "La ubicación está disponible en el brief y el modelo de compra es impulsivo.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "hook_mentions_location_time_or_distance"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_014",
+        "title": "El error es esperar a estar agotado",
+        "concept": "Reel emocional sobre reservar antes del colapso de la semana.",
+        "format": "Reel",
+        "objective": "Crear urgencia emocional",
+        "recommendedAngle": "Texto grande con frase fuerte y escenas calmadas del lugar.",
+        "whyItShouldWork": "El motivo de compra es descanso; el hook de curiosidad puede elevar atención.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_015",
+        "title": "Tu próxima conversación debería ser esta",
+        "concept": "Reel con capturas visuales simuladas no sensibles: '¿reservamos?' y respuesta emocional.",
+        "format": "Reel",
+        "objective": "Impulsar reservas en pareja",
+        "recommendedAngle": "Mostrar el momento de decisión, no solo el espacio.",
+        "whyItShouldWork": "La audiencia principal son parejas y el canal de conversión es WhatsApp.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_016",
+        "title": "5 señales de que necesitas glamping",
+        "concept": "Reel de lista con señales cotidianas de cansancio y cierre aspiracional.",
+        "format": "Reel",
+        "objective": "Generar identificación y compartidos",
+        "recommendedAngle": "Usar humor ligero y texto grande; evitar hablar a cámara.",
+        "whyItShouldWork": "Listas y entretenimiento aparecen en el mejor reel junto a curiosidad y aspiración.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile",
+          "recommendationInputs.bestEvidence[0].sourceId=cmq9nnswb0008sz2gjhtla2os"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "hook_uses_list_number_or_ranking"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_017",
+        "title": "Reserva hoy, descansa este fin de semana",
+        "concept": "Historia directa con disponibilidad, visual limpio y botón a WhatsApp.",
+        "format": "Historia",
+        "objective": "Convertir intención en contacto",
+        "recommendedAngle": "CTA claro sin sobreexplicar; enfoque en acción inmediata.",
+        "whyItShouldWork": "El plan busca reservas y WhatsApp es el canal principal.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_018",
+        "title": "El descanso también se reserva",
+        "concept": "Post minimalista con mensaje comercial suave.",
+        "format": "Post",
+        "objective": "Reforzar hábito de reserva",
+        "recommendedAngle": "Texto grande, tono aspiracional, CTA pequeño a WhatsApp.",
+        "whyItShouldWork": "La señal de CTA visible o implícito aparece en el mejor contenido.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_019",
+        "title": "Cuando el plan sí se siente diferente",
+        "concept": "Reel de comparación entre plan común y noche en glamping.",
+        "format": "Reel",
+        "objective": "Diferenciar la experiencia",
+        "recommendedAngle": "Usar cortes rápidos, texto grande y pregunta incompleta al inicio.",
+        "whyItShouldWork": "Curiosity gap + aspiración es una combinación positiva en el grupo.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_020",
+        "title": "La escapada que se decide en un mensaje",
+        "concept": "Reel centrado en la facilidad de reservar por WhatsApp.",
+        "format": "Reel",
+        "objective": "Reducir fricción y llevar a WhatsApp",
+        "recommendedAngle": "Cerrar con texto: escribe 'GLAMPING' y te enviamos disponibilidad.",
+        "whyItShouldWork": "Canal WhatsApp, compra impulsiva y objetivo reservas justifican CTA directo.",
+        "evidenceUsed": [
+          "aggregatedInsights.topWinningFlags",
+          "recommendationInputs.whatToPrioritize",
+          "targetBusiness.profile"
+        ],
+        "relatedFlags": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "makes_purchase_or_booking_feel_easy",
+          "has_visible_or_implied_cta"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      }
+    ],
+    "hooksLibrary": [
+      {
+        "id": "hook_001",
+        "hook": "3 razones para escaparte con tu pareja esta semana",
+        "hookType": "lista/ranking",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "curiosidad + beneficio concreto",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_007"
+        ],
+        "evidenceUsed": [
+          "topWinningCombos: texto grande + curiosity gap"
+        ]
+      },
+      {
+        "id": "hook_002",
+        "hook": "Esto no es un plan, es una pausa",
+        "hookType": "aspiracional",
+        "bestForFormat": "Reel/Post",
+        "psychologicalTrigger": "reencuadre emocional",
+        "relatedIdeaIds": [
+          "idea_002",
+          "idea_006"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_003",
+        "hook": "No necesitas vacaciones. Necesitas una noche así",
+        "hookType": "contraste",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "dolor-solución",
+        "relatedIdeaIds": [
+          "idea_008",
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.purchaseMotive=Descanso"
+        ]
+      },
+      {
+        "id": "hook_004",
+        "hook": "Lo que pasa cuando por fin salen de la rutina",
+        "hookType": "curiosity gap",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "curiosidad aspiracional",
+        "relatedIdeaIds": [
+          "idea_003",
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_005",
+        "hook": "POV: reservaron para no hacer nada",
+        "hookType": "POV",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "identificación + humor suave",
+        "relatedIdeaIds": [
+          "idea_004",
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0]: entretenimiento + autenticidad"
+        ]
+      },
+      {
+        "id": "hook_006",
+        "hook": "El plan de pareja que se decide en un mensaje",
+        "hookType": "conversión",
+        "bestForFormat": "Reel/Historia",
+        "psychologicalTrigger": "facilidad de acción",
+        "relatedIdeaIds": [
+          "idea_015",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.conversionChannel=WhatsApp"
+        ]
+      },
+      {
+        "id": "hook_007",
+        "hook": "¿Descanso o rutina este fin de semana?",
+        "hookType": "pregunta",
+        "bestForFormat": "Historia",
+        "psychologicalTrigger": "elección simple",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.primaryAction=Reservas"
+        ]
+      },
+      {
+        "id": "hook_008",
+        "hook": "Guarda esto para tu próxima escapada",
+        "hookType": "utilidad",
+        "bestForFormat": "Carrusel/Reel",
+        "psychologicalTrigger": "intención de guardado",
+        "relatedIdeaIds": [
+          "idea_007",
+          "idea_013"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0].metrics.saves=732"
+        ]
+      },
+      {
+        "id": "hook_009",
+        "hook": "San Francisco tiene un plan que se siente distinto",
+        "hookType": "ubicación",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "proximidad + curiosidad",
+        "relatedIdeaIds": [
+          "idea_013",
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.city=San Francisco"
+        ]
+      },
+      {
+        "id": "hook_010",
+        "hook": "Si tu semana estuvo pesada, mira esto",
+        "hookType": "empatía",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "identificación emocional",
+        "relatedIdeaIds": [
+          "idea_003",
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.purchaseMotive=Descanso"
+        ]
+      },
+      {
+        "id": "hook_011",
+        "hook": "Una noche aquí cambia el mood completo",
+        "hookType": "aspiracional",
+        "bestForFormat": "Post/Reel",
+        "psychologicalTrigger": "resultado emocional",
+        "relatedIdeaIds": [
+          "idea_006",
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_012",
+        "hook": "5 señales de que necesitas una escapada",
+        "hookType": "lista/ranking",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "autoidentificación",
+        "relatedIdeaIds": [
+          "idea_016",
+          "idea_001"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0]: hook_uses_list_number_or_ranking"
+        ]
+      },
+      {
+        "id": "hook_013",
+        "hook": "El descanso también se agenda",
+        "hookType": "frase directa",
+        "bestForFormat": "Post/Historia",
+        "psychologicalTrigger": "recordatorio de acción",
+        "relatedIdeaIds": [
+          "idea_018",
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.primaryAction=Reservas"
+        ]
+      },
+      {
+        "id": "hook_014",
+        "hook": "¿Qué harías aquí con tu pareja?",
+        "hookType": "pregunta abierta",
+        "bestForFormat": "Historia/Reel",
+        "psychologicalTrigger": "conversación",
+        "relatedIdeaIds": [
+          "idea_012",
+          "idea_015"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0].scores.conversationScore=100"
+        ]
+      },
+      {
+        "id": "hook_015",
+        "hook": "El plan perfecto cuando no quieres planear",
+        "hookType": "beneficio específico",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "facilidad + descanso",
+        "relatedIdeaIds": [
+          "idea_010",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.purchaseModel=Compra impulsiva"
+        ]
+      },
+      {
+        "id": "hook_016",
+        "hook": "Antes de decir 'estoy agotado', reserva esto",
+        "hookType": "urgencia emocional",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "prevención del dolor",
+        "relatedIdeaIds": [
+          "idea_014",
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "targetBusiness.purchaseMotive=Descanso"
+        ]
+      },
+      {
+        "id": "hook_017",
+        "hook": "Un mensaje puede cambiar tu fin de semana",
+        "hookType": "conversión",
+        "bestForFormat": "Historia/Reel",
+        "psychologicalTrigger": "acción fácil",
+        "relatedIdeaIds": [
+          "idea_020",
+          "idea_009"
+        ],
+        "evidenceUsed": [
+          "conversionChannel=WhatsApp"
+        ]
+      },
+      {
+        "id": "hook_018",
+        "hook": "Mira este lugar antes de escoger hotel",
+        "hookType": "comparación",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "curiosidad + alternativa",
+        "relatedIdeaIds": [
+          "idea_011",
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "mainOffering=Lugar"
+        ]
+      },
+      {
+        "id": "hook_019",
+        "hook": "Esto es lo que muchos llaman desconectarse",
+        "hookType": "aspiracional",
+        "bestForFormat": "Reel/Post",
+        "psychologicalTrigger": "validación emocional",
+        "relatedIdeaIds": [
+          "idea_002",
+          "idea_003"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_020",
+        "hook": "La escapada que no necesita explicación",
+        "hookType": "minimalista",
+        "bestForFormat": "Post/Reel",
+        "psychologicalTrigger": "deseo visual rápido",
+        "relatedIdeaIds": [
+          "idea_006",
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0]: visual_value_is_clear_fast"
+        ]
+      }
+    ],
+    "captionsLibrary": [
+      {
+        "id": "caption_001",
+        "caption": "A veces el mejor plan no es hacer más, sino salir de la rutina y descansar en serio. Si quieres vivir una noche diferente en My Glamping, escríbenos por WhatsApp y te compartimos disponibilidad.",
+        "tone": "cálido aspiracional",
+        "bestFor": "Reels de escapada en pareja",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_002"
+        ],
+        "evidenceUsed": [
+          "purchaseMotive=Descanso",
+          "conversionChannel=WhatsApp"
+        ]
+      },
+      {
+        "id": "caption_002",
+        "caption": "Una pausa también puede ser un plan. Naturaleza, comodidad y ese momento que cambia el ritmo de la semana. Reserva tu experiencia por WhatsApp.",
+        "tone": "minimalista",
+        "bestFor": "Posts aspiracionales",
+        "relatedIdeaIds": [
+          "idea_006",
+          "idea_018"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_003",
+        "caption": "Para parejas que necesitan desconectarse sin complicarse. Elige la fecha, escríbenos y convierte el fin de semana en una escapada.",
+        "tone": "directo comercial",
+        "bestFor": "Historias de conversión",
+        "relatedIdeaIds": [
+          "idea_017",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "primaryAudience=Parejas",
+          "primaryAction=Reservas"
+        ]
+      },
+      {
+        "id": "caption_004",
+        "caption": "No necesitas esperar vacaciones para sentir que descansaste. Una noche puede ser suficiente para cambiar el mood.",
+        "tone": "emocional",
+        "bestFor": "Reels de descanso",
+        "relatedIdeaIds": [
+          "idea_008",
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "purchaseModel=Compra impulsiva"
+        ]
+      },
+      {
+        "id": "caption_005",
+        "caption": "Ese mensaje de '¿reservamos?' puede terminar en una noche de descanso, naturaleza y tiempo para ustedes dos. Escríbenos por WhatsApp.",
+        "tone": "romántico suave",
+        "bestFor": "Reels para parejas",
+        "relatedIdeaIds": [
+          "idea_015",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "primaryAudience=Parejas"
+        ]
+      },
+      {
+        "id": "caption_006",
+        "caption": "Guarda este plan para cuando la rutina empiece a pesar. My Glamping está pensado para descansar, reconectar y salir de lo mismo.",
+        "tone": "aspiracional",
+        "bestFor": "Carruseles y reels guardables",
+        "relatedIdeaIds": [
+          "idea_007",
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0].metrics.saves=732"
+        ]
+      },
+      {
+        "id": "caption_007",
+        "caption": "Hay lugares que no necesitan mucha explicación: se ven, se sienten y se reservan. Te enviamos disponibilidad por WhatsApp.",
+        "tone": "visual directo",
+        "bestFor": "Reels de lugar",
+        "relatedIdeaIds": [
+          "idea_011",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "mainOffering=Lugar",
+          "visualLevel=Muy visual"
+        ]
+      },
+      {
+        "id": "caption_008",
+        "caption": "Si este fin de semana pide calma, privacidad y un plan diferente, esta puede ser la señal. Reserva por WhatsApp.",
+        "tone": "cálido urgente",
+        "bestFor": "Historias con disponibilidad",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "goal=Reservas"
+        ]
+      },
+      {
+        "id": "caption_009",
+        "caption": "San Francisco, Cundinamarca, también puede sentirse como una pausa completa. Ven a descansar en My Glamping.",
+        "tone": "ubicación aspiracional",
+        "bestFor": "Contenido local",
+        "relatedIdeaIds": [
+          "idea_013",
+          "idea_003"
+        ],
+        "evidenceUsed": [
+          "city=San Francisco",
+          "region=Cundinamarca"
+        ]
+      },
+      {
+        "id": "caption_010",
+        "caption": "Menos explicación, más descanso. Menos rutina, más tiempo juntos. Así se siente una escapada en My Glamping.",
+        "tone": "minimalista romántico",
+        "bestFor": "Posts de marca",
+        "relatedIdeaIds": [
+          "idea_002",
+          "idea_006"
+        ],
+        "evidenceUsed": [
+          "audience=Parejas",
+          "motive=Descanso"
+        ]
+      },
+      {
+        "id": "caption_011",
+        "caption": "Cuando el plan es no correr, no producir, no cumplirle a nadie. Solo descansar. Escríbenos y agenda tu escapada.",
+        "tone": "emocional honesto",
+        "bestFor": "Reels POV",
+        "relatedIdeaIds": [
+          "idea_004",
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "avoid: feels_polished_or_professional",
+          "testNext: raw authentic"
+        ]
+      },
+      {
+        "id": "caption_012",
+        "caption": "La escapada perfecta no tiene que ser complicada. Un mensaje, una fecha y una noche para ustedes.",
+        "tone": "simple comercial",
+        "bestFor": "Reels de reserva fácil",
+        "relatedIdeaIds": [
+          "idea_010",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "makes_purchase_or_booking_feel_easy"
+        ]
+      },
+      {
+        "id": "caption_013",
+        "caption": "¿Descanso o rutina? Si ya sabes la respuesta, te esperamos por WhatsApp para ayudarte a reservar.",
+        "tone": "interactivo",
+        "bestFor": "Historias con encuesta",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_012"
+        ],
+        "evidenceUsed": [
+          "conversationScore=100 en mejor evidencia"
+        ]
+      },
+      {
+        "id": "caption_014",
+        "caption": "A veces lo más especial es tener un lugar bonito, tiempo tranquilo y cero afán. Ese es el plan.",
+        "tone": "cozy aspiracional",
+        "bestFor": "Reels/post de experiencia",
+        "relatedIdeaIds": [
+          "idea_003",
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "shows_comfort_adventure_or_experience"
+        ]
+      },
+      {
+        "id": "caption_015",
+        "caption": "Para los que quieren salir de lo mismo sin armar un viaje enorme. My Glamping es una escapada sencilla, visual y lista para reservar.",
+        "tone": "práctico",
+        "bestFor": "Reels de compra impulsiva",
+        "relatedIdeaIds": [
+          "idea_010",
+          "idea_013"
+        ],
+        "evidenceUsed": [
+          "purchaseModel=Compra impulsiva"
+        ]
+      },
+      {
+        "id": "caption_016",
+        "caption": "Este es el tipo de plan que se comparte con un 'vamos'. Mándaselo a esa persona y escríbenos para reservar.",
+        "tone": "social",
+        "bestFor": "Reels compartibles",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "bestEvidence[0].metrics.shares=1206",
+          "sends=9470"
+        ]
+      },
+      {
+        "id": "caption_017",
+        "caption": "La rutina vuelve sola. El descanso hay que decidirlo. Reserva tu noche en My Glamping por WhatsApp.",
+        "tone": "decisivo",
+        "bestFor": "Posts con CTA",
+        "relatedIdeaIds": [
+          "idea_018",
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "primaryAction=Reservas"
+        ]
+      },
+      {
+        "id": "caption_018",
+        "caption": "Si estás buscando un lugar para bajar el ritmo, dormir diferente y reconectar, esta es una buena señal.",
+        "tone": "sereno",
+        "bestFor": "Contenido aspiracional",
+        "relatedIdeaIds": [
+          "idea_006",
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "topWinningFlags: evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_019",
+        "caption": "No es solo hospedaje. Es una pausa para dos, una conversación distinta y una noche fuera de la rutina.",
+        "tone": "romántico estratégico",
+        "bestFor": "Reels para parejas",
+        "relatedIdeaIds": [
+          "idea_015",
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "businessType=Glamping",
+          "primaryAudience=Parejas"
+        ]
+      },
+      {
+        "id": "caption_020",
+        "caption": "Pregunta por disponibilidad y elige tu fecha. El descanso puede empezar con un solo mensaje.",
+        "tone": "directo",
+        "bestFor": "Historias y cierres de reel",
+        "relatedIdeaIds": [
+          "idea_017",
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "conversionChannel=WhatsApp"
+        ]
+      }
+    ],
+    "ctaLibrary": [
+      {
+        "id": "cta_001",
+        "cta": "Escríbenos por WhatsApp y te enviamos disponibilidad.",
+        "ctaType": "directo",
+        "bestFor": "Reels con intención alta",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_002",
+        "cta": "Reserva tu escapada en pareja.",
+        "ctaType": "aspiracional",
+        "bestFor": "Posts de marca",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_003",
+          "idea_006"
+        ]
+      },
+      {
+        "id": "cta_003",
+        "cta": "Mándanos un mensaje con la palabra GLAMPING.",
+        "ctaType": "palabra clave",
+        "bestFor": "Historias y reels",
+        "conversionIntent": "lead WhatsApp",
+        "relatedIdeaIds": [
+          "idea_017",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_004",
+        "cta": "Consulta fechas disponibles para este fin de semana.",
+        "ctaType": "urgencia suave",
+        "bestFor": "Historias",
+        "conversionIntent": "consulta de disponibilidad",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_017"
+        ]
+      },
+      {
+        "id": "cta_005",
+        "cta": "Guarda este plan para tu próxima escapada.",
+        "ctaType": "guardado",
+        "bestFor": "Carruseles",
+        "conversionIntent": "intención futura",
+        "relatedIdeaIds": [
+          "idea_007",
+          "idea_016"
+        ]
+      },
+      {
+        "id": "cta_006",
+        "cta": "Compártelo con la persona con la que vendrías.",
+        "ctaType": "social",
+        "bestFor": "Reels para parejas",
+        "conversionIntent": "envío/compartido",
+        "relatedIdeaIds": [
+          "idea_012",
+          "idea_016"
+        ]
+      },
+      {
+        "id": "cta_007",
+        "cta": "Escríbenos y armamos tu reserva.",
+        "ctaType": "servicial",
+        "bestFor": "Reels de reserva fácil",
+        "conversionIntent": "reserva asistida",
+        "relatedIdeaIds": [
+          "idea_010",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_008",
+        "cta": "Pregunta por la fecha que tienes en mente.",
+        "ctaType": "conversacional",
+        "bestFor": "Historias",
+        "conversionIntent": "inicio de conversación",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_012"
+        ]
+      },
+      {
+        "id": "cta_009",
+        "cta": "Haz de este fin de semana una pausa.",
+        "ctaType": "emocional",
+        "bestFor": "Posts aspiracionales",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_008",
+          "idea_014"
+        ]
+      },
+      {
+        "id": "cta_010",
+        "cta": "Toca el link y reserva por WhatsApp.",
+        "ctaType": "acción clara",
+        "bestFor": "Historias con link",
+        "conversionIntent": "click a WhatsApp",
+        "relatedIdeaIds": [
+          "idea_017",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_011",
+        "cta": "Envíanos 'RESERVA' y te respondemos con opciones.",
+        "ctaType": "palabra clave",
+        "bestFor": "Reels y stories",
+        "conversionIntent": "lead calificado",
+        "relatedIdeaIds": [
+          "idea_015",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_012",
+        "cta": "Elige la fecha y ven a descansar.",
+        "ctaType": "simple",
+        "bestFor": "Posts comerciales",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_018",
+          "idea_017"
+        ]
+      },
+      {
+        "id": "cta_013",
+        "cta": "Dale enviar a quien necesita este plan contigo.",
+        "ctaType": "social",
+        "bestFor": "Reels compartibles",
+        "conversionIntent": "compartido",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_019"
+        ]
+      },
+      {
+        "id": "cta_014",
+        "cta": "Haz tu consulta sin compromiso por WhatsApp.",
+        "ctaType": "baja fricción",
+        "bestFor": "Contenido de objeciones",
+        "conversionIntent": "consulta",
+        "relatedIdeaIds": [
+          "idea_005",
+          "idea_010"
+        ]
+      },
+      {
+        "id": "cta_015",
+        "cta": "Reserva antes de volver a la rutina.",
+        "ctaType": "urgencia emocional",
+        "bestFor": "Reels de domingo/lunes",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_003",
+          "idea_014"
+        ]
+      },
+      {
+        "id": "cta_016",
+        "cta": "Ven a vivir una noche diferente.",
+        "ctaType": "aspiracional",
+        "bestFor": "Reels de experiencia",
+        "conversionIntent": "deseo/reserva",
+        "relatedIdeaIds": [
+          "idea_011",
+          "idea_019"
+        ]
+      },
+      {
+        "id": "cta_017",
+        "cta": "Responde esta historia y te enviamos información.",
+        "ctaType": "interactivo",
+        "bestFor": "Historias",
+        "conversionIntent": "respuesta directa",
+        "relatedIdeaIds": [
+          "idea_009",
+          "idea_012"
+        ]
+      },
+      {
+        "id": "cta_018",
+        "cta": "Revisa disponibilidad hoy.",
+        "ctaType": "directo",
+        "bestFor": "Historias de conversión",
+        "conversionIntent": "consulta inmediata",
+        "relatedIdeaIds": [
+          "idea_017",
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_019",
+        "cta": "Agenda tu pausa en My Glamping.",
+        "ctaType": "marca",
+        "bestFor": "Posts de posicionamiento",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_006",
+          "idea_018"
+        ]
+      },
+      {
+        "id": "cta_020",
+        "cta": "Escríbenos ahora y separa tu noche.",
+        "ctaType": "urgencia comercial",
+        "bestFor": "Cierres de reel",
+        "conversionIntent": "reserva inmediata",
+        "relatedIdeaIds": [
+          "idea_020",
+          "idea_017"
+        ]
+      }
+    ],
+    "scripts": [],
+    "predictions": {
+      "enabled": false,
+      "items": []
+    },
+    "likeliScore": {
+      "enabled": false,
+      "score": "",
+      "scoreLabel": "",
+      "explanation": "",
+      "strengths": [],
+      "weaknesses": [],
+      "recommendedNextMove": ""
+    },
+    "benchmarks": {
+      "enabled": false,
+      "items": []
+    },
+    "contentCalendar": [],
+    "monthlyRoadmap": [],
+    "prioritizationMatrix": [
+      {
+        "id": "priority_001",
+        "itemType": "idea",
+        "itemId": "idea_001",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Replica lista + texto grande + aspiración, señales presentes en el contenido de mejor rendimiento."
+      },
+      {
+        "id": "priority_002",
+        "itemType": "idea",
+        "itemId": "idea_004",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Usa POV auténtico, evita hablar a cámara y conecta con parejas que buscan descanso."
+      },
+      {
+        "id": "priority_003",
+        "itemType": "idea",
+        "itemId": "idea_008",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Contraste claro entre rutina y descanso, alineado con compra impulsiva."
+      },
+      {
+        "id": "priority_004",
+        "itemType": "idea",
+        "itemId": "idea_020",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Reduce fricción hacia WhatsApp, el canal de conversión definido."
+      },
+      {
+        "id": "priority_005",
+        "itemType": "opportunity",
+        "itemId": "opportunity_001",
+        "impact": "high",
+        "effort": "medium",
+        "priority": "high",
+        "reason": "Convierte las señales positivas en un sistema repetible de contenido."
+      },
+      {
+        "id": "priority_006",
+        "itemType": "opportunity",
+        "itemId": "opportunity_002",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Alinea todos los contenidos con reservas por WhatsApp."
+      },
+      {
+        "id": "priority_007",
+        "itemType": "idea",
+        "itemId": "idea_007",
+        "impact": "medium",
+        "effort": "medium",
+        "priority": "medium",
+        "reason": "Puede generar guardados, pero requiere más diseño que un reel simple."
+      },
+      {
+        "id": "priority_008",
+        "itemType": "opportunity",
+        "itemId": "opportunity_003",
+        "impact": "medium",
+        "effort": "low",
+        "priority": "medium",
+        "reason": "Evita repetir una señal débil, pero debe aplicarse con cuidado por el carácter visual del negocio."
+      }
+    ],
+    "reviewChecklists": {
+      "beforePublishing": [
+        "El primer segundo tiene texto grande, corto y legible.",
+        "El hook abre curiosidad o promete una razón clara para seguir viendo.",
+        "El contenido se siente aspiracional, pero no exagerado.",
+        "La pieza evita depender de una persona hablando a cámara.",
+        "El plano visual comunica descanso o experiencia vivible rápidamente.",
+        "El CTA lleva a WhatsApp de forma simple.",
+        "No se inventan datos de disponibilidad, precios, distancia ni beneficios no confirmados."
+      ],
+      "afterPublishing": [
+        "Revisar envíos, compartidos, guardados, comentarios y mensajes recibidos por WhatsApp.",
+        "Comparar si los hooks con curiosity gap superan a los hooks descriptivos.",
+        "Identificar si los contenidos con pareja o decisión compartible generan más conversaciones.",
+        "Registrar qué CTA produjo más respuestas: disponibilidad, palabra clave o reserva directa.",
+        "Anotar si el contenido se percibió espontáneo o demasiado producido."
+      ],
+      "weeklyReview": [
+        "Separar las piezas por receta: texto grande, curiosity gap, aspiracional, lista, CTA directo.",
+        "Repetir la mejor combinación de la semana con una variación visual distinta.",
+        "Pausar formatos que tengan baja intención y baja distribución.",
+        "Validar si el contenido de naturaleza funcionó mejor cuando estuvo conectado a una promesa concreta.",
+        "Actualizar la lista de hooks ganadores con base en resultados propios."
+      ]
+    },
+    "finalRecommendation": {
+      "summary": "La mejor dirección para My Glamping es construir una serie de contenidos simples y repetibles alrededor de escapadas en pareja, descanso y reserva fácil por WhatsApp. La prioridad no debe ser producir más bonito, sino abrir con una frase fuerte, crear curiosidad y mostrar una experiencia deseable de forma rápida.",
+      "firstMove": "Publicar primero un reel tipo lista: '3 razones para escaparte con tu pareja esta semana', con texto grande, escenas reales del lugar, tono aspiracional y CTA a WhatsApp.",
+      "whatToAvoid": [
+        "Videos largos explicando a cámara.",
+        "Piezas demasiado producidas que parezcan anuncio frío.",
+        "Tomas de naturaleza o ambiente sin texto, promesa ni tensión narrativa.",
+        "CTAs ambiguos como 'más información' sin dirigir a WhatsApp.",
+        "Asumir causalidad definitiva con una muestra pequeña."
+      ],
+      "whatToRepeat": [
+        "Texto grande en pantalla desde el primer segundo.",
+        "Hooks con curiosidad o información incompleta.",
+        "Mensajes aspiracionales de descanso para parejas.",
+        "Listas cortas y fáciles de entender.",
+        "CTA directo a WhatsApp con baja fricción."
+      ],
+      "whatToTestNext": [
+        "Reels POV de pareja sin hablar a cámara.",
+        "Historias con encuesta descanso vs rutina.",
+        "CTAs con palabra clave como GLAMPING o RESERVA.",
+        "Comparación entre plan común y noche en glamping.",
+        "Variaciones de la receta texto grande + curiosity gap + aspiración."
+      ]
+    }
+  }
+}
