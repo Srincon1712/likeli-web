@@ -4,7 +4,6 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getPlan, planOrder, plans } from "@/data/plans";
-import { createLocalPortal, deleteLocalPortal, getAllClientPortals, saveLocalPortalOutput } from "@/lib/portalStorage";
 import { readAndValidateLikeliPortalOutput } from "@/lib/likeli-output/importLikeliPortalOutput";
 import type { ClientPortal, PortalPlanId } from "@/types/likeliPortalOutput";
 
@@ -25,28 +24,48 @@ export function AdminApp() {
   const [pendingImport, setPendingImport] = useState<ClientPortal | null>(null);
   const [importState, setImportState] = useState<ImportState>(initialImport);
 
-  function refresh() {
-    setPortals(getAllClientPortals());
+  async function refresh() {
+    try {
+      const response = await fetch("/api/portals", { cache: "no-store" });
+      if (!response.ok) throw new Error("No se pudieron cargar los portales.");
+      const data = await response.json() as { portals: ClientPortal[] };
+      setPortals(data.portals || []);
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : "No se pudieron cargar los portales.");
+      setPortals([]);
+    }
   }
 
   useEffect(() => {
-    const handle = window.setTimeout(refresh, 0);
+    const handle = window.setTimeout(() => void refresh(), 0);
     return () => window.clearTimeout(handle);
   }, []);
 
-  function createPortal(event: FormEvent<HTMLFormElement>) {
+  async function createPortal(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     const formData = new FormData(event.currentTarget);
-    createLocalPortal({
-      clientName: String(formData.get("clientName") || "").trim(),
-      businessType: String(formData.get("businessType") || "").trim(),
-      clientSlug: String(formData.get("clientSlug") || "").trim(),
-      activePlan: String(formData.get("activePlan") || "signals") as PortalPlanId,
-      status: "active",
+    const response = await fetch("/api/portals", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: String(formData.get("clientName") || "").trim(),
+        clientName: String(formData.get("clientName") || "").trim(),
+        businessType: String(formData.get("businessType") || "").trim(),
+        activePlan: String(formData.get("activePlan") || "signals") as PortalPlanId,
+        status: "active",
+      }),
     });
-    event.currentTarget.reset();
-    setNotice("Portal creado.");
-    refresh();
+
+    const data = await response.json() as { portal?: ClientPortal; error?: string };
+    if (!response.ok || !data.portal) {
+      setNotice(data.error || "No se pudo crear el portal.");
+      return;
+    }
+
+    form.reset();
+    setNotice(`Portal creado. Slug: ${data.portal.clientSlug}`);
+    await refresh();
   }
 
   function readImport(rawInput: string) {
@@ -83,13 +102,52 @@ export function AdminApp() {
     readImport(await file.text());
   }
 
-  function saveImport() {
+  async function saveImport() {
     if (!pendingImport || !importState.output || importState.status !== "valid") return;
-    saveLocalPortalOutput(pendingImport, importState.output, pendingImport.activePlan);
+    const response = await fetch(`/api/portals/${encodeURIComponent(pendingImport.clientSlug)}/output`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ output: importState.output, portalPlanId: pendingImport.activePlan }),
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({ error: "No se pudo guardar el output." })) as { error?: string };
+      setNotice(data.error || "No se pudo guardar el output.");
+      return;
+    }
+
     setNotice("Output importado correctamente.");
     setPendingImport(null);
     setImportState(initialImport);
-    refresh();
+    await refresh();
+  }
+
+  async function togglePortalStatus(portal: ClientPortal) {
+    const nextStatus = portal.status === "active" ? "inactive" : "active";
+    const response = await fetch(`/api/portals/${encodeURIComponent(portal.clientSlug)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: nextStatus }),
+    });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({ error: "No se pudo cambiar el estado." })) as { error?: string };
+      setNotice(data.error || "No se pudo cambiar el estado.");
+      return;
+    }
+
+    setNotice(nextStatus === "active" ? "Portal activado." : "Portal desactivado.");
+    await refresh();
+  }
+
+  async function removePortal(portal: ClientPortal) {
+    const response = await fetch(`/api/portals/${encodeURIComponent(portal.clientSlug)}`, { method: "DELETE" });
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({ error: "No se pudo eliminar el portal." })) as { error?: string };
+      setNotice(data.error || "No se pudo eliminar el portal.");
+      return;
+    }
+
+    setNotice("Portal eliminado.");
+    await refresh();
   }
 
   return (
@@ -111,7 +169,6 @@ export function AdminApp() {
           <form className="admin-form" onSubmit={createPortal}>
             <input name="clientName" placeholder="Nombre del cliente" required />
             <input name="businessType" placeholder="Tipo de negocio" required />
-            <input name="clientSlug" placeholder="slug-del-cliente" required />
             <select name="activePlan" defaultValue="signals">
               {planOrder.map((planId) => <option value={planId} key={planId}>{plans[planId].name}</option>)}
             </select>
@@ -133,8 +190,14 @@ export function AdminApp() {
                     <code>/portal/{portal.clientSlug}/{portal.accessKey}</code>
                   </div>
                   <span className="pill">{plan.name}</span>
+                  <span className="pill muted">{portal.status === "active" ? "Activo" : portal.status === "inactive" ? "Inactivo" : portal.status}</span>
                   <button className="button ghost" type="button" onClick={() => { setPendingImport(portal); setImportState(initialImport); }}>Importar JSON</button>
-                  {portal.source === "local" && <button className="button danger" type="button" onClick={() => { deleteLocalPortal(portalId); refresh(); }}>Eliminar</button>}
+                  {portal.source === "local" && (
+                    <button className="button ghost" type="button" onClick={() => void togglePortalStatus(portal)}>
+                      {portal.status === "active" ? "Desactivar" : "Activar"}
+                    </button>
+                  )}
+                  {portal.source === "local" && <button className="button danger" type="button" onClick={() => void removePortal(portal)}>Eliminar</button>}
                 </div>
               );
             })}

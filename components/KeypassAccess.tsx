@@ -2,20 +2,30 @@
 
 import { FormEvent, useState } from "react";
 import Image from "next/image";
-import { findPortalByAccessKey } from "@/lib/portalStorage";
+import type { ClientPortal } from "@/types/likeliPortalOutput";
 
 export function KeypassAccess() {
   const [accessKey, setAccessKey] = useState("");
   const [error, setError] = useState("");
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const portal = findPortalByAccessKey(accessKey.trim());
-    if (!portal) {
+    setError("");
+
+    const response = await fetch(`/api/portals?accessKey=${encodeURIComponent(accessKey.trim())}`, { cache: "no-store" });
+    const data = await response.json().catch(() => ({})) as { portal?: ClientPortal; error?: string };
+
+    if (response.status === 403) {
+      setError("Portal inactivo. Este portal no esta disponible actualmente.");
+      return;
+    }
+
+    if (!response.ok || !data.portal) {
       setError("Keypass no valido o portal no disponible.");
       return;
     }
-    window.location.href = `/portal/${portal.clientSlug}/${portal.accessKey}`;
+
+    window.location.href = `/portal/${data.portal.clientSlug}/${data.portal.accessKey}`;
   }
 
   return (

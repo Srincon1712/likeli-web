@@ -1,0 +1,3776 @@
+{
+  "outputType": "LIKELI_CLIENT_PORTAL_OUTPUT",
+  "importedAt": "2026-06-12T18:19:08.826Z",
+  "version": "1.0",
+  "portalPlanId": "signals-elite",
+  "output": {
+    "meta": {
+      "outputType": "LIKELI_CLIENT_PORTAL_OUTPUT",
+      "version": "1.0",
+      "language": "es",
+      "generatedAt": "2026-06-11T19:28:12.005Z",
+      "sourceExportType": "LIKELI_CLIENT_OUTPUT_BRIEF"
+    },
+    "clientProfile": {
+      "businessName": "Trica",
+      "businessType": "Hotel / finca hotel",
+      "category": "Alojamiento",
+      "location": "Choachí, Cundinamarca, Colombia",
+      "audience": "Parejas",
+      "objective": "Entender qué funciona para aumentar reservas por WhatsApp",
+      "notes": "Negocio muy visual, con compra impulsiva, ticket medio, motivo principal de descanso, menos de 30 minutos desde ciudad principal, 18.343 seguidores y etapa social empezando."
+    },
+    "plan": {
+      "id": "signals_elite",
+      "label": "Signals Elite",
+      "requiredCounts": {
+        "contentIdeas": 40,
+        "hooks": 40,
+        "captions": 40,
+        "ctas": 40,
+        "trends": 4,
+        "opportunities": 4,
+        "scripts": 16
+      },
+      "enabledSections": {
+        "predictions": true,
+        "likeliScore": true,
+        "benchmarks": true,
+        "calendar": true,
+        "roadmap": true
+      }
+    },
+    "executiveSummary": {
+      "summary": "El análisis sugiere que Trica debe construir su contenido alrededor de reels con texto grande en pantalla, curiosidad abierta y sensación aspiracional de descanso en pareja. La muestra es pequeña, pero el mejor contenido analizado combina lugar, rostro, valor visual rápido, CTA implícito y una sensación auténtica, logrando señales máximas de atención, distribución e intención.",
+      "whatWasAnalyzed": "Se comparó el perfil de Trica con un grupo similar de alojamiento en Choachí, Cundinamarca, orientado a parejas, reservas por WhatsApp, descanso, ticket medio y etapa social empezando. La evidencia disponible incluye 3 reels analizados del grupo Prueba 1.",
+      "mainFindings": [
+        "El patrón más fuerte combina texto grande en pantalla, curiosidad incompleta y aspiración.",
+        "El reel con mejor rendimiento alcanzó 15.299 likes, 129 comentarios, 1.206 compartidos, 9.470 envíos, 732 guardados y Likeli Score 100.",
+        "Los contenidos demasiado producidos, con persona hablando a cámara o ambiente mostrado sin tensión narrativa aparecen asociados a menor rendimiento dentro de esta muestra.",
+        "Las señales positivas deben probarse como recetas recurrentes antes de escalar producción."
+      ],
+      "mainRecommendation": "Publicar durante el primer mes una batería de reels cortos con promesa visual inmediata, texto grande, curiosidad tipo lista o secreto cercano y CTA simple a WhatsApp, evitando piezas largas de explicación directa a cámara.",
+      "evidenceLevel": "low"
+    },
+    "diagnosis": {
+      "strengths": [
+        {
+          "title": "Alto potencial visual",
+          "explanation": "El negocio pertenece a alojamiento, tiene oferta de lugar y nivel visual muy alto, lo que permite comunicar descanso y deseo sin depender de explicación verbal.",
+          "evidenceStrength": "medium"
+        },
+        {
+          "title": "Audiencia clara",
+          "explanation": "La audiencia principal son parejas y el motivo de compra es descanso, lo que facilita construir mensajes emocionales y aspiracionales.",
+          "evidenceStrength": "medium"
+        },
+        {
+          "title": "Canal de conversión directo",
+          "explanation": "WhatsApp permite transformar intención impulsiva en conversación de reserva con CTAs simples.",
+          "evidenceStrength": "medium"
+        },
+        {
+          "title": "Existe una receta ganadora detectable",
+          "explanation": "Texto grande, curiosidad y aspiración aparecen como señales positivas en el grupo comparable.",
+          "evidenceStrength": "low"
+        }
+      ],
+      "weaknesses": [
+        {
+          "title": "Base de evidencia limitada",
+          "explanation": "Solo hay 3 reels analizados en el grupo seleccionado; las asociaciones deben tratarse como hipótesis, no como verdades absolutas.",
+          "evidenceStrength": "high"
+        },
+        {
+          "title": "Riesgo de producir demasiado",
+          "explanation": "El formato muy producido aparece como señal débil en la muestra, especialmente si se siente menos espontáneo.",
+          "evidenceStrength": "low"
+        },
+        {
+          "title": "Riesgo de hablar demasiado a cámara",
+          "explanation": "La persona hablando a cámara aparece asociada a menor rendimiento cuando no está integrada a una promesa visual fuerte.",
+          "evidenceStrength": "low"
+        },
+        {
+          "title": "Mostrar naturaleza sin historia puede no bastar",
+          "explanation": "El ambiente atractivo por sí solo no garantiza intención si no hay hook, tensión o beneficio claro.",
+          "evidenceStrength": "low"
+        }
+      ],
+      "risks": [
+        "La muestra puede ser pequeña y no representar todo el mercado.",
+        "Las asociaciones no prueban causalidad.",
+        "El rendimiento puede cambiar si la calidad visual real de Trica, la oferta o la temporada difieren del grupo analizado.",
+        "Escalar producción sin testear puede repetir patrones débiles."
+      ],
+      "evidenceNotes": [
+        "Grupo seleccionado: Prueba 1, matchScore 77, evidenceLevel low, 3 reels analizados.",
+        "Mejor reel: Prueba 1 #2, Likeli Score 100, attentionScore 100, distributionScore 100, intentScore 100.",
+        "Flags ganadoras: has_large_text_overlay, hook_uses_curiosity_gap, evokes_aspiration.",
+        "Flags débiles: has_person_talking_to_camera, feels_polished_or_professional, shows_nature_place_or_environment."
+      ]
+    },
+    "trends": [
+      {
+        "id": "trend_001",
+        "title": "Texto grande como filtro de atención",
+        "description": "Los contenidos con texto grande en pantalla aparecen asociados a mejor rendimiento porque comunican la promesa antes de que el usuario decida seguir viendo.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "topWinningFlags.has_large_text_overlay",
+          "Prueba 1 #2",
+          "supportCount_2",
+          "confidenceAverage_0.29"
+        ],
+        "strategicImplication": "Cada reel prioritario debe iniciar con una frase grande, concreta y emocional que se entienda en menos de dos segundos."
+      },
+      {
+        "id": "trend_002",
+        "title": "Curiosidad incompleta para impulsar retención",
+        "description": "Los hooks que dejan información incompleta o abren una pregunta funcionan como motor de retención y distribución dentro del grupo comparable.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "topWinningFlags.hook_uses_curiosity_gap",
+          "topWinningCombos.texto_grande+curiosidad",
+          "Prueba 1 #2"
+        ],
+        "strategicImplication": "Usar aperturas tipo 'No parece a menos de 30 min...', 'El plan que pocos conocen...' o 'Esto es lo que pasa cuando...'."
+      },
+      {
+        "id": "trend_003",
+        "title": "Aspiración cercana, no lujo lejano",
+        "description": "La aspiración aparece como señal positiva cuando el contenido hace que el descanso en pareja se sienta deseable y alcanzable.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "topWinningFlags.evokes_aspiration",
+          "topWinningCombos.texto_grande+aspiracion",
+          "audience_parejas",
+          "motive_descanso"
+        ],
+        "strategicImplication": "Mostrar experiencias que se sientan reales, reservables y deseables, evitando una estética excesivamente publicitaria."
+      },
+      {
+        "id": "trend_004",
+        "title": "Autenticidad visual sobre producción rígida",
+        "description": "El mejor reel incluye sensación real, espontánea y valor visual rápido; en cambio, lo producido aparece como señal débil dentro de la muestra.",
+        "evidenceStrength": "low",
+        "evidenceUsed": [
+          "Prueba 1 #2.feels_raw_authentic_or_spontaneous",
+          "Prueba 1 #2.visual_value_is_clear_fast",
+          "topWeakFlags.feels_polished_or_professional"
+        ],
+        "strategicImplication": "Grabar con intención editorial, pero conservar naturalidad, movimiento real y escenas vivibles."
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "opportunity_001",
+        "title": "Crear una serie recurrente de escapes en pareja",
+        "description": "Convertir el descanso en pareja en una narrativa repetible: llegada, sorpresa, habitación, vista, comida, jacuzzi o momento íntimo.",
+        "whyItMatters": "La audiencia principal son parejas y el motivo de compra es descanso; una serie recurrente facilita recordación y reservas impulsivas.",
+        "recommendedAction": "Publicar 8 variaciones durante el mes con texto grande, curiosidad y CTA a WhatsApp.",
+        "priority": "high",
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "has_large_text_overlay",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "opportunity_002",
+        "title": "Transformar objeciones en hooks",
+        "description": "Usar preguntas de reserva como precio, distancia, disponibilidad, privacidad y plan de pareja como piezas cortas con respuesta visual.",
+        "whyItMatters": "El mejor reel reduce objeciones y tiene alta intención; resolver dudas puede acercar el contenido a la reserva.",
+        "recommendedAction": "Crear reels de 12 a 18 segundos que abran con una objeción y cierren con WhatsApp.",
+        "priority": "high",
+        "evidenceUsed": [
+          "Prueba 1 #2.reduces_customer_objection",
+          "Prueba 1 #2.intentScore_100",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "opportunity_003",
+        "title": "Usar listas y rankings del lugar",
+        "description": "El mejor reel incluyó lista o número, lo que permite empaquetar beneficios del lugar de forma fácil de consumir.",
+        "whyItMatters": "Las listas facilitan retención, guardados y envíos entre parejas que planean escapadas.",
+        "recommendedAction": "Probar '3 razones', '5 momentos', '2 señales de que necesitas venir' y '1 plan para desconectarte'.",
+        "priority": "medium",
+        "evidenceUsed": [
+          "Prueba 1 #2.hook_uses_list_number_or_ranking",
+          "Prueba 1 #2.saves_732",
+          "Prueba 1 #2.sends_9470"
+        ]
+      },
+      {
+        "id": "opportunity_004",
+        "title": "Bajar producción y subir sensación real",
+        "description": "Priorizar tomas naturales, POV, movimiento humano y escenas de descanso reales por encima de anuncios demasiado pulidos.",
+        "whyItMatters": "La producción rígida aparece asociada a menor rendimiento; lo real puede hacer que la experiencia se sienta más alcanzable.",
+        "recommendedAction": "Crear un banco de clips espontáneos: llegada, café, vista, cama, caminata corta, risa, silencio y cierre con CTA.",
+        "priority": "medium",
+        "evidenceUsed": [
+          "topWeakFlags.feels_polished_or_professional",
+          "Prueba 1 #2.feels_raw_authentic_or_spontaneous",
+          "visual_value_is_clear_fast"
+        ]
+      }
+    ],
+    "contentIdeas": [
+      {
+        "id": "idea_001",
+        "title": "El plan que no parece tan cerca",
+        "concept": "Mostrar que una escapada de descanso puede sentirse lejana sin estar lejos.",
+        "format": "Reel",
+        "objective": "reservas",
+        "recommendedAngle": "Abrir con texto grande: 'No parece a menos de 30 minutos...' y revelar escenas del lugar.",
+        "whyItShouldWork": "La distancia corta reduce fricción y la curiosidad sostiene retención.",
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "distance_menos_de_30_min"
+        ],
+        "relatedFlags": [
+          "distance_menos_de_30_min",
+          "conversion_whatsapp"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_002",
+        "title": "POV: llegas con tu pareja y el ruido desaparece",
+        "concept": "Vender descanso emocional en pareja desde una secuencia sensorial.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Usar llegada, puerta, vista, cama y silencio con texto grande.",
+        "whyItShouldWork": "Conecta audiencia parejas con motivo descanso y aspiración cercana.",
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "evokes_aspiration"
+        ],
+        "relatedFlags": [
+          "audience_parejas",
+          "motive_descanso"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_003",
+        "title": "3 señales de que necesitas una escapada",
+        "concept": "Usar lista rápida para activar necesidad de descanso.",
+        "format": "Reel",
+        "objective": "identificación",
+        "recommendedAngle": "Texto grande con 3 señales: cansancio, ciudad, falta de tiempo juntos.",
+        "whyItShouldWork": "Las listas aparecen en el reel ganador y facilitan compartir.",
+        "evidenceUsed": [
+          "hook_uses_list_number_or_ranking",
+          "Prueba 1 #2"
+        ],
+        "relatedFlags": [
+          "lista",
+          "aspiracion"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_004",
+        "title": "Esto es lo que reservas cuando reservas descanso",
+        "concept": "Mostrar beneficios concretos sin hablar a cámara.",
+        "format": "Reel",
+        "objective": "conversión",
+        "recommendedAngle": "Alternar espacios y momentos con texto: privacidad, vista, pausa, tiempo juntos.",
+        "whyItShouldWork": "Reduce objeciones y convierte visual en intención.",
+        "evidenceUsed": [
+          "reduces_customer_objection",
+          "intentScore_100"
+        ],
+        "relatedFlags": [
+          "conversion_whatsapp"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_005",
+        "title": "Un lugar para desaparecer un día",
+        "concept": "Crear curiosidad aspiracional alrededor del escape.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Texto grande: 'Un lugar para desaparecer un día' y tomas íntimas del lugar.",
+        "whyItShouldWork": "La frase abre curiosidad y activa deseo sin parecer anuncio.",
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "relatedFlags": [
+          "aspiracional"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_006",
+        "title": "Antes de reservar otro restaurante, mira esto",
+        "concept": "Comparar una cita normal con una escapada memorable.",
+        "format": "Reel",
+        "objective": "reservas",
+        "recommendedAngle": "Corte rápido restaurante/ciudad versus Trica como plan distinto.",
+        "whyItShouldWork": "La comparación genera curiosidad y posiciona el lugar como alternativa de pareja.",
+        "evidenceUsed": [
+          "audience_parejas",
+          "hook_uses_curiosity_gap"
+        ],
+        "relatedFlags": [
+          "audience_parejas"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_007",
+        "title": "La cita que empieza antes de llegar",
+        "concept": "Mostrar trayecto, expectativa y llegada como parte del plan.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Usar texto grande y clips de camino, entrada y primera vista.",
+        "whyItShouldWork": "Convierte la cercanía en ventaja emocional.",
+        "evidenceUsed": [
+          "distance_menos_de_30_min",
+          "evokes_aspiration"
+        ],
+        "relatedFlags": [
+          "distance_menos_de_30_min"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_008",
+        "title": "Lo que nadie te dice de escaparte cerca",
+        "concept": "Hook de curiosidad para revelar que no se necesita viajar lejos.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Secuencia de descanso con texto: 'no necesitas irte horas para sentir cambio'.",
+        "whyItShouldWork": "Curiosidad + ubicación cercana pueden aumentar retención.",
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap",
+          "hook_mentions_location_time_or_distance"
+        ],
+        "relatedFlags": [
+          "curiosidad"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_009",
+        "title": "Checklist de una noche perfecta",
+        "concept": "Crear contenido guardable para parejas en decisión.",
+        "format": "Carrusel",
+        "objective": "guardados",
+        "recommendedAngle": "Slides: lugar, clima, ropa, reserva, hora ideal, CTA.",
+        "whyItShouldWork": "El formato checklist facilita intención y WhatsApp.",
+        "evidenceUsed": [
+          "makes_purchase_or_booking_feel_easy",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "whatsapp"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_010",
+        "title": "Reserva si necesitas esto",
+        "concept": "Transformar beneficios en microescenas emocionales.",
+        "format": "Reel",
+        "objective": "conversión",
+        "recommendedAngle": "Texto grande: 'Reserva si necesitas silencio, vista y tiempo juntos'.",
+        "whyItShouldWork": "CTA directo conecta motivación descanso con reserva.",
+        "evidenceUsed": [
+          "motive_descanso",
+          "has_visible_or_implied_cta"
+        ],
+        "relatedFlags": [
+          "conversion_whatsapp"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_011",
+        "title": "Un día aquí cambia el mood",
+        "concept": "Mostrar transformación emocional antes/después.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Primer plano cansancio/ciudad y luego escenas cálidas del lugar.",
+        "whyItShouldWork": "La transformación hace visible el beneficio final.",
+        "evidenceUsed": [
+          "shows_result_or_final_benefit",
+          "evokes_desire"
+        ],
+        "relatedFlags": [
+          "aspiracion"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_012",
+        "title": "5 momentos que hacen que valga la pena",
+        "concept": "Usar ranking rápido de momentos vivibles.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Mostrar cinco clips breves con texto grande numerado.",
+        "whyItShouldWork": "El número estructura la atención y aumenta guardados.",
+        "evidenceUsed": [
+          "hook_uses_list_number_or_ranking",
+          "has_large_text_overlay"
+        ],
+        "relatedFlags": [
+          "lista"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_013",
+        "title": "No vengas si quieres seguir con afán",
+        "concept": "Hook contraintuitivo para vender calma.",
+        "format": "Reel",
+        "objective": "retención",
+        "recommendedAngle": "Texto grande irónico y escenas lentas del lugar.",
+        "whyItShouldWork": "La negación genera curiosidad y diferencia el mensaje.",
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "curiosidad"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_014",
+        "title": "La pregunta que más nos hacen por WhatsApp",
+        "concept": "Responder una objeción frecuente sin inventar datos específicos.",
+        "format": "Reel",
+        "objective": "conversión",
+        "recommendedAngle": "Abrir con la pregunta y responder visualmente con pasos de reserva.",
+        "whyItShouldWork": "Resolver dudas puede aumentar intención de reserva.",
+        "evidenceUsed": [
+          "reduces_customer_objection",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "whatsapp"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_015",
+        "title": "Plan de aniversario sin complicarse",
+        "concept": "Posicionar Trica como solución práctica para parejas.",
+        "format": "Reel",
+        "objective": "reservas",
+        "recommendedAngle": "Texto grande: '¿Aniversario cerca? Mira esto'.",
+        "whyItShouldWork": "Promesa específica + facilidad de compra aumenta conversión.",
+        "evidenceUsed": [
+          "hook_promises_specific_benefit",
+          "audience_parejas"
+        ],
+        "relatedFlags": [
+          "audience_parejas"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_016",
+        "title": "La escapada que se reserva por WhatsApp",
+        "concept": "Mostrar lo fácil que es pasar de deseo a reserva.",
+        "format": "Reel",
+        "objective": "conversión",
+        "recommendedAngle": "Pantalla de mensaje simulado sin datos falsos, escenas del lugar y CTA.",
+        "whyItShouldWork": "El canal de conversión es WhatsApp y el modelo es impulsivo.",
+        "evidenceUsed": [
+          "conversion_whatsapp",
+          "purchase_compra_impulsiva"
+        ],
+        "relatedFlags": [
+          "whatsapp"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_017",
+        "title": "Cosas que sí importan en una escapada",
+        "concept": "Ayudar a decidir con criterios simples de descanso.",
+        "format": "Carrusel",
+        "objective": "educación",
+        "recommendedAngle": "Privacidad, vista, comodidad, facilidad, experiencia.",
+        "whyItShouldWork": "Contenido útil reduce fricción sin hablar a cámara.",
+        "evidenceUsed": [
+          "reduces_customer_objection",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "educacion"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_018",
+        "title": "Cuando los dos necesitan pausar",
+        "concept": "Apelar a parejas cansadas de rutina.",
+        "format": "Reel",
+        "objective": "identificación",
+        "recommendedAngle": "Escenas de manos, vista, café y descanso con texto grande.",
+        "whyItShouldWork": "La identificación activa deseo y envío entre parejas.",
+        "evidenceUsed": [
+          "audience_parejas",
+          "evokes_identification"
+        ],
+        "relatedFlags": [
+          "audience_parejas"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_019",
+        "title": "Un lugar, dos personas, cero ruido",
+        "concept": "Crear una promesa simple y aspiracional.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Tomas limpias de espacio y pareja implícita, sin explicación.",
+        "whyItShouldWork": "El concepto es memorable y alineado a descanso.",
+        "evidenceUsed": [
+          "evokes_aspiration",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "aspiracion"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_020",
+        "title": "¿Qué incluye una escapada que sí descansa?",
+        "concept": "Responder expectativa general sin inventar detalles puntuales.",
+        "format": "Carrusel",
+        "objective": "guardados",
+        "recommendedAngle": "Hablar de sensaciones y experiencia, no de inventario específico.",
+        "whyItShouldWork": "Evita datos falsos y aun así reduce objeciones.",
+        "evidenceUsed": [
+          "reduces_customer_objection"
+        ],
+        "relatedFlags": [
+          "objecion"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_021",
+        "title": "El error de esperar vacaciones para descansar",
+        "concept": "Desbloquear compra impulsiva de descanso corto.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Texto grande: 'No tienes que esperar vacaciones'.",
+        "whyItShouldWork": "Compra impulsiva + cercanía permiten vender pausa inmediata.",
+        "evidenceUsed": [
+          "purchase_compra_impulsiva",
+          "distance_menos_de_30_min"
+        ],
+        "relatedFlags": [
+          "compra_impulsiva"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_022",
+        "title": "Así se ve apagar notificaciones",
+        "concept": "Convertir desconexión en imagen visual.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Mostrar celular boca abajo y escenas de descanso.",
+        "whyItShouldWork": "El beneficio final es claro y emocional.",
+        "evidenceUsed": [
+          "shows_result_or_final_benefit",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "descanso"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_023",
+        "title": "El plan que se manda con un 'vamos'",
+        "concept": "Crear contenido enviable entre parejas.",
+        "format": "Reel",
+        "objective": "distribución",
+        "recommendedAngle": "Texto grande: 'Mándale esto y dile vamos'.",
+        "whyItShouldWork": "El reel ganador tuvo muchos envíos; este formato incentiva compartir.",
+        "evidenceUsed": [
+          "Prueba 1 #2.sends_9470",
+          "has_visible_or_implied_cta"
+        ],
+        "relatedFlags": [
+          "envios"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_024",
+        "title": "Si te aparece esto, es señal",
+        "concept": "Hook de señal/destino para activar curiosidad.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Mostrar escenas del lugar con frase grande y cierre a WhatsApp.",
+        "whyItShouldWork": "El lenguaje de señal impulsa envío y deseo.",
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration"
+        ],
+        "relatedFlags": [
+          "curiosidad"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_025",
+        "title": "Mini tour sin narrador",
+        "concept": "Mostrar el lugar rápido evitando persona hablando a cámara.",
+        "format": "Reel",
+        "objective": "consideración",
+        "recommendedAngle": "Secuencia de 7 clips, texto breve por escena, música suave.",
+        "whyItShouldWork": "Evita una señal débil y mantiene valor visual rápido.",
+        "evidenceUsed": [
+          "has_person_talking_to_camera_negative",
+          "visual_value_is_clear_fast"
+        ],
+        "relatedFlags": [
+          "evitar_habla_camara"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_026",
+        "title": "Lo que cambia cuando duermes fuera de la ciudad",
+        "concept": "Vender cambio de ambiente como beneficio emocional.",
+        "format": "Reel",
+        "objective": "deseo",
+        "recommendedAngle": "Antes/después de energía con escenas de descanso.",
+        "whyItShouldWork": "Promete resultado final sin depender de datos externos.",
+        "evidenceUsed": [
+          "shows_result_or_final_benefit",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "descanso"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_027",
+        "title": "Guía rápida para reservar una escapada",
+        "concept": "Simplificar la decisión de compra por WhatsApp.",
+        "format": "Carrusel",
+        "objective": "conversión",
+        "recommendedAngle": "Slides: fecha, pareja, disponibilidad, confirmación, llegada.",
+        "whyItShouldWork": "Hace que reservar se sienta fácil.",
+        "evidenceUsed": [
+          "makes_purchase_or_booking_feel_easy",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "whatsapp"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_028",
+        "title": "El lugar que no necesita mucho texto",
+        "concept": "Dejar que el visual venda, con texto grande mínimo.",
+        "format": "Reel",
+        "objective": "marca",
+        "recommendedAngle": "Texto inicial potente y luego clips limpios.",
+        "whyItShouldWork": "El valor visual claro fue parte del reel ganador.",
+        "evidenceUsed": [
+          "visual_value_is_clear_fast",
+          "Prueba 1 #2"
+        ],
+        "relatedFlags": [
+          "visual"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_029",
+        "title": "Una noche para volver a hablar",
+        "concept": "Conectar descanso con vínculo de pareja.",
+        "format": "Reel",
+        "objective": "emocional",
+        "recommendedAngle": "Escenas de mesa, vista, silencio y cercanía.",
+        "whyItShouldWork": "Audiencia parejas + descanso permite storytelling íntimo.",
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "parejas"
+        ],
+        "difficulty": "medium",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_030",
+        "title": "¿Cuánto vale descansar de verdad?",
+        "concept": "Abrir una pregunta de valor sin mencionar precio.",
+        "format": "Reel",
+        "objective": "consideración",
+        "recommendedAngle": "Mostrar experiencia y cerrar invitando a consultar disponibilidad.",
+        "whyItShouldWork": "Curiosidad + objeción de precio sin inventar tarifa.",
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap",
+          "reduces_customer_objection"
+        ],
+        "relatedFlags": [
+          "precio"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_031",
+        "title": "Plan de cumpleaños tranquilo",
+        "concept": "Atacar ocasión de compra clara para parejas.",
+        "format": "Reel",
+        "objective": "reservas",
+        "recommendedAngle": "Texto grande: 'Cumpleaños sin ruido, con vista y descanso'.",
+        "whyItShouldWork": "Ocasiones específicas facilitan decisión impulsiva.",
+        "evidenceUsed": [
+          "hook_promises_specific_benefit",
+          "purchase_compra_impulsiva"
+        ],
+        "relatedFlags": [
+          "ocasion"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_032",
+        "title": "La pausa que estaban aplazando",
+        "concept": "Hablarle a parejas que postergan planes.",
+        "format": "Reel",
+        "objective": "identificación",
+        "recommendedAngle": "Texto grande, escenas de descanso y CTA de disponibilidad.",
+        "whyItShouldWork": "La identificación puede motivar conversación por WhatsApp.",
+        "evidenceUsed": [
+          "evokes_identification",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "parejas"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_033",
+        "title": "No es viajar, es resetear",
+        "concept": "Reencuadrar la escapada como reset emocional.",
+        "format": "Reel",
+        "objective": "marca",
+        "recommendedAngle": "Clips de llegada, respiración, vista y descanso.",
+        "whyItShouldWork": "Aspiración cercana y beneficio final claro.",
+        "evidenceUsed": [
+          "evokes_aspiration",
+          "shows_result_or_final_benefit"
+        ],
+        "relatedFlags": [
+          "aspiracion"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_034",
+        "title": "Lo primero que haríamos al llegar",
+        "concept": "Crear expectativa secuencial con POV.",
+        "format": "Reel",
+        "objective": "retención",
+        "recommendedAngle": "Mostrar primera acción, segunda acción y cierre con vista.",
+        "whyItShouldWork": "El POV real mantiene autenticidad sin hablar a cámara.",
+        "evidenceUsed": [
+          "feels_raw_authentic_or_spontaneous",
+          "hook_uses_curiosity_gap"
+        ],
+        "relatedFlags": [
+          "pov"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_035",
+        "title": "Cómo se ve un domingo bien usado",
+        "concept": "Convertir un día común en oportunidad de reserva.",
+        "format": "Reel",
+        "objective": "alcance",
+        "recommendedAngle": "Texto grande y escenas de domingo tranquilo.",
+        "whyItShouldWork": "Compra impulsiva y descanso cercano.",
+        "evidenceUsed": [
+          "purchase_compra_impulsiva",
+          "motive_descanso"
+        ],
+        "relatedFlags": [
+          "domingo"
+        ],
+        "difficulty": "low",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_036",
+        "title": "Mándaselo a quien te debe una escapada",
+        "concept": "CTA social para aumentar envíos.",
+        "format": "Reel",
+        "objective": "distribución",
+        "recommendedAngle": "Texto grande directo y visual aspiracional.",
+        "whyItShouldWork": "El reel ganador tuvo alta señal de envíos y CTA implícito.",
+        "evidenceUsed": [
+          "Prueba 1 #2.sends_9470",
+          "has_visible_or_implied_cta"
+        ],
+        "relatedFlags": [
+          "envios"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_037",
+        "title": "El mood de Choachí que necesitas",
+        "concept": "Usar ubicación como ancla emocional sin depender solo del paisaje.",
+        "format": "Reel",
+        "objective": "ubicación",
+        "recommendedAngle": "Texto grande, tomas de ambiente y descanso.",
+        "whyItShouldWork": "Misma ciudad en grupo comparable y negocio objetivo.",
+        "evidenceUsed": [
+          "city_choachi",
+          "region_cundinamarca"
+        ],
+        "relatedFlags": [
+          "ubicacion"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_038",
+        "title": "Una escapada sin planear demasiado",
+        "concept": "Reducir fricción de compra impulsiva.",
+        "format": "Reel",
+        "objective": "conversión",
+        "recommendedAngle": "Mostrar reserva sencilla y llegada.",
+        "whyItShouldWork": "Alineado a compra impulsiva y canal WhatsApp.",
+        "evidenceUsed": [
+          "purchase_compra_impulsiva",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "facilidad"
+        ],
+        "difficulty": "low",
+        "priority": "high",
+        "estimatedImpact": "high"
+      },
+      {
+        "id": "idea_039",
+        "title": "El contenido que vendería Trica sin vender",
+        "concept": "Pieza aspiracional que no parece anuncio.",
+        "format": "Reel",
+        "objective": "marca",
+        "recommendedAngle": "Visual, texto mínimo, cierre suave a WhatsApp.",
+        "whyItShouldWork": "Evita sensación producida y aumenta naturalidad.",
+        "evidenceUsed": [
+          "feels_polished_or_professional_negative",
+          "evokes_aspiration"
+        ],
+        "relatedFlags": [
+          "marca"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      },
+      {
+        "id": "idea_040",
+        "title": "Preguntas antes de venir",
+        "concept": "Resolver dudas generales sin inventar información específica.",
+        "format": "Carrusel",
+        "objective": "consideración",
+        "recommendedAngle": "Invitar a preguntar disponibilidad, planes, horarios y recomendaciones por WhatsApp.",
+        "whyItShouldWork": "Reduce objeciones y mueve a conversación.",
+        "evidenceUsed": [
+          "reduces_customer_objection",
+          "conversion_whatsapp"
+        ],
+        "relatedFlags": [
+          "faq"
+        ],
+        "difficulty": "medium",
+        "priority": "medium",
+        "estimatedImpact": "medium"
+      }
+    ],
+    "hooksLibrary": [
+      {
+        "id": "hook_001",
+        "hook": "No parece a menos de 30 minutos...",
+        "hookType": "curiosity_gap",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "curiosidad + cercanía",
+        "relatedIdeaIds": [
+          "idea_001",
+          "idea_008"
+        ],
+        "evidenceUsed": [
+          "distance_menos_de_30_min",
+          "hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_002",
+        "hook": "POV: vienes con tu pareja y pasa esto",
+        "hookType": "pov",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "proyección personal",
+        "relatedIdeaIds": [
+          "idea_002",
+          "idea_034"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_003",
+        "hook": "3 señales de que necesitas escaparte",
+        "hookType": "list",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "identificación",
+        "relatedIdeaIds": [
+          "idea_003"
+        ],
+        "evidenceUsed": [
+          "hook_uses_list_number_or_ranking"
+        ]
+      },
+      {
+        "id": "hook_004",
+        "hook": "Esto es lo que realmente reservas",
+        "hookType": "reframe",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "beneficio final",
+        "relatedIdeaIds": [
+          "idea_004"
+        ],
+        "evidenceUsed": [
+          "shows_result_or_final_benefit"
+        ]
+      },
+      {
+        "id": "hook_005",
+        "hook": "Un lugar para desaparecer un día",
+        "hookType": "aspirational",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "deseo de desconexión",
+        "relatedIdeaIds": [
+          "idea_005"
+        ],
+        "evidenceUsed": [
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_006",
+        "hook": "Antes de reservar otro restaurante, mira esto",
+        "hookType": "contrast",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "comparación",
+        "relatedIdeaIds": [
+          "idea_006"
+        ],
+        "evidenceUsed": [
+          "audience_parejas"
+        ]
+      },
+      {
+        "id": "hook_007",
+        "hook": "La cita empieza antes de llegar",
+        "hookType": "story",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "anticipación",
+        "relatedIdeaIds": [
+          "idea_007"
+        ],
+        "evidenceUsed": [
+          "distance_menos_de_30_min"
+        ]
+      },
+      {
+        "id": "hook_008",
+        "hook": "Lo que nadie te dice de escaparte cerca",
+        "hookType": "curiosity_gap",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "información incompleta",
+        "relatedIdeaIds": [
+          "idea_008"
+        ],
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_009",
+        "hook": "Checklist para una noche perfecta",
+        "hookType": "checklist",
+        "bestForFormat": "Carrusel",
+        "psychologicalTrigger": "utilidad guardable",
+        "relatedIdeaIds": [
+          "idea_009"
+        ],
+        "evidenceUsed": [
+          "makes_purchase_or_booking_feel_easy"
+        ]
+      },
+      {
+        "id": "hook_010",
+        "hook": "Reserva si necesitas silencio",
+        "hookType": "direct_benefit",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "necesidad emocional",
+        "relatedIdeaIds": [
+          "idea_010"
+        ],
+        "evidenceUsed": [
+          "motive_descanso"
+        ]
+      },
+      {
+        "id": "hook_011",
+        "hook": "Un día aquí cambia el mood",
+        "hookType": "transformation",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "antes/después",
+        "relatedIdeaIds": [
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "shows_result_or_final_benefit"
+        ]
+      },
+      {
+        "id": "hook_012",
+        "hook": "5 momentos que hacen que valga la pena",
+        "hookType": "list",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "estructura simple",
+        "relatedIdeaIds": [
+          "idea_012"
+        ],
+        "evidenceUsed": [
+          "hook_uses_list_number_or_ranking"
+        ]
+      },
+      {
+        "id": "hook_013",
+        "hook": "No vengas si quieres seguir con afán",
+        "hookType": "negative_hook",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "contraste",
+        "relatedIdeaIds": [
+          "idea_013"
+        ],
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_014",
+        "hook": "La pregunta que más nos hacen por WhatsApp",
+        "hookType": "faq_hook",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "objeción",
+        "relatedIdeaIds": [
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "hook_015",
+        "hook": "¿Aniversario cerca? Mira esto",
+        "hookType": "occasion",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "ocasión de compra",
+        "relatedIdeaIds": [
+          "idea_015"
+        ],
+        "evidenceUsed": [
+          "audience_parejas"
+        ]
+      },
+      {
+        "id": "hook_016",
+        "hook": "La escapada que se reserva por WhatsApp",
+        "hookType": "conversion",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "facilidad",
+        "relatedIdeaIds": [
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "hook_017",
+        "hook": "Cosas que sí importan en una escapada",
+        "hookType": "educational",
+        "bestForFormat": "Carrusel",
+        "psychologicalTrigger": "criterios de decisión",
+        "relatedIdeaIds": [
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "reduces_customer_objection"
+        ]
+      },
+      {
+        "id": "hook_018",
+        "hook": "Cuando los dos necesitan pausar",
+        "hookType": "emotional",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "identificación de pareja",
+        "relatedIdeaIds": [
+          "idea_018"
+        ],
+        "evidenceUsed": [
+          "audience_parejas"
+        ]
+      },
+      {
+        "id": "hook_019",
+        "hook": "Un lugar, dos personas, cero ruido",
+        "hookType": "minimal",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "aspiración simple",
+        "relatedIdeaIds": [
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "motive_descanso"
+        ]
+      },
+      {
+        "id": "hook_020",
+        "hook": "¿Qué incluye descansar de verdad?",
+        "hookType": "question",
+        "bestForFormat": "Carrusel",
+        "psychologicalTrigger": "curiosidad útil",
+        "relatedIdeaIds": [
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "reduces_customer_objection"
+        ]
+      },
+      {
+        "id": "hook_021",
+        "hook": "El error es esperar vacaciones",
+        "hookType": "contrarian",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "urgencia suave",
+        "relatedIdeaIds": [
+          "idea_021"
+        ],
+        "evidenceUsed": [
+          "purchase_compra_impulsiva"
+        ]
+      },
+      {
+        "id": "hook_022",
+        "hook": "Así se ve apagar notificaciones",
+        "hookType": "visual_metaphor",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "desconexión",
+        "relatedIdeaIds": [
+          "idea_022"
+        ],
+        "evidenceUsed": [
+          "motive_descanso"
+        ]
+      },
+      {
+        "id": "hook_023",
+        "hook": "Mándale esto y dile: vamos",
+        "hookType": "share_cta",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "envío social",
+        "relatedIdeaIds": [
+          "idea_023",
+          "idea_036"
+        ],
+        "evidenceUsed": [
+          "Prueba 1 #2.sends_9470"
+        ]
+      },
+      {
+        "id": "hook_024",
+        "hook": "Si te aparece esto, es señal",
+        "hookType": "signal",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "destino + curiosidad",
+        "relatedIdeaIds": [
+          "idea_024"
+        ],
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_025",
+        "hook": "Mini tour sin narrador",
+        "hookType": "format",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "valor visual rápido",
+        "relatedIdeaIds": [
+          "idea_025"
+        ],
+        "evidenceUsed": [
+          "visual_value_is_clear_fast"
+        ]
+      },
+      {
+        "id": "hook_026",
+        "hook": "Lo que cambia cuando duermes fuera",
+        "hookType": "transformation",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "resultado emocional",
+        "relatedIdeaIds": [
+          "idea_026"
+        ],
+        "evidenceUsed": [
+          "shows_result_or_final_benefit"
+        ]
+      },
+      {
+        "id": "hook_027",
+        "hook": "Guía rápida para reservar",
+        "hookType": "how_to",
+        "bestForFormat": "Carrusel",
+        "psychologicalTrigger": "facilidad",
+        "relatedIdeaIds": [
+          "idea_027"
+        ],
+        "evidenceUsed": [
+          "makes_purchase_or_booking_feel_easy"
+        ]
+      },
+      {
+        "id": "hook_028",
+        "hook": "El lugar no necesita mucho texto",
+        "hookType": "visual",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "promesa visual",
+        "relatedIdeaIds": [
+          "idea_028"
+        ],
+        "evidenceUsed": [
+          "visual_value_is_clear_fast"
+        ]
+      },
+      {
+        "id": "hook_029",
+        "hook": "Una noche para volver a hablar",
+        "hookType": "emotional",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "vínculo",
+        "relatedIdeaIds": [
+          "idea_029"
+        ],
+        "evidenceUsed": [
+          "audience_parejas"
+        ]
+      },
+      {
+        "id": "hook_030",
+        "hook": "¿Cuánto vale descansar de verdad?",
+        "hookType": "value_question",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "valor percibido",
+        "relatedIdeaIds": [
+          "idea_030"
+        ],
+        "evidenceUsed": [
+          "hook_uses_curiosity_gap"
+        ]
+      },
+      {
+        "id": "hook_031",
+        "hook": "Cumpleaños sin ruido",
+        "hookType": "occasion",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "celebración íntima",
+        "relatedIdeaIds": [
+          "idea_031"
+        ],
+        "evidenceUsed": [
+          "hook_promises_specific_benefit"
+        ]
+      },
+      {
+        "id": "hook_032",
+        "hook": "La pausa que estaban aplazando",
+        "hookType": "identification",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "postergación",
+        "relatedIdeaIds": [
+          "idea_032"
+        ],
+        "evidenceUsed": [
+          "evokes_identification"
+        ]
+      },
+      {
+        "id": "hook_033",
+        "hook": "No es viajar, es resetear",
+        "hookType": "reframe",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "reset emocional",
+        "relatedIdeaIds": [
+          "idea_033"
+        ],
+        "evidenceUsed": [
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_034",
+        "hook": "Lo primero que haríamos al llegar",
+        "hookType": "sequence",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "curiosidad secuencial",
+        "relatedIdeaIds": [
+          "idea_034"
+        ],
+        "evidenceUsed": [
+          "feels_raw_authentic_or_spontaneous"
+        ]
+      },
+      {
+        "id": "hook_035",
+        "hook": "Cómo se ve un domingo bien usado",
+        "hookType": "occasion",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "uso del tiempo",
+        "relatedIdeaIds": [
+          "idea_035"
+        ],
+        "evidenceUsed": [
+          "purchase_compra_impulsiva"
+        ]
+      },
+      {
+        "id": "hook_036",
+        "hook": "Mándaselo a quien te debe una escapada",
+        "hookType": "share_cta",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "distribución",
+        "relatedIdeaIds": [
+          "idea_036"
+        ],
+        "evidenceUsed": [
+          "Prueba 1 #2.sends_9470"
+        ]
+      },
+      {
+        "id": "hook_037",
+        "hook": "El mood de Choachí que necesitas",
+        "hookType": "location",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "ubicación emocional",
+        "relatedIdeaIds": [
+          "idea_037"
+        ],
+        "evidenceUsed": [
+          "city_choachi"
+        ]
+      },
+      {
+        "id": "hook_038",
+        "hook": "Una escapada sin planear demasiado",
+        "hookType": "ease",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "baja fricción",
+        "relatedIdeaIds": [
+          "idea_038"
+        ],
+        "evidenceUsed": [
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "hook_039",
+        "hook": "Vender sin decir 'reserva ya'",
+        "hookType": "soft_sell",
+        "bestForFormat": "Reel",
+        "psychologicalTrigger": "deseo indirecto",
+        "relatedIdeaIds": [
+          "idea_039"
+        ],
+        "evidenceUsed": [
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "hook_040",
+        "hook": "Preguntas antes de venir",
+        "hookType": "faq",
+        "bestForFormat": "Carrusel",
+        "psychologicalTrigger": "objeciones",
+        "relatedIdeaIds": [
+          "idea_040"
+        ],
+        "evidenceUsed": [
+          "reduces_customer_objection"
+        ]
+      }
+    ],
+    "captionsLibrary": [
+      {
+        "id": "caption_001",
+        "caption": "El plan que no parece tan cerca. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_001"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_002",
+        "caption": "POV: llegas con tu pareja y el ruido desaparece. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_002"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_003",
+        "caption": "3 señales de que necesitas una escapada. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_003"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_004",
+        "caption": "Esto es lo que reservas cuando reservas descanso. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_004"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_005",
+        "caption": "Un lugar para desaparecer un día. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_005"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_006",
+        "caption": "Antes de reservar otro restaurante, mira esto. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_006"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_007",
+        "caption": "La cita que empieza antes de llegar. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_007"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_008",
+        "caption": "Lo que nadie te dice de escaparte cerca. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_008"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_009",
+        "caption": "Checklist de una noche perfecta. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Carrusel",
+        "relatedIdeaIds": [
+          "idea_009"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_010",
+        "caption": "Reserva si necesitas esto. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_010"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_011",
+        "caption": "Un día aquí cambia el mood. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_012",
+        "caption": "5 momentos que hacen que valga la pena. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_012"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_013",
+        "caption": "No vengas si quieres seguir con afán. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_013"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_014",
+        "caption": "La pregunta que más nos hacen por WhatsApp. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_015",
+        "caption": "Plan de aniversario sin complicarse. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_015"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_016",
+        "caption": "La escapada que se reserva por WhatsApp. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_017",
+        "caption": "Cosas que sí importan en una escapada. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Carrusel",
+        "relatedIdeaIds": [
+          "idea_017"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_018",
+        "caption": "Cuando los dos necesitan pausar. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_018"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_019",
+        "caption": "Un lugar, dos personas, cero ruido. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_019"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_020",
+        "caption": "¿Qué incluye una escapada que sí descansa?. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Carrusel",
+        "relatedIdeaIds": [
+          "idea_020"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_021",
+        "caption": "El error de esperar vacaciones para descansar. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_021"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_022",
+        "caption": "Así se ve apagar notificaciones. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_022"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_023",
+        "caption": "El plan que se manda con un 'vamos'. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_023"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_024",
+        "caption": "Si te aparece esto, es señal. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_024"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_025",
+        "caption": "Mini tour sin narrador. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_025"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_026",
+        "caption": "Lo que cambia cuando duermes fuera de la ciudad. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_026"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_027",
+        "caption": "Guía rápida para reservar una escapada. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Carrusel",
+        "relatedIdeaIds": [
+          "idea_027"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_028",
+        "caption": "El lugar que no necesita mucho texto. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_028"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_029",
+        "caption": "Una noche para volver a hablar. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_029"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_030",
+        "caption": "¿Cuánto vale descansar de verdad?. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_030"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_031",
+        "caption": "Plan de cumpleaños tranquilo. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_031"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_032",
+        "caption": "La pausa que estaban aplazando. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_032"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_033",
+        "caption": "No es viajar, es resetear. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_033"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_034",
+        "caption": "Lo primero que haríamos al llegar. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_034"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_035",
+        "caption": "Cómo se ve un domingo bien usado. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_035"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_036",
+        "caption": "Mándaselo a quien te debe una escapada. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_036"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_037",
+        "caption": "El mood de Choachí que necesitas. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_037"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_038",
+        "caption": "Una escapada sin planear demasiado. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_038"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_039",
+        "caption": "El contenido que vendería Trica sin vender. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Reel",
+        "relatedIdeaIds": [
+          "idea_039"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      },
+      {
+        "id": "caption_040",
+        "caption": "Preguntas antes de venir. A veces descansar no necesita un viaje largo, solo un lugar que se sienta diferente y una decisión sencilla. Escríbenos por WhatsApp y consulta disponibilidad para tu próxima escapada en pareja.",
+        "tone": "cálido, aspiracional y directo",
+        "bestFor": "Carrusel",
+        "relatedIdeaIds": [
+          "idea_040"
+        ],
+        "evidenceUsed": [
+          "audience_parejas",
+          "motive_descanso",
+          "conversion_whatsapp",
+          "evokes_aspiration"
+        ]
+      }
+    ],
+    "ctaLibrary": [
+      {
+        "id": "cta_001",
+        "cta": "Escríbenos por WhatsApp y consulta disponibilidad.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_001"
+        ]
+      },
+      {
+        "id": "cta_002",
+        "cta": "Envíanos la fecha que tienes en mente.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_002"
+        ]
+      },
+      {
+        "id": "cta_003",
+        "cta": "Mándanos un mensaje y planeamos tu escapada.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_003"
+        ]
+      },
+      {
+        "id": "cta_004",
+        "cta": "Reserva tu pausa por WhatsApp.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_004"
+        ]
+      },
+      {
+        "id": "cta_005",
+        "cta": "Pregúntanos disponibilidad para este fin de semana.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_005"
+        ]
+      },
+      {
+        "id": "cta_006",
+        "cta": "Escríbenos y te ayudamos a elegir fecha.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_006"
+        ]
+      },
+      {
+        "id": "cta_007",
+        "cta": "Guarda este plan y envíaselo a tu pareja.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_007"
+        ]
+      },
+      {
+        "id": "cta_008",
+        "cta": "Compártelo con quien necesita una escapada.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_008"
+        ]
+      },
+      {
+        "id": "cta_009",
+        "cta": "Pregunta por fechas disponibles.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_009"
+        ]
+      },
+      {
+        "id": "cta_010",
+        "cta": "Reserva fácil por WhatsApp.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_010"
+        ]
+      },
+      {
+        "id": "cta_011",
+        "cta": "Dinos cuándo quieres venir.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_011"
+        ]
+      },
+      {
+        "id": "cta_012",
+        "cta": "Agenda tu descanso en pareja.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_012"
+        ]
+      },
+      {
+        "id": "cta_013",
+        "cta": "Consulta disponibilidad ahora.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_013"
+        ]
+      },
+      {
+        "id": "cta_014",
+        "cta": "Escríbenos 'escapada' por WhatsApp.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_014"
+        ]
+      },
+      {
+        "id": "cta_015",
+        "cta": "Haz que ese plan salga del chat.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_015"
+        ]
+      },
+      {
+        "id": "cta_016",
+        "cta": "Mándale esto a tu pareja.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_016"
+        ]
+      },
+      {
+        "id": "cta_017",
+        "cta": "Da el primer paso: escríbenos.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_017"
+        ]
+      },
+      {
+        "id": "cta_018",
+        "cta": "Pregunta por la próxima fecha libre.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_018"
+        ]
+      },
+      {
+        "id": "cta_019",
+        "cta": "Tu descanso empieza con un mensaje.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_019"
+        ]
+      },
+      {
+        "id": "cta_020",
+        "cta": "Reserva sin complicarte.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_020"
+        ]
+      },
+      {
+        "id": "cta_021",
+        "cta": "Consulta planes disponibles.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_021"
+        ]
+      },
+      {
+        "id": "cta_022",
+        "cta": "Escríbenos para más información.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_022"
+        ]
+      },
+      {
+        "id": "cta_023",
+        "cta": "Guárdalo para tu próxima escapada.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_023"
+        ]
+      },
+      {
+        "id": "cta_024",
+        "cta": "Envíalo y di: vamos.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_024"
+        ]
+      },
+      {
+        "id": "cta_025",
+        "cta": "Pregunta por disponibilidad hoy.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_025"
+        ]
+      },
+      {
+        "id": "cta_026",
+        "cta": "Planea tu noche de descanso.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_026"
+        ]
+      },
+      {
+        "id": "cta_027",
+        "cta": "Conversemos por WhatsApp.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_027"
+        ]
+      },
+      {
+        "id": "cta_028",
+        "cta": "Elige fecha y escríbenos.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_028"
+        ]
+      },
+      {
+        "id": "cta_029",
+        "cta": "Reserva tu experiencia.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_029"
+        ]
+      },
+      {
+        "id": "cta_030",
+        "cta": "Pregúntanos cómo llegar y reservar.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_030"
+        ]
+      },
+      {
+        "id": "cta_031",
+        "cta": "Escríbenos si necesitas pausar.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_031"
+        ]
+      },
+      {
+        "id": "cta_032",
+        "cta": "Consulta opciones para pareja.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_032"
+        ]
+      },
+      {
+        "id": "cta_033",
+        "cta": "Tu próxima escapada puede empezar aquí.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_033"
+        ]
+      },
+      {
+        "id": "cta_034",
+        "cta": "Escríbenos y revisamos fechas.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_034"
+        ]
+      },
+      {
+        "id": "cta_035",
+        "cta": "Hazlo realidad por WhatsApp.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_035"
+        ]
+      },
+      {
+        "id": "cta_036",
+        "cta": "Envíale este plan a quien vendría contigo.",
+        "ctaType": "share/save",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "distribución e intención social",
+        "relatedIdeaIds": [
+          "idea_036"
+        ]
+      },
+      {
+        "id": "cta_037",
+        "cta": "Pregunta por la fecha que quieres.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_037"
+        ]
+      },
+      {
+        "id": "cta_038",
+        "cta": "Reserva tu escape cerca.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_038"
+        ]
+      },
+      {
+        "id": "cta_039",
+        "cta": "Déjanos un mensaje y te respondemos.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_039"
+        ]
+      },
+      {
+        "id": "cta_040",
+        "cta": "Agenda tu momento de descanso.",
+        "ctaType": "WhatsApp",
+        "bestFor": "Reels, carruseles e historias",
+        "conversionIntent": "reserva",
+        "relatedIdeaIds": [
+          "idea_040"
+        ]
+      }
+    ],
+    "scripts": [
+      {
+        "id": "script_001",
+        "title": "El plan que no parece tan cerca",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "No parece a menos de 30 minutos...",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "No parece a menos de 30 minutos...",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_001"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_002",
+        "title": "POV: llegas con tu pareja y el ruido desaparece",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "POV: vienes con tu pareja y pasa esto",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "POV: vienes con tu pareja y pasa esto",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_002"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_003",
+        "title": "3 señales de que necesitas una escapada",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 18,
+        "structure": {
+          "hook": "3 señales de que necesitas escaparte",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "3 señales de que necesitas escaparte",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_003"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_004",
+        "title": "Esto es lo que reservas cuando reservas descanso",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "Esto es lo que realmente reservas",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Esto es lo que realmente reservas",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_004"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_005",
+        "title": "Un lugar para desaparecer un día",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "Un lugar para desaparecer un día",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Un lugar para desaparecer un día",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_005"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_006",
+        "title": "Antes de reservar otro restaurante, mira esto",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 18,
+        "structure": {
+          "hook": "Antes de reservar otro restaurante, mira esto",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Antes de reservar otro restaurante, mira esto",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_006"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_007",
+        "title": "La cita que empieza antes de llegar",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "La cita empieza antes de llegar",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "La cita empieza antes de llegar",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_007"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_008",
+        "title": "Lo que nadie te dice de escaparte cerca",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "Lo que nadie te dice de escaparte cerca",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Lo que nadie te dice de escaparte cerca",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_008"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_009",
+        "title": "Checklist de una noche perfecta",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 18,
+        "structure": {
+          "hook": "Checklist para una noche perfecta",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Checklist para una noche perfecta",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_009"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_010",
+        "title": "Reserva si necesitas esto",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "Reserva si necesitas silencio",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Reserva si necesitas silencio",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_010"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_011",
+        "title": "Un día aquí cambia el mood",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "Un día aquí cambia el mood",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "Un día aquí cambia el mood",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_011"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_012",
+        "title": "5 momentos que hacen que valga la pena",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 18,
+        "structure": {
+          "hook": "5 momentos que hacen que valga la pena",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "5 momentos que hacen que valga la pena",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_012"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_013",
+        "title": "No vengas si quieres seguir con afán",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "No vengas si quieres seguir con afán",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "No vengas si quieres seguir con afán",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_013"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_014",
+        "title": "La pregunta que más nos hacen por WhatsApp",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "La pregunta que más nos hacen por WhatsApp",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "La pregunta que más nos hacen por WhatsApp",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_014"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_015",
+        "title": "Plan de aniversario sin complicarse",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 18,
+        "structure": {
+          "hook": "¿Aniversario cerca? Mira esto",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "¿Aniversario cerca? Mira esto",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_015"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      },
+      {
+        "id": "script_016",
+        "title": "La escapada que se reserva por WhatsApp",
+        "format": "Reel vertical 9:16",
+        "durationSeconds": 15,
+        "structure": {
+          "hook": "La escapada que se reserva por WhatsApp",
+          "sceneSequence": [
+            "0-2s: texto grande en pantalla con el hook y una toma visual fuerte del lugar.",
+            "2-6s: primer momento de descanso o llegada, sin hablar a cámara.",
+            "6-11s: secuencia rápida de detalles vivibles para pareja: vista, habitación, pausa o camino.",
+            "11-14s: cierre aspiracional con beneficio final.",
+            "14-15s: CTA simple a WhatsApp."
+          ],
+          "voiceover": "",
+          "onScreenText": [
+            "La escapada que se reserva por WhatsApp",
+            "Descanso cerca",
+            "Plan para dos",
+            "Reserva por WhatsApp"
+          ],
+          "cta": "Escríbenos por WhatsApp y consulta disponibilidad."
+        },
+        "relatedIdeaIds": [
+          "idea_016"
+        ],
+        "evidenceUsed": [
+          "has_large_text_overlay",
+          "hook_uses_curiosity_gap",
+          "evokes_aspiration",
+          "conversion_whatsapp"
+        ]
+      }
+    ],
+    "predictions": {
+      "enabled": true,
+      "items": [
+        {
+          "id": "prediction_001",
+          "contentType": "Reel con texto grande + curiosidad + aspiración",
+          "prediction": "Probablemente será el formato con mejor rendimiento relativo para Trica durante el primer ciclo de pruebas.",
+          "expectedPerformance": "high",
+          "confidence": "low",
+          "reasoning": "La combinación aparece como señal positiva en el grupo comparable y está presente en el reel con mejores métricas e intención máxima.",
+          "evidenceUsed": [
+            "topWinningCombos.texto_grande+curiosidad",
+            "topWinningCombos.texto_grande+aspiracion",
+            "Prueba 1 #2.likeliScore_100"
+          ]
+        },
+        {
+          "id": "prediction_002",
+          "contentType": "Reel de persona hablando a cámara",
+          "prediction": "Puede rendir por debajo si la explicación domina la pieza y no hay promesa visual inmediata.",
+          "expectedPerformance": "low",
+          "confidence": "low",
+          "reasoning": "La flag de persona hablando a cámara aparece como señal débil en la muestra, especialmente combinada con producción rígida.",
+          "evidenceUsed": [
+            "topWeakFlags.has_person_talking_to_camera",
+            "topWeakCombos.persona+producido",
+            "Prueba 1 #3.likeliScore_25"
+          ]
+        },
+        {
+          "id": "prediction_003",
+          "contentType": "Carrusel checklist de reserva",
+          "prediction": "Puede generar guardados y conversaciones si simplifica la decisión sin inventar datos específicos.",
+          "expectedPerformance": "medium",
+          "confidence": "low",
+          "reasoning": "Aunque la evidencia principal viene de reels, la facilidad de reserva y reducción de objeciones son señales comerciales presentes en piezas con intención.",
+          "evidenceUsed": [
+            "makes_purchase_or_booking_feel_easy",
+            "reduces_customer_objection",
+            "conversion_whatsapp"
+          ]
+        },
+        {
+          "id": "prediction_004",
+          "contentType": "Reel enviable entre parejas",
+          "prediction": "Puede tener buena distribución si el CTA invita a enviarlo a la pareja y el visual se entiende rápido.",
+          "expectedPerformance": "high",
+          "confidence": "low",
+          "reasoning": "El reel ganador tuvo 9.470 envíos y combinó valor visual rápido, aspiración y CTA implícito.",
+          "evidenceUsed": [
+            "Prueba 1 #2.sends_9470",
+            "visual_value_is_clear_fast",
+            "has_visible_or_implied_cta"
+          ]
+        },
+        {
+          "id": "prediction_005",
+          "contentType": "Contenido solo de paisaje o ambiente",
+          "prediction": "Puede quedarse corto si no incluye hook, texto grande o una tensión emocional clara.",
+          "expectedPerformance": "low",
+          "confidence": "low",
+          "reasoning": "Mostrar naturaleza o ambiente atractivo aparece como señal débil en la muestra cuando no se integra con una receta de curiosidad y aspiración.",
+          "evidenceUsed": [
+            "topWeakFlags.shows_nature_place_or_environment",
+            "weakEvidence.Prueba 1 #1"
+          ]
+        },
+        {
+          "id": "prediction_006",
+          "contentType": "Reel de lista o ranking",
+          "prediction": "Puede funcionar bien para empaquetar razones de reserva, momentos del lugar y beneficios de pareja.",
+          "expectedPerformance": "medium",
+          "confidence": "low",
+          "reasoning": "El mejor reel incluyó lista o número y tuvo alto rendimiento en atención, distribución e intención.",
+          "evidenceUsed": [
+            "Prueba 1 #2.hook_uses_list_number_or_ranking",
+            "attentionScore_100",
+            "intentScore_100"
+          ]
+        }
+      ]
+    },
+    "likeliScore": {
+      "enabled": true,
+      "score": 72,
+      "scoreLabel": "Potencial alto con evidencia inicial limitada",
+      "explanation": "Trica tiene una combinación favorable: negocio visual, audiencia clara de parejas, motivo de descanso, canal directo por WhatsApp y cercanía. El score no es más alto porque la evidencia disponible proviene de solo 3 reels y el evidenceLevel del grupo es bajo.",
+      "strengths": [
+        "Oferta muy visual y fácil de convertir en deseo.",
+        "Audiencia y motivo de compra bien definidos.",
+        "Canal WhatsApp compatible con compra impulsiva.",
+        "Receta inicial clara: texto grande, curiosidad y aspiración."
+      ],
+      "weaknesses": [
+        "Muestra de evidencia pequeña.",
+        "Riesgo de depender de producción demasiado pulida.",
+        "Riesgo de mostrar ambiente sin historia ni objeción resuelta.",
+        "Necesita validar si las recetas funcionan con el material real de Trica."
+      ],
+      "recommendedNextMove": "Ejecutar un calendario de 30 días con 12 a 16 reels prioritarios, midiendo envíos, guardados, clics o conversaciones por WhatsApp antes de duplicar producción."
+    },
+    "benchmarks": {
+      "enabled": true,
+      "items": [
+        {
+          "id": "benchmark_001",
+          "comparisonType": "success_case",
+          "title": "Reel aspiracional con texto grande y curiosidad",
+          "summary": "Prueba 1 #2 combinó rostro, lugar, texto grande, curiosidad, lista, aspiración, CTA implícito, objeción resuelta, autenticidad y valor visual rápido. Obtuvo Likeli Score 100.",
+          "lesson": "La receta base para Trica debe abrir fuerte, mostrar el beneficio rápido y cerrar con acción fácil.",
+          "evidenceUsed": [
+            "Prueba 1 #2",
+            "likes_15299",
+            "shares_1206",
+            "sends_9470",
+            "saves_732",
+            "likeliScore_100"
+          ]
+        },
+        {
+          "id": "benchmark_002",
+          "comparisonType": "failure_case",
+          "title": "Actividad o lugar sin intención suficiente",
+          "summary": "Prueba 1 #1 tuvo Likeli Score 0, baja intención y baja distribución, aunque incluía ubicación, curiosidad, entretenimiento y prueba social.",
+          "lesson": "No basta con mostrar actividad o ambiente; se necesita una promesa clara y una razón de reserva.",
+          "evidenceUsed": [
+            "Prueba 1 #1",
+            "likes_11",
+            "intentScore_0",
+            "distributionScore_0"
+          ]
+        },
+        {
+          "id": "benchmark_003",
+          "comparisonType": "industry_pattern",
+          "title": "Demasiada producción puede bajar naturalidad",
+          "summary": "La señal de contenido producido o profesional aparece asociada a menor rendimiento dentro de la muestra comparable.",
+          "lesson": "Producir limpio, pero no rígido: tomas reales, movimiento humano y escenas vivibles.",
+          "evidenceUsed": [
+            "topWeakFlags.feels_polished_or_professional",
+            "Prueba 1 #3"
+          ]
+        },
+        {
+          "id": "benchmark_004",
+          "comparisonType": "competitor_pattern",
+          "title": "Texto + curiosidad + aspiración como formato recurrente",
+          "summary": "Las tres combinaciones ganadoras del grupo comparten texto grande, curiosidad y aspiración.",
+          "lesson": "Convertir esa combinación en un sistema de series, no en una pieza aislada.",
+          "evidenceUsed": [
+            "topWinningCombos",
+            "contentRecipes.repeat"
+          ]
+        },
+        {
+          "id": "benchmark_005",
+          "comparisonType": "industry_pattern",
+          "title": "WhatsApp exige contenido con intención",
+          "summary": "Para negocios con reservas por WhatsApp, el contenido debe cerrar con una acción simple y una razón inmediata para escribir.",
+          "lesson": "Cada pieza prioritaria debe tener CTA visible o implícito y reducir una microobjeción.",
+          "evidenceUsed": [
+            "conversion_whatsapp",
+            "has_visible_or_implied_cta",
+            "reduces_customer_objection"
+          ]
+        }
+      ]
+    },
+    "contentCalendar": [
+      {
+        "day": 1,
+        "title": "El plan que no parece tan cerca",
+        "format": "Reel",
+        "objective": "reservas",
+        "relatedIdeaId": "idea_001",
+        "suggestedHookId": "hook_001",
+        "suggestedCaptionId": "caption_001",
+        "suggestedCtaId": "cta_001",
+        "id": "calendar_001"
+      },
+      {
+        "day": 2,
+        "title": "POV: llegas con tu pareja y el ruido desaparece",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_002",
+        "suggestedHookId": "hook_002",
+        "suggestedCaptionId": "caption_002",
+        "suggestedCtaId": "cta_002",
+        "id": "calendar_002"
+      },
+      {
+        "day": 3,
+        "title": "3 señales de que necesitas una escapada",
+        "format": "Reel",
+        "objective": "identificación",
+        "relatedIdeaId": "idea_003",
+        "suggestedHookId": "hook_003",
+        "suggestedCaptionId": "caption_003",
+        "suggestedCtaId": "cta_003",
+        "id": "calendar_003"
+      },
+      {
+        "day": 4,
+        "title": "Esto es lo que reservas cuando reservas descanso",
+        "format": "Reel",
+        "objective": "conversión",
+        "relatedIdeaId": "idea_004",
+        "suggestedHookId": "hook_004",
+        "suggestedCaptionId": "caption_004",
+        "suggestedCtaId": "cta_004",
+        "id": "calendar_004"
+      },
+      {
+        "day": 5,
+        "title": "Un lugar para desaparecer un día",
+        "format": "Reel",
+        "objective": "alcance",
+        "relatedIdeaId": "idea_005",
+        "suggestedHookId": "hook_005",
+        "suggestedCaptionId": "caption_005",
+        "suggestedCtaId": "cta_005",
+        "id": "calendar_005"
+      },
+      {
+        "day": 6,
+        "title": "Antes de reservar otro restaurante, mira esto",
+        "format": "Reel",
+        "objective": "reservas",
+        "relatedIdeaId": "idea_006",
+        "suggestedHookId": "hook_006",
+        "suggestedCaptionId": "caption_006",
+        "suggestedCtaId": "cta_006",
+        "id": "calendar_006"
+      },
+      {
+        "day": 7,
+        "title": "La cita que empieza antes de llegar",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_007",
+        "suggestedHookId": "hook_007",
+        "suggestedCaptionId": "caption_007",
+        "suggestedCtaId": "cta_007",
+        "id": "calendar_007"
+      },
+      {
+        "day": 8,
+        "title": "Lo que nadie te dice de escaparte cerca",
+        "format": "Reel",
+        "objective": "alcance",
+        "relatedIdeaId": "idea_008",
+        "suggestedHookId": "hook_008",
+        "suggestedCaptionId": "caption_008",
+        "suggestedCtaId": "cta_008",
+        "id": "calendar_008"
+      },
+      {
+        "day": 9,
+        "title": "Checklist de una noche perfecta",
+        "format": "Carrusel",
+        "objective": "guardados",
+        "relatedIdeaId": "idea_009",
+        "suggestedHookId": "hook_009",
+        "suggestedCaptionId": "caption_009",
+        "suggestedCtaId": "cta_009",
+        "id": "calendar_009"
+      },
+      {
+        "day": 10,
+        "title": "Reserva si necesitas esto",
+        "format": "Reel",
+        "objective": "conversión",
+        "relatedIdeaId": "idea_010",
+        "suggestedHookId": "hook_010",
+        "suggestedCaptionId": "caption_010",
+        "suggestedCtaId": "cta_010",
+        "id": "calendar_010"
+      },
+      {
+        "day": 11,
+        "title": "Un día aquí cambia el mood",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_011",
+        "suggestedHookId": "hook_011",
+        "suggestedCaptionId": "caption_011",
+        "suggestedCtaId": "cta_011",
+        "id": "calendar_011"
+      },
+      {
+        "day": 12,
+        "title": "5 momentos que hacen que valga la pena",
+        "format": "Reel",
+        "objective": "alcance",
+        "relatedIdeaId": "idea_012",
+        "suggestedHookId": "hook_012",
+        "suggestedCaptionId": "caption_012",
+        "suggestedCtaId": "cta_012",
+        "id": "calendar_012"
+      },
+      {
+        "day": 13,
+        "title": "No vengas si quieres seguir con afán",
+        "format": "Reel",
+        "objective": "retención",
+        "relatedIdeaId": "idea_013",
+        "suggestedHookId": "hook_013",
+        "suggestedCaptionId": "caption_013",
+        "suggestedCtaId": "cta_013",
+        "id": "calendar_013"
+      },
+      {
+        "day": 14,
+        "title": "La pregunta que más nos hacen por WhatsApp",
+        "format": "Reel",
+        "objective": "conversión",
+        "relatedIdeaId": "idea_014",
+        "suggestedHookId": "hook_014",
+        "suggestedCaptionId": "caption_014",
+        "suggestedCtaId": "cta_014",
+        "id": "calendar_014"
+      },
+      {
+        "day": 15,
+        "title": "Plan de aniversario sin complicarse",
+        "format": "Reel",
+        "objective": "reservas",
+        "relatedIdeaId": "idea_015",
+        "suggestedHookId": "hook_015",
+        "suggestedCaptionId": "caption_015",
+        "suggestedCtaId": "cta_015",
+        "id": "calendar_015"
+      },
+      {
+        "day": 16,
+        "title": "La escapada que se reserva por WhatsApp",
+        "format": "Reel",
+        "objective": "conversión",
+        "relatedIdeaId": "idea_016",
+        "suggestedHookId": "hook_016",
+        "suggestedCaptionId": "caption_016",
+        "suggestedCtaId": "cta_016",
+        "id": "calendar_016"
+      },
+      {
+        "day": 17,
+        "title": "Cosas que sí importan en una escapada",
+        "format": "Carrusel",
+        "objective": "educación",
+        "relatedIdeaId": "idea_017",
+        "suggestedHookId": "hook_017",
+        "suggestedCaptionId": "caption_017",
+        "suggestedCtaId": "cta_017",
+        "id": "calendar_017"
+      },
+      {
+        "day": 18,
+        "title": "Cuando los dos necesitan pausar",
+        "format": "Reel",
+        "objective": "identificación",
+        "relatedIdeaId": "idea_018",
+        "suggestedHookId": "hook_018",
+        "suggestedCaptionId": "caption_018",
+        "suggestedCtaId": "cta_018",
+        "id": "calendar_018"
+      },
+      {
+        "day": 19,
+        "title": "Un lugar, dos personas, cero ruido",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_019",
+        "suggestedHookId": "hook_019",
+        "suggestedCaptionId": "caption_019",
+        "suggestedCtaId": "cta_019",
+        "id": "calendar_019"
+      },
+      {
+        "day": 20,
+        "title": "¿Qué incluye una escapada que sí descansa?",
+        "format": "Carrusel",
+        "objective": "guardados",
+        "relatedIdeaId": "idea_020",
+        "suggestedHookId": "hook_020",
+        "suggestedCaptionId": "caption_020",
+        "suggestedCtaId": "cta_020",
+        "id": "calendar_020"
+      },
+      {
+        "day": 21,
+        "title": "El error de esperar vacaciones para descansar",
+        "format": "Reel",
+        "objective": "alcance",
+        "relatedIdeaId": "idea_021",
+        "suggestedHookId": "hook_021",
+        "suggestedCaptionId": "caption_021",
+        "suggestedCtaId": "cta_021",
+        "id": "calendar_021"
+      },
+      {
+        "day": 22,
+        "title": "Así se ve apagar notificaciones",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_022",
+        "suggestedHookId": "hook_022",
+        "suggestedCaptionId": "caption_022",
+        "suggestedCtaId": "cta_022",
+        "id": "calendar_022"
+      },
+      {
+        "day": 23,
+        "title": "El plan que se manda con un 'vamos'",
+        "format": "Reel",
+        "objective": "distribución",
+        "relatedIdeaId": "idea_023",
+        "suggestedHookId": "hook_023",
+        "suggestedCaptionId": "caption_023",
+        "suggestedCtaId": "cta_023",
+        "id": "calendar_023"
+      },
+      {
+        "day": 24,
+        "title": "Si te aparece esto, es señal",
+        "format": "Reel",
+        "objective": "alcance",
+        "relatedIdeaId": "idea_024",
+        "suggestedHookId": "hook_024",
+        "suggestedCaptionId": "caption_024",
+        "suggestedCtaId": "cta_024",
+        "id": "calendar_024"
+      },
+      {
+        "day": 25,
+        "title": "Mini tour sin narrador",
+        "format": "Reel",
+        "objective": "consideración",
+        "relatedIdeaId": "idea_025",
+        "suggestedHookId": "hook_025",
+        "suggestedCaptionId": "caption_025",
+        "suggestedCtaId": "cta_025",
+        "id": "calendar_025"
+      },
+      {
+        "day": 26,
+        "title": "Lo que cambia cuando duermes fuera de la ciudad",
+        "format": "Reel",
+        "objective": "deseo",
+        "relatedIdeaId": "idea_026",
+        "suggestedHookId": "hook_026",
+        "suggestedCaptionId": "caption_026",
+        "suggestedCtaId": "cta_026",
+        "id": "calendar_026"
+      },
+      {
+        "day": 27,
+        "title": "Guía rápida para reservar una escapada",
+        "format": "Carrusel",
+        "objective": "conversión",
+        "relatedIdeaId": "idea_027",
+        "suggestedHookId": "hook_027",
+        "suggestedCaptionId": "caption_027",
+        "suggestedCtaId": "cta_027",
+        "id": "calendar_027"
+      },
+      {
+        "day": 28,
+        "title": "El lugar que no necesita mucho texto",
+        "format": "Reel",
+        "objective": "marca",
+        "relatedIdeaId": "idea_028",
+        "suggestedHookId": "hook_028",
+        "suggestedCaptionId": "caption_028",
+        "suggestedCtaId": "cta_028",
+        "id": "calendar_028"
+      },
+      {
+        "day": 29,
+        "title": "Una noche para volver a hablar",
+        "format": "Reel",
+        "objective": "emocional",
+        "relatedIdeaId": "idea_029",
+        "suggestedHookId": "hook_029",
+        "suggestedCaptionId": "caption_029",
+        "suggestedCtaId": "cta_029",
+        "id": "calendar_029"
+      },
+      {
+        "day": 30,
+        "title": "¿Cuánto vale descansar de verdad?",
+        "format": "Reel",
+        "objective": "consideración",
+        "relatedIdeaId": "idea_030",
+        "suggestedHookId": "hook_030",
+        "suggestedCaptionId": "caption_030",
+        "suggestedCtaId": "cta_030",
+        "id": "calendar_030"
+      }
+    ],
+    "monthlyRoadmap": [
+      {
+        "week": 1,
+        "focus": "Validar receta ganadora base",
+        "mainActions": [
+          "Publicar reels con texto grande, curiosidad y aspiración.",
+          "Evitar hablar a cámara como formato principal.",
+          "Medir envíos, guardados y conversaciones por WhatsApp."
+        ],
+        "successCriteria": [
+          "Al menos 3 piezas publicadas.",
+          "Identificar el hook con mayor retención o interacción.",
+          "Registrar preguntas recibidas por WhatsApp."
+        ],
+        "notes": "Priorizar velocidad de aprendizaje sobre perfección visual.",
+        "id": "roadmap_001"
+      },
+      {
+        "week": 2,
+        "focus": "Convertir objeciones en contenido",
+        "mainActions": [
+          "Publicar piezas de distancia, disponibilidad, facilidad de reserva y plan para pareja.",
+          "Crear un carrusel checklist guardable.",
+          "Responder comentarios o DMs con piezas nuevas."
+        ],
+        "successCriteria": [
+          "Detectar las 3 objeciones más frecuentes.",
+          "Aumentar conversaciones iniciadas desde contenido.",
+          "Elegir 2 formatos para repetir."
+        ],
+        "notes": "No inventar precios, paquetes ni servicios no confirmados.",
+        "id": "roadmap_002"
+      },
+      {
+        "week": 3,
+        "focus": "Escalar formatos enviables",
+        "mainActions": [
+          "Usar CTAs de compartir con pareja.",
+          "Publicar reels tipo 'mándale esto'.",
+          "Repetir el mejor hook con diferente visual."
+        ],
+        "successCriteria": [
+          "Comparar envíos por pieza.",
+          "Encontrar el mejor CTA social.",
+          "Detectar si listas o POV generan más intención."
+        ],
+        "notes": "La distribución debe medirse más allá de likes.",
+        "id": "roadmap_003"
+      },
+      {
+        "week": 4,
+        "focus": "Optimizar y decidir la siguiente receta",
+        "mainActions": [
+          "Revisar métricas de todo el mes.",
+          "Clasificar piezas en ganar, ajustar o descartar.",
+          "Definir la serie recurrente del siguiente mes."
+        ],
+        "successCriteria": [
+          "Seleccionar 5 piezas ganadoras.",
+          "Crear nuevas variaciones de los 2 mejores hooks.",
+          "Tener una recomendación clara para el siguiente ciclo."
+        ],
+        "notes": "Escalar únicamente lo que muestre señales de intención, no solo alcance.",
+        "id": "roadmap_004"
+      }
+    ],
+    "prioritizationMatrix": [
+      {
+        "id": "priority_001",
+        "itemType": "idea",
+        "itemId": "idea_001",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Combina cercanía, curiosidad y texto grande."
+      },
+      {
+        "id": "priority_002",
+        "itemType": "idea",
+        "itemId": "idea_002",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Conecta directamente parejas con descanso aspiracional."
+      },
+      {
+        "id": "priority_003",
+        "itemType": "idea",
+        "itemId": "idea_003",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Usa lista, formato presente en el reel ganador."
+      },
+      {
+        "id": "priority_004",
+        "itemType": "opportunity",
+        "itemId": "opportunity_002",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Resolver objeciones puede llevar a WhatsApp."
+      },
+      {
+        "id": "priority_005",
+        "itemType": "script",
+        "itemId": "script_001",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Primer test de receta base."
+      },
+      {
+        "id": "priority_006",
+        "itemType": "script",
+        "itemId": "script_002",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "POV de pareja alineado con audiencia principal."
+      },
+      {
+        "id": "priority_007",
+        "itemType": "idea",
+        "itemId": "idea_023",
+        "impact": "high",
+        "effort": "low",
+        "priority": "high",
+        "reason": "Incentiva envíos, métrica fuerte del mejor reel."
+      },
+      {
+        "id": "priority_008",
+        "itemType": "idea",
+        "itemId": "idea_025",
+        "impact": "medium",
+        "effort": "medium",
+        "priority": "medium",
+        "reason": "Evita hablar a cámara y conserva valor visual rápido."
+      },
+      {
+        "id": "priority_009",
+        "itemType": "opportunity",
+        "itemId": "opportunity_004",
+        "impact": "medium",
+        "effort": "medium",
+        "priority": "medium",
+        "reason": "Mejora autenticidad, pero requiere banco visual."
+      },
+      {
+        "id": "priority_010",
+        "itemType": "idea",
+        "itemId": "idea_040",
+        "impact": "medium",
+        "effort": "medium",
+        "priority": "medium",
+        "reason": "Útil para objeciones, aunque menos viral que reels."
+      },
+      {
+        "id": "priority_011",
+        "itemType": "script",
+        "itemId": "script_014",
+        "impact": "medium",
+        "effort": "low",
+        "priority": "medium",
+        "reason": "Conecta pregunta frecuente con intención comercial."
+      },
+      {
+        "id": "priority_012",
+        "itemType": "idea",
+        "itemId": "idea_039",
+        "impact": "medium",
+        "effort": "medium",
+        "priority": "medium",
+        "reason": "Bueno para marca, pero debe medirse por intención."
+      }
+    ],
+    "reviewChecklists": {
+      "beforePublishing": [
+        "¿El hook se entiende en menos de 2 segundos?",
+        "¿Hay texto grande y legible en pantalla?",
+        "¿La pieza activa curiosidad o deja una pregunta abierta?",
+        "¿Se siente aspiracional sin parecer anuncio rígido?",
+        "¿El CTA lleva a WhatsApp o a compartir con la pareja?",
+        "¿Evita hablar a cámara como recurso principal si no aporta intención?",
+        "¿No inventa precios, servicios, disponibilidad ni métricas?"
+      ],
+      "afterPublishing": [
+        "Registrar likes, comentarios, compartidos, envíos y guardados.",
+        "Anotar si llegaron mensajes por WhatsApp relacionados con la pieza.",
+        "Comparar desempeño contra el promedio del mes.",
+        "Clasificar el contenido como repetir, ajustar o descartar.",
+        "Guardar preguntas reales que puedan convertirse en nuevos hooks."
+      ],
+      "weeklyReview": [
+        "Identificar el hook con más envíos.",
+        "Identificar el formato con más intención de reserva.",
+        "Revisar si los contenidos producidos rinden peor que los espontáneos.",
+        "Elegir 2 ideas para repetir con diferente visual.",
+        "Eliminar patrones con baja distribución e intención."
+      ]
+    },
+    "finalRecommendation": {
+      "summary": "Trica debe operar el próximo mes como un laboratorio de recetas visuales: texto grande, curiosidad, aspiración y CTA a WhatsApp. La prioridad no es publicar más bonito, sino encontrar qué combinación genera envíos, guardados y conversaciones reales.",
+      "firstMove": "Grabar y publicar 4 reels iniciales: 'No parece a menos de 30 minutos...', 'POV: llegas con tu pareja y el ruido desaparece', '3 señales de que necesitas una escapada' y 'Mándale esto y dile: vamos'.",
+      "whatToAvoid": [
+        "Piezas largas de persona hablando a cámara.",
+        "Videos demasiado producidos que parezcan anuncio.",
+        "Mostrar naturaleza o espacios sin hook ni promesa.",
+        "Escalar una receta sin medir intención.",
+        "Inventar precios, disponibilidad o beneficios no confirmados."
+      ],
+      "whatToRepeat": [
+        "Texto grande en pantalla.",
+        "Hooks de curiosidad incompleta.",
+        "Aspiración cercana para parejas.",
+        "CTAs simples a WhatsApp.",
+        "Formatos enviables entre parejas.",
+        "Escenas reales, espontáneas y visualmente claras."
+      ],
+      "whatToTestNext": [
+        "Rostro humano como protagonista junto al lugar.",
+        "CTA visible versus CTA implícito.",
+        "Reels tipo lista versus POV.",
+        "Objeciones de reserva como hooks.",
+        "Carruseles checklist para guardados.",
+        "Variaciones del mismo hook con diferentes tomas."
+      ]
+    }
+  }
+}

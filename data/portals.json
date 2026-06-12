@@ -1,0 +1,16 @@
+[
+  {
+    "id": "trica-glamping",
+    "slug": "trica-glamping",
+    "name": "Trica Glamping",
+    "clientName": "Trica Glamping",
+    "businessType": "Hotel Finca",
+    "plan": "signals-elite",
+    "activePlan": "signals-elite",
+    "status": "active",
+    "accessKey": "lk_lNPVQvgaJ0M",
+    "createdAt": "2026-06-12T18:18:33.580Z",
+    "updatedAt": "2026-06-12T18:18:33.580Z",
+    "billingDueInDays": 30
+  }
+]

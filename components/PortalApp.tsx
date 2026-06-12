@@ -9,22 +9,41 @@ import { ModuleCard } from "@/components/ModuleCard";
 import { ModuleIcon } from "@/components/ModuleIcon";
 import { buildEnrichedCalendar, buildEnrichedScripts, type EnrichedScript } from "@/lib/likeli-output/enrichment";
 import { getPortalOutputSections } from "@/lib/likeli-output/getPortalOutputSections";
-import { findPortalByRoute } from "@/lib/portalStorage";
 import type { ClientPortal, LikeliClientPortalOutput, LikeliOutputItem } from "@/types/likeliPortalOutput";
 
-const statusLabels: Record<string, string> = { active: "Activo", review: "En revision" };
+const statusLabels: Record<string, string> = { active: "Activo", inactive: "Inactivo", review: "En revision" };
 const allowedViews = new Set(["inicio", ...PORTAL_MODULES.map((module) => module.view), "plan"]);
 
 export function PortalRoute({ clientSlug, accessKey }: { clientSlug: string; accessKey: string }) {
   const [client, setClient] = useState<ClientPortal | null | undefined>(undefined);
 
   useEffect(() => {
-    const handle = window.setTimeout(() => setClient(findPortalByRoute(clientSlug, accessKey)), 0);
-    return () => window.clearTimeout(handle);
+    let cancelled = false;
+
+    async function loadPortal() {
+      try {
+        const response = await fetch(`/api/portals/${encodeURIComponent(clientSlug)}?accessKey=${encodeURIComponent(accessKey)}`, { cache: "no-store" });
+        if (!response.ok) {
+          if (!cancelled) setClient(null);
+          return;
+        }
+
+        const data = await response.json() as { portal: ClientPortal };
+        if (!cancelled) setClient(data.portal || null);
+      } catch {
+        if (!cancelled) setClient(null);
+      }
+    }
+
+    void loadPortal();
+    return () => {
+      cancelled = true;
+    };
   }, [clientSlug, accessKey]);
 
   if (client === undefined) return <main className="center-screen">Cargando portal...</main>;
   if (!client) return <InvalidAccess />;
+  if (client.status === "inactive") return <InactivePortal />;
   return <PortalApp client={client} />;
 }
 
@@ -489,6 +508,20 @@ function InvalidAccess() {
         <p className="eyebrow">Likeli Portal</p>
         <h1>Acceso no valido</h1>
         <p>El enlace no coincide con un cliente activo. Verifica el acceso o solicita un nuevo link.</p>
+        <Link className="button" href="/portal">Volver</Link>
+      </section>
+    </main>
+  );
+}
+
+function InactivePortal() {
+  return (
+    <main className="center-screen">
+      <section className="access-card">
+        <Image src="/brand/likeli-white-transparent.png" width={126} height={46} alt="Likeli" />
+        <p className="eyebrow">Likeli Portal</p>
+        <h1>Portal inactivo</h1>
+        <p>Este portal no esta disponible actualmente.</p>
         <Link className="button" href="/portal">Volver</Link>
       </section>
     </main>
