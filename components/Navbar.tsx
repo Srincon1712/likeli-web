@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-lk-black/82 backdrop-blur-xl">
       <div className="lk-container flex h-16 items-center justify-between gap-4">
         <a href="#producto" className="flex min-w-0 shrink-0 items-center gap-3" aria-label="Ir al inicio">
-          <span className="grid h-9 w-[112px] shrink-0 place-items-center rounded-full border border-white/[0.09] bg-white/[0.035] px-3 sm:w-[122px]">
+          <span className="grid h-9 w-[112px] shrink-0 place-items-center sm:w-[122px]">
             <Logo variant="navbar" size="sm" priority />
           </span>
         </a>
