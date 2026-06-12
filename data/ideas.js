@@ -1,0 +1,105 @@
+window.LikeliPortal = window.LikeliPortal || {};
+
+const ideas = [
+  {
+    id: "idea-01",
+    order: 1,
+    title: "Antes y despues de llegar al lugar",
+    idea: "Mostrar el cambio emocional entre el momento de salir de la ciudad y la llegada a la experiencia.",
+    caption:
+      "A veces no necesitas mas dias libres. Necesitas un lugar que te cambie el ritmo en las primeras dos horas.",
+    format: "Reel",
+    duration: "35 a 45 segundos",
+    priority: "Alta",
+    expectedPerformance: "Alto",
+    status: "Lista para producir",
+    likeliScore: 92,
+    script:
+      "Plano 1: salida de la ciudad. Plano 2: camino y silencio. Plano 3: llegada, textura del espacio y gesto de descanso. Cierre con reserva suave.",
+    strengths: [
+      "Contraste visual facil de entender",
+      "Conecta con deseo de descanso",
+      "Funciona para audiencias frias y tibias",
+    ],
+    weaknesses: [
+      "Requiere buena luz en la llegada",
+      "Debe evitar sentirse generico",
+    ],
+    comparison: "Similar a piezas de viaje con alto guardado por mostrar transformacion clara en pocos segundos.",
+    cta: "Reserva tu proxima pausa desde el enlace del perfil.",
+    hook: "Esto pasa cuando sales de la ciudad por una noche.",
+    bestTime: "Jueves 7:30 p. m.",
+    benchmark: "Contenido de escapadas premium con transicion ciudad-naturaleza.",
+  },
+  {
+    id: "idea-02",
+    order: 2,
+    title: "Tres errores al planear una escapada corta",
+    idea: "Educar con una lista simple de errores comunes y cerrar con una alternativa facil.",
+    caption:
+      "Una escapada corta puede sentirse larga si eliges bien el lugar, el horario y lo que realmente necesitas llevar.",
+    format: "Carrusel",
+    duration: "7 slides",
+    priority: "Alta",
+    expectedPerformance: "Medio alto",
+    status: "En revision",
+    likeliScore: 86,
+    script:
+      "Slide 1: promesa. Slides 2-4: error y correccion. Slides 5-6: ejemplo aplicado. Slide 7: CTA de reserva.",
+    strengths: ["Formato guardable", "Aclara dudas previas a compra", "Reduce friccion de decision"],
+    weaknesses: ["Debe cuidar que el texto no sea largo", "Menor impacto si no hay imagenes propias"],
+    comparison: "Patron educativo que suele sostener buen guardado en turismo, wellness y servicios.",
+    cta: "Guarda esta guia y compartela con quien necesita una pausa.",
+    hook: "No arruines una escapada corta por estos 3 detalles.",
+    bestTime: "Martes 12:30 p. m.",
+    benchmark: "Carruseles de checklist con fuerte intencion de guardado.",
+  },
+  {
+    id: "idea-03",
+    order: 3,
+    title: "La habitacion contada en 5 detalles",
+    idea: "Presentar detalles tactiles y visuales que justifican la percepcion premium.",
+    caption:
+      "Lo premium no siempre se explica con lujo. A veces se nota en los detalles que hacen que quieras quedarte.",
+    format: "Reel",
+    duration: "25 a 30 segundos",
+    priority: "Media",
+    expectedPerformance: "Medio",
+    status: "Pendiente",
+    likeliScore: 78,
+    script:
+      "Abrir con textura. Mostrar cama, vista, bebida, luz y cierre con plano amplio. Texto corto por cada detalle.",
+    strengths: ["Muestra producto real", "Aumenta confianza", "Facil de producir"],
+    weaknesses: ["Depende mucho de composicion visual", "Puede quedarse solo en estetica"],
+    comparison: "Piezas de alojamiento con detalle sensorial tienden a mejorar clics de perfil.",
+    cta: "Mira disponibilidad para este mes.",
+    hook: "Cinco detalles que hacen que una noche se sienta distinta.",
+    bestTime: "Domingo 6:00 p. m.",
+    benchmark: "Room tours breves con enfoque sensorial.",
+  },
+  {
+    id: "idea-04",
+    order: 4,
+    title: "Que empacar para dos dias de descanso",
+    idea: "Lista practica para resolver una objecion frecuente antes de reservar.",
+    caption:
+      "Si vas dos dias, no necesitas empacar media casa. Necesitas llevar lo correcto para descansar sin friccion.",
+    format: "Post",
+    duration: "1 imagen + caption",
+    priority: "Media",
+    expectedPerformance: "Medio",
+    status: "Lista para producir",
+    likeliScore: 74,
+    script:
+      "Imagen limpia con lista corta. Caption con recomendaciones por clima y cierre hacia reserva.",
+    strengths: ["Utilidad clara", "Bajo costo de produccion", "Reduce preguntas repetidas"],
+    weaknesses: ["Menor potencia emocional", "Necesita buen diseno de la lista"],
+    comparison: "Checklists simples funcionan como contenido de apoyo para conversion.",
+    cta: "Guarda la lista para tu proxima visita.",
+    hook: "La maleta perfecta para una escapada de dos dias.",
+    bestTime: "Lunes 8:00 a. m.",
+    benchmark: "Listas practicas para viajes cortos.",
+  },
+];
+
+window.LikeliPortal.ideas = ideas;
