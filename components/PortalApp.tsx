@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getModuleByView, getModulesForPlan, PORTAL_MODULES } from "@/data/portalModules";
+import { LockKeyhole } from "lucide-react";
+import { getModuleByView, PORTAL_MODULES, type PortalModule } from "@/data/portalModules";
 import { getPlan } from "@/data/plans";
 import { ModuleCard } from "@/components/ModuleCard";
 import { ModuleIcon } from "@/components/ModuleIcon";
@@ -13,6 +14,7 @@ import type { ClientPortal, LikeliClientPortalOutput, LikeliOutputItem } from "@
 
 const statusLabels: Record<string, string> = { active: "Activo", inactive: "Inactivo", review: "En revision" };
 const allowedViews = new Set(["inicio", ...PORTAL_MODULES.map((module) => module.view), "plan"]);
+const lockedModuleMessage = "Funcion superior no incluida en tu plan actual. Mejora tu plan para desbloquearla.";
 
 export function PortalRoute({ clientSlug, accessKey }: { clientSlug: string; accessKey: string }) {
   const [client, setClient] = useState<ClientPortal | null | undefined>(undefined);
@@ -52,7 +54,6 @@ function PortalApp({ client }: { client: ClientPortal }) {
   const [activeView, setActiveView] = useState("inicio");
   const sections = useMemo(() => getPortalOutputSections(client), [client]);
   const output = useMemo(() => buildOutputForEnrichment(client, sections), [client, sections]);
-  const modules = useMemo(() => getVisibleModulesForClient(plan.id, sections), [plan.id, sections]);
 
   useEffect(() => {
     const readHash = () => {
@@ -78,8 +79,15 @@ function PortalApp({ client }: { client: ClientPortal }) {
         </button>
         <nav className="sidebar-nav" aria-label="Navegacion del portal">
           <NavButton view="inicio" label="Inicio" active={activeView === "inicio"} onClick={() => openView("inicio")} />
-          {modules.map((module) => (
-            <NavButton key={module.id} view={module.view} label={module.title} active={activeView === module.view} onClick={() => openView(module.view)} />
+          {PORTAL_MODULES.map((module) => (
+            <NavButton
+              key={module.id}
+              view={module.view}
+              label={module.title}
+              active={activeView === module.view}
+              locked={!isModuleIncludedInPlan(module, plan.id)}
+              onClick={() => openView(module.view)}
+            />
           ))}
           <NavButton view="plan" label="Plan" active={activeView === "plan"} onClick={() => openView("plan")} />
         </nav>
@@ -100,7 +108,7 @@ function PortalApp({ client }: { client: ClientPortal }) {
         </header>
 
         <main className="workspace">
-          {activeView === "inicio" && <PortalHome client={client} modules={modules} onOpen={openView} />}
+          {activeView === "inicio" && <PortalHome client={client} modules={PORTAL_MODULES} onOpen={openView} />}
           {activeView === "plan" && <PlanView client={client} sections={sections} />}
           {activeView !== "inicio" && activeView !== "plan" && (
             <ModuleView client={client} view={activeView} sections={sections} output={output} />
@@ -111,16 +119,36 @@ function PortalApp({ client }: { client: ClientPortal }) {
   );
 }
 
-function NavButton({ view, label, active, onClick }: { view: string; label: string; active: boolean; onClick: () => void }) {
+function NavButton({
+  view,
+  label,
+  active,
+  locked = false,
+  onClick,
+}: {
+  view: string;
+  label: string;
+  active: boolean;
+  locked?: boolean;
+  onClick: () => void;
+}) {
   return (
-    <button className={active ? "is-active" : ""} type="button" onClick={onClick}>
+    <button
+      aria-disabled={locked}
+      className={`${active ? "is-active" : ""}${locked ? " is-locked" : ""}`}
+      data-tooltip={locked ? lockedModuleMessage : undefined}
+      title={locked ? lockedModuleMessage : undefined}
+      type="button"
+      onClick={locked ? undefined : onClick}
+    >
       <ModuleIcon view={view} />
       <span>{label}</span>
+      {locked && <LockKeyhole className="lock-icon" aria-hidden="true" size={13} strokeWidth={2.2} />}
     </button>
   );
 }
 
-function PortalHome({ client, modules, onOpen }: { client: ClientPortal; modules: ReturnType<typeof getModulesForPlan>; onOpen: (view: string) => void }) {
+function PortalHome({ client, modules, onOpen }: { client: ClientPortal; modules: PortalModule[]; onOpen: (view: string) => void }) {
   const plan = getPlan(client.activePlan);
   const nextFocus = String(client.generatedOutput?.nextFocus || "Priorizar contenido claro, accionable y facil de producir durante el mes.");
 
@@ -147,7 +175,7 @@ function PortalHome({ client, modules, onOpen }: { client: ClientPortal; modules
       </section>
       <section className="module-grid">
         {modules.map((module) => (
-          <ModuleCard key={module.id} module={module} onOpen={onOpen} />
+          <ModuleCard key={module.id} module={module} locked={!isModuleIncludedInPlan(module, plan.id)} onOpen={onOpen} />
         ))}
       </section>
     </>
@@ -173,7 +201,7 @@ function ModuleView({
     return (
       <section className="locked-view">
         <h2>{portalModule.title}</h2>
-        <p>Este modulo esta disponible desde Signals Pro.</p>
+        <p>{lockedModuleMessage}</p>
       </section>
     );
   }
@@ -469,7 +497,7 @@ function EmptyState() {
 }
 
 function getVisibleModulesForClient(planId: ClientPortal["activePlan"], sections: ReturnType<typeof getPortalOutputSections>) {
-  return getModulesForPlan(planId).filter((module) => {
+  return PORTAL_MODULES.filter((module) => module.plans.includes(planId)).filter((module) => {
     if (module.id === "scripts") return asItems(sections.scripts).length > 0;
     if (module.id === "contentCalendar") return asItems(sections.contentCalendar).length > 0;
     if (module.id === "monthlyRoadmap") return asItems(sections.monthlyRoadmap).length > 0;
@@ -512,6 +540,10 @@ function InvalidAccess() {
       </section>
     </main>
   );
+}
+
+function isModuleIncludedInPlan(module: PortalModule, planId: ClientPortal["activePlan"]) {
+  return module.plans.includes(planId);
 }
 
 function InactivePortal() {
