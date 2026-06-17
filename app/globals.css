@@ -192,6 +192,31 @@
     padding-block: var(--section-y-tight);
   }
 
+  .landing-scope .landing-reveal {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    transition:
+      opacity 760ms var(--ease-out) var(--reveal-delay, 0ms),
+      transform 760ms var(--ease-out) var(--reveal-delay, 0ms);
+  }
+
+  .landing-scope .landing-reveal:not(.is-visible) {
+    will-change: opacity, transform;
+  }
+
+  .landing-scope .landing-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .landing-scope .landing-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   .section-head {
     display: grid;
     gap: 1.1rem;
