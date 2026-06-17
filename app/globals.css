@@ -2344,6 +2344,9 @@
 }.portal-scope .button,
 .portal-scope .sidebar-nav button,
 .portal-scope .brand-block,
+.portal-scope .sidebar-toggle,
+.portal-scope .sidebar-reopen,
+.portal-scope .sidebar-overlay,
 .portal-scope .module-card,
 .portal-scope .icon-button {
   border: 0;
@@ -2380,6 +2383,7 @@
   --sidebar-width: 276px;
   display: block;
   min-height: 100vh;
+  overflow-x: clip;
 }.portal-scope .sidebar {
   position: fixed;
   top: 0;
@@ -2394,10 +2398,23 @@
   padding: 22px;
   overflow: hidden;
   z-index: 10;
+  transform: translateX(0);
+  transition: transform 190ms ease, opacity 190ms ease;
+  will-change: transform;
+}.portal-scope .portal-shell.is-sidebar-collapsed .sidebar {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(calc(-1 * var(--sidebar-width) - 24px));
+}.portal-scope .sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
 }.portal-scope .brand-block {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1 1 auto;
   min-width: 0;
   background: transparent;
   color: var(--text);
@@ -2409,6 +2426,35 @@
 }.portal-scope .brand-block span {
   color: var(--muted);
   font-size: 0.82rem;
+}.portal-scope .sidebar-toggle,
+.portal-scope .sidebar-reopen {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.055);
+  color: rgba(245, 247, 251, 0.84);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease, transform 150ms ease;
+}.portal-scope .sidebar-toggle:hover,
+.portal-scope .sidebar-reopen:hover {
+  border-color: rgba(141, 240, 198, 0.24);
+  background: rgba(141, 240, 198, 0.09);
+  color: var(--text);
+}.portal-scope .sidebar-toggle:active,
+.portal-scope .sidebar-reopen:active {
+  transform: translateY(1px);
+}.portal-scope .sidebar-reopen {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 12;
+  backdrop-filter: blur(16px);
+}.portal-scope .sidebar-overlay {
+  display: none;
 }.portal-scope .sidebar-nav {
   display: flex;
   flex: 1;
@@ -2499,6 +2545,11 @@
   min-width: 0;
   margin-left: var(--sidebar-width);
   overflow-x: hidden;
+  transition: margin-left 190ms ease;
+}.portal-scope .portal-shell.is-sidebar-collapsed .portal-main {
+  margin-left: 0;
+}.portal-scope .portal-shell.is-sidebar-collapsed .topbar {
+  padding-left: clamp(68px, 6vw, 86px);
 }.portal-scope .topbar {
   display: flex;
   align-items: flex-start;
@@ -2971,20 +3022,32 @@
 }
 
 @media (max-width: 920px) {.portal-scope .sidebar {
-    position: static;
-    width: auto;
-    height: auto;
-    max-height: none;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    overflow: visible;
-  }.portal-scope .portal-main {
+    width: min(82vw, 318px);
+    border-right: 1px solid var(--line);
+    box-shadow: 24px 0 60px rgba(0, 0, 0, 0.34);
+    transform: translateX(-105%);
+    z-index: 21;
+  }.portal-scope .portal-shell.is-sidebar-open .sidebar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }.portal-scope .portal-shell.is-sidebar-collapsed .sidebar {
+    transform: translateX(-105%);
+  }.portal-scope .portal-main,
+  .portal-scope .portal-shell.is-sidebar-collapsed .portal-main {
     margin-left: 0;
-  }.portal-scope .sidebar-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow: visible;
-    padding-bottom: 0;
+  }.portal-scope .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: rgba(4, 6, 10, 0.64);
+    backdrop-filter: blur(4px);
+    z-index: 20;
+  }.portal-scope .sidebar-reopen {
+    top: 14px;
+    left: 14px;
+  }.portal-scope .portal-shell.is-sidebar-collapsed .topbar {
+    padding-left: 64px;
   }.portal-scope .home-hero,
 .portal-scope .admin-grid,
 .portal-scope .portal-row,
@@ -3006,9 +3069,8 @@
 .portal-scope .admin-shell {
     padding: 16px;
   }.portal-scope .sidebar {
+    width: min(88vw, 320px);
     padding: 16px;
-  }.portal-scope .sidebar-nav {
-    grid-template-columns: 1fr;
   }.portal-scope .module-card {
     min-height: 136px;
   }.portal-scope .modal-actions {

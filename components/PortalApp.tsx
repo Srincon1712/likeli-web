@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LockKeyhole } from "lucide-react";
+import { LockKeyhole, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { getModuleByView, PORTAL_MODULES, type PortalModule } from "@/data/portalModules";
 import { getPlan } from "@/data/plans";
 import { ModuleCard } from "@/components/ModuleCard";
@@ -52,8 +52,27 @@ export function PortalRoute({ clientSlug, accessKey }: { clientSlug: string; acc
 function PortalApp({ client }: { client: ClientPortal }) {
   const plan = getPlan(client.activePlan);
   const [activeView, setActiveView] = useState("inicio");
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const sections = useMemo(() => getPortalOutputSections(client), [client]);
   const output = useMemo(() => buildOutputForEnrichment(client, sections), [client, sections]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 920px)");
+    const syncSidebar = () => setSidebarOpen(!media.matches);
+
+    syncSidebar();
+    media.addEventListener("change", syncSidebar);
+    return () => media.removeEventListener("change", syncSidebar);
+  }, []);
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSidebarOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   useEffect(() => {
     const readHash = () => {
@@ -68,15 +87,27 @@ function PortalApp({ client }: { client: ClientPortal }) {
   function openView(view: string) {
     setActiveView(view);
     window.history.replaceState(null, "", `#${view}`);
+    if (window.matchMedia("(max-width: 920px)").matches) setSidebarOpen(false);
   }
 
   return (
-    <div className="portal-shell">
-      <aside className="sidebar">
-        <button className="brand-block" type="button" onClick={() => openView("inicio")}>
-          <Image src="/brand/likeli-white-transparent.png" width={106} height={38} alt="Likeli" priority />
-          <span>Portal</span>
+    <div className={`portal-shell ${sidebarOpen ? "is-sidebar-open" : "is-sidebar-collapsed"}`}>
+      {!sidebarOpen && (
+        <button className="sidebar-reopen" type="button" aria-label="Abrir barra lateral" aria-expanded="false" onClick={() => setSidebarOpen(true)}>
+          <PanelLeftOpen aria-hidden="true" size={18} strokeWidth={2} />
         </button>
+      )}
+      {sidebarOpen && <button className="sidebar-overlay" type="button" aria-label="Cerrar menu lateral" onClick={() => setSidebarOpen(false)} />}
+      <aside className="sidebar">
+        <div className="sidebar-header">
+          <button className="brand-block" type="button" onClick={() => openView("inicio")}>
+            <Image src="/brand/likeli-white-transparent.png" width={106} height={38} alt="Likeli" priority />
+            <span>Portal</span>
+          </button>
+          <button className="sidebar-toggle" type="button" aria-label="Cerrar barra lateral" aria-expanded="true" onClick={() => setSidebarOpen(false)}>
+            <PanelLeftClose aria-hidden="true" size={18} strokeWidth={2} />
+          </button>
+        </div>
         <nav className="sidebar-nav" aria-label="Navegacion del portal">
           <NavButton view="inicio" label="Inicio" active={activeView === "inicio"} onClick={() => openView("inicio")} />
           {PORTAL_MODULES.map((module) => (
