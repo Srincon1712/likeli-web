@@ -2,7 +2,18 @@ import Button from "@/components/ui/Button";
 import CursorReactiveCard from "@/components/ui/CursorReactiveCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 
-const plans = [
+type PricingPlan = {
+  id: string;
+  name: string;
+  price: string;
+  description: string;
+  includes: string[];
+  excludes: string[];
+  featured: boolean;
+  ctaHref: string;
+};
+
+const plans: PricingPlan[] = [
   {
     id: "signals",
     name: "Signals",
@@ -30,6 +41,7 @@ const plans = [
       "Predicciones",
       "Benchmarking",
     ],
+    featured: false,
     ctaHref: "https://wa.link/tv4i85",
   },
   {
@@ -83,6 +95,7 @@ const plans = [
       "Acceso ampliado a investigaciones, frameworks y recursos exclusivos",
     ],
     excludes: [],
+    featured: false,
     ctaHref: "https://wa.link/kj642u",
   },
 ];
@@ -93,8 +106,8 @@ export default function PricingSection() {
       <div className="lk-container">
         <SectionHeader
           eyebrow="Plans"
-          title="Planes pensados por etapa de sistema."
-          copy="Precios de la Etapa 2 mientras Likeli evoluciona de servicio inteligente a producto SaaS."
+          title="Planes diseñados para convertir señales en reservas"
+          copy="Elige el nivel de análisis que necesita tu negocio para detectar oportunidades reales, crear contenido con intención y tomar mejores decisiones cada mes."
         />
 
         <div className="mt-12 grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -113,17 +126,23 @@ export default function PricingSection() {
                   ) : null}
                 </div>
 
-                <p className="mt-5 min-h-[5.25rem] text-sm leading-6 text-muted">{plan.description}</p>
+                <p className="mt-5 min-h-21 text-sm leading-6 text-muted">{plan.description}</p>
 
                 <strong className="mt-6 block text-balance text-[clamp(1.85rem,3vw,2.6rem)] leading-none text-lk-beige">
                   {plan.price}
                 </strong>
 
-                <Button href={plan.ctaHref} target="_blank" rel="noopener noreferrer" variant={plan.featured ? "primary" : "secondary"} className="mt-6 w-full whitespace-nowrap">
+                <Button
+                  href={plan.ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant={plan.featured ? "primary" : "secondary"}
+                  className="mt-6 w-full whitespace-nowrap"
+                >
                   Adquirir
                 </Button>
 
-                <div className="mt-7 border-t border-white/[0.08] pt-6">
+                <div className="mt-7 border-t border-white/8 pt-6">
                   <p className="mono text-[0.62rem] uppercase tracking-[0.14em] text-lk-gray-light">Incluye</p>
                   <ul className="mt-4 grid gap-3">
                     {plan.includes.map((item) => (
@@ -131,14 +150,14 @@ export default function PricingSection() {
                         <span className="mono text-lk-red-bright" aria-hidden="true">
                           ✓
                         </span>
-                        <span className="min-w-0 break-words">{item}</span>
+                        <span className="min-w-0 wrap-break-word">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {plan.excludes.length ? (
-                  <div className="mt-7 border-t border-white/[0.08] pt-6">
+                  <div className="mt-7 border-t border-white/8 pt-6">
                     <p className="mono text-[0.62rem] uppercase tracking-[0.14em] text-lk-gray-light">No incluye</p>
                     <ul className="mt-4 grid gap-3">
                       {plan.excludes.map((item) => (
@@ -146,7 +165,7 @@ export default function PricingSection() {
                           <span className="mono text-lk-gray" aria-hidden="true">
                             ×
                           </span>
-                          <span className="min-w-0 break-words">{item}</span>
+                          <span className="min-w-0 wrap-break-word">{item}</span>
                         </li>
                       ))}
                     </ul>
