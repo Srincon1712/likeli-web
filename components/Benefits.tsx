@@ -150,7 +150,7 @@ export default function Benefits() {
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {plans.map((plan) => (
-              <article key={plan.tag} className="panel panel-hover flex min-h-[440px] flex-col p-6">
+              <article key={plan.tag} className="panel panel-hover flex min-h-110 flex-col p-6">
                 <span className="section-kicker">{plan.tag}</span>
                 <h3 className="mt-5 text-2xl leading-tight">{plan.title}</h3>
                 <p className="copy mt-4">{plan.description}</p>
