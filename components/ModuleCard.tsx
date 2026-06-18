@@ -11,6 +11,7 @@ export function ModuleCard({ module, locked = false, onOpen }: { module: PortalM
     <button
       aria-disabled={locked}
       className={`module-card${locked ? " is-locked" : ""}`}
+      data-tour-id={locked ? "locked-module" : undefined}
       data-tooltip={locked ? lockedModuleMessage : undefined}
       title={locked ? lockedModuleMessage : undefined}
       type="button"

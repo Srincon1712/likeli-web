@@ -176,7 +176,7 @@ export function PlanControlCenter({ client }: { client: ClientPortal }) {
   const current = planCards.find((plan) => plan.id === currentPlan);
   return (
     <section className="plan-control-center">
-      <header className="plan-control-header">
+      <header className="plan-control-header" data-tour-id="module-plans">
         <div>
           <p className="eyebrow">Plan control center</p>
           <h2>Elige el nivel de inteligencia que quieres activar</h2>
@@ -262,7 +262,7 @@ function CalendarHeader({ endDate, planId, scheduled, startDate }: { endDate: Da
 
 function ScriptStudioCard({ index, onOpen, script }: { index: number; onOpen: () => void; script: StudioScript }) {
   return (
-    <button className="studio-script-card" type="button" onClick={onOpen} aria-label={`Abrir guion: ${script.title}`}>
+    <button className="studio-script-card" data-tour-id={index === 0 ? "script-card" : undefined} type="button" onClick={onOpen} aria-label={`Abrir guion: ${script.title}`}>
       <header>
         <div className="production-tags">
           {script.format && <ProductionTag>{script.format}</ProductionTag>}

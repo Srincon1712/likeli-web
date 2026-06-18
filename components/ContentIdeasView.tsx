@@ -55,11 +55,12 @@ const aliases = {
   emotion: ["emotion", "emocion", "intention", "intencion", "whatToTransmit", "queTransmitir"],
 } as const;
 
-export function ContentIdeasView({ items }: { items: LikeliOutputItem[] }) {
+export function ContentIdeasView({ items, openFirstIdea = false }: { items: LikeliOutputItem[]; openFirstIdea?: boolean }) {
   const [selectedIdea, setSelectedIdea] = useState<LikeliOutputItem | null>(null);
   const [isClosing, setIsClosing] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const closingRef = useRef(false);
+  const tutorialOpenedRef = useRef(false);
 
   const beginClose = useCallback(() => {
     if (closingRef.current) return;
@@ -71,6 +72,18 @@ export function ContentIdeasView({ items }: { items: LikeliOutputItem[] }) {
       closingRef.current = false;
     }, 180);
   }, []);
+
+  useEffect(() => {
+    let frame = 0;
+    if (openFirstIdea && items[0] && !selectedIdea) {
+      tutorialOpenedRef.current = true;
+      frame = window.requestAnimationFrame(() => setSelectedIdea(items[0]));
+    } else if (!openFirstIdea && tutorialOpenedRef.current) {
+      tutorialOpenedRef.current = false;
+      frame = window.requestAnimationFrame(() => setSelectedIdea(null));
+    }
+    return () => window.cancelAnimationFrame(frame);
+  }, [items, openFirstIdea, selectedIdea]);
 
   useEffect(() => {
     if (!selectedIdea) return;
@@ -142,7 +155,7 @@ function IdeaCard({
   const summary = objective || textOf(pick(item, aliases.concept)) || textOf(pick(item, aliases.insight));
 
   return (
-    <button className="idea-card" type="button" onClick={onOpen} aria-label={`Abrir estrategia: ${title}`}>
+    <button className="idea-card" data-tour-id={index === 0 ? "idea-card" : undefined} type="button" onClick={onOpen} aria-label={`Abrir estrategia: ${title}`}>
       <span className="idea-card__glow" aria-hidden="true" />
       <header className="idea-card__header">
         <div className="idea-card__chips">
@@ -223,7 +236,7 @@ function IdeaModal({
   const hasProduction = visual != null || duration || resources.length;
 
   return (
-    <section className="idea-modal" role="dialog" aria-modal="true" aria-labelledby="idea-modal-title">
+    <section className="idea-modal" data-tour-id="idea-expanded" role="dialog" aria-modal="true" aria-labelledby="idea-modal-title">
       <header className="idea-modal__hero">
         <div className="idea-modal__topline">
           <div className="idea-card__chips">

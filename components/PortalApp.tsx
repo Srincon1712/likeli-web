@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LockKeyhole, PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { GraduationCap, LockKeyhole, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { getModuleByView, PORTAL_MODULES, type PortalModule } from "@/data/portalModules";
 import { getPlan } from "@/data/plans";
+import type { PortalTutorialStep } from "@/data/portalTutorial";
 import { ModuleCard } from "@/components/ModuleCard";
 import { ModuleIcon } from "@/components/ModuleIcon";
+import { PortalTutorial } from "@/components/PortalTutorial";
 import { ContentIdeasView } from "@/components/ContentIdeasView";
 import { ContentLibrariesView } from "@/components/ContentLibrariesView";
 import { TrendsRadarView } from "@/components/TrendsRadarView";
@@ -58,8 +60,16 @@ function PortalApp({ client }: { client: ClientPortal }) {
   const plan = getPlan(client.activePlan);
   const [activeView, setActiveView] = useState("inicio");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [tutorialOpen, setTutorialOpen] = useState(false);
+  const [tutorialStepId, setTutorialStepId] = useState<string | null>(null);
   const sections = useMemo(() => getPortalOutputSections(client), [client]);
   const output = useMemo(() => buildOutputForEnrichment(client, sections), [client, sections]);
+  const enrichedScripts = useMemo(() => buildEnrichedScripts(output), [output]);
+  const tutorialCapabilities = useMemo(() => ({
+    hasCaseLibrary: false,
+    hasLockedModules: PORTAL_MODULES.some((module) => !isModuleIncludedInPlan(module, plan.id)),
+    hasScripts: plan.id !== "signals" && enrichedScripts.length > 0,
+  }), [enrichedScripts.length, plan.id]);
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 920px)");
@@ -89,11 +99,18 @@ function PortalApp({ client }: { client: ClientPortal }) {
     return () => window.removeEventListener("hashchange", readHash);
   }, []);
 
-  function openView(view: string) {
+  const openView = useCallback((view: string) => {
     setActiveView(view);
     window.history.replaceState(null, "", `#${view}`);
     if (window.matchMedia("(max-width: 920px)").matches) setSidebarOpen(false);
-  }
+  }, []);
+
+  const navigateTutorial = useCallback((step: PortalTutorialStep) => {
+    setActiveView(step.view);
+    window.history.replaceState(null, "", `#${step.view}`);
+    const isMobile = window.matchMedia("(max-width: 920px)").matches;
+    setSidebarOpen(step.target === "portal-navigation" ? true : !isMobile);
+  }, []);
 
   return (
     <div className={`portal-shell ${sidebarOpen ? "is-sidebar-open" : "is-sidebar-collapsed"}`}>
@@ -113,7 +130,7 @@ function PortalApp({ client }: { client: ClientPortal }) {
             <PanelLeftClose aria-hidden="true" size={18} strokeWidth={2} />
           </button>
         </div>
-        <nav className="sidebar-nav" aria-label="Navegacion del portal">
+        <nav className="sidebar-nav" data-tour-id="portal-navigation" aria-label="Navegacion del portal">
           <NavButton view="inicio" label="Inicio" active={activeView === "inicio"} onClick={() => openView("inicio")} />
           {PORTAL_MODULES.map((module) => (
             <NavButton
@@ -144,13 +161,27 @@ function PortalApp({ client }: { client: ClientPortal }) {
         </header>
 
         <main className="workspace">
-          {activeView === "inicio" && <PortalHome client={client} modules={PORTAL_MODULES} onOpen={openView} />}
+          {activeView === "inicio" && (
+            <PortalHome client={client} modules={PORTAL_MODULES} onOpen={openView} onStartTutorial={() => setTutorialOpen(true)} />
+          )}
           {activeView === "plan" && <PlanControlCenter client={client} />}
           {activeView !== "inicio" && activeView !== "plan" && (
-            <ModuleView client={client} view={activeView} sections={sections} output={output} />
+            <ModuleView client={client} view={activeView} sections={sections} output={output} tutorialStepId={tutorialStepId} />
           )}
         </main>
       </div>
+      {tutorialOpen && (
+        <PortalTutorial
+          capabilities={tutorialCapabilities}
+          completionKey={`likeli.portal-tutorial.completed.${client.clientSlug}`}
+          onClose={() => {
+            setTutorialOpen(false);
+            setTutorialStepId(null);
+          }}
+          onNavigate={navigateTutorial}
+          onStepChange={setTutorialStepId}
+        />
+      )}
     </div>
   );
 }
@@ -184,19 +215,33 @@ function NavButton({
   );
 }
 
-function PortalHome({ client, modules, onOpen }: { client: ClientPortal; modules: PortalModule[]; onOpen: (view: string) => void }) {
+function PortalHome({
+  client,
+  modules,
+  onOpen,
+  onStartTutorial,
+}: {
+  client: ClientPortal;
+  modules: PortalModule[];
+  onOpen: (view: string) => void;
+  onStartTutorial: () => void;
+}) {
   const plan = getPlan(client.activePlan);
   const nextFocus = String(client.generatedOutput?.nextFocus || "Priorizar contenido claro, accionable y facil de producir durante el mes.");
 
   return (
-    <>
-      <section className="home-hero">
+    <div className="portal-home">
+      <section className="home-hero" data-tour-id="portal-home">
         <div>
           <p className="eyebrow">{plan.level}</p>
           <h2>{client.clientName}</h2>
           <p>{nextFocus}</p>
+          <button className="portal-tutorial-launch" type="button" onClick={onStartTutorial}>
+            <GraduationCap aria-hidden="true" size={17} />
+            Ver tutorial
+          </button>
         </div>
-        <div className="hero-summary">
+        <div className="hero-summary" data-tour-id="portal-plan">
           <span>Plan actual</span>
           <strong>{plan.name}</strong>
           <p>{plan.objective}</p>
@@ -214,7 +259,7 @@ function PortalHome({ client, modules, onOpen }: { client: ClientPortal; modules
           <ModuleCard key={module.id} module={module} locked={!isModuleIncludedInPlan(module, plan.id)} onOpen={onOpen} />
         ))}
       </section>
-    </>
+    </div>
   );
 }
 
@@ -223,11 +268,13 @@ function ModuleView({
   view,
   sections,
   output,
+  tutorialStepId,
 }: {
   client: ClientPortal;
   view: string;
   sections: ReturnType<typeof getPortalOutputSections>;
   output: Partial<LikeliClientPortalOutput>;
+  tutorialStepId: string | null;
 }) {
   const portalModule = getModuleByView(view);
   const plan = getPlan(client.activePlan);
@@ -240,26 +287,28 @@ function ModuleView({
         ? "El calendario de contenido de 30 dias esta disponible en Signals Pro y Signals Elite porque se construye a partir de guiones completos."
         : lockedModuleMessage;
     return (
-      <section className="locked-view">
-        <h2>{portalModule.title}</h2>
-        <p>{premiumMessage}</p>
-      </section>
+      <div data-tour-id={tourTargetForModule(portalModule.id)}>
+        <section className="locked-view" data-tour-id="locked-module">
+          <h2>{portalModule.title}</h2>
+          <p>{premiumMessage}</p>
+        </section>
+      </div>
     );
   }
 
   const content = getModuleItems(portalModule.id, sections);
 
   return (
-    <>
-      <section className="section-heading">
+    <div className="portal-module-view">
+      <section className="section-heading" data-tour-id={tourTargetForModule(portalModule.id)}>
         <div>
           <p className="eyebrow">Modulo</p>
           <h2>{portalModule.title}</h2>
           <p>{portalModule.description}</p>
         </div>
       </section>
-      {renderModuleContent(portalModule.id, content, { client, output, sections })}
-    </>
+      {renderModuleContent(portalModule.id, content, { client, output, sections, tutorialStepId })}
+    </div>
   );
 }
 
@@ -271,7 +320,12 @@ function getModuleItems(moduleId: string, sections: ReturnType<typeof getPortalO
 function renderModuleContent(
   moduleId: string,
   content: unknown,
-  context: { client: ClientPortal; output: Partial<LikeliClientPortalOutput>; sections: ReturnType<typeof getPortalOutputSections> },
+  context: {
+    client: ClientPortal;
+    output: Partial<LikeliClientPortalOutput>;
+    sections: ReturnType<typeof getPortalOutputSections>;
+    tutorialStepId: string | null;
+  },
 ) {
   if (moduleId === "scripts") {
     return <ScriptStudioView entries={buildEnrichedScripts(context.output)} ideaCount={asItems(context.sections.contentIdeas).length} planId={context.client.activePlan} />;
@@ -280,7 +334,9 @@ function renderModuleContent(
     return <ExecutionCalendarView client={context.client} entries={buildEnrichedScripts(context.output)} planId={context.client.activePlan} />;
   }
   if (moduleId === "monthlyRoadmap") return <ExecutionRoadmapView items={asItems(content)} />;
-  if (moduleId === "contentIdeas") return <ContentIdeasView items={asItems(content)} />;
+  if (moduleId === "contentIdeas") {
+    return <ContentIdeasView items={asItems(content)} openFirstIdea={context.tutorialStepId === "idea-expanded"} />;
+  }
   if (moduleId === "hooksLibrary") return <ContentLibrariesView key="hooks" kind="hooks" items={asItems(content)} />;
   if (moduleId === "ctaLibrary") return <ContentLibrariesView key="ctas" kind="ctas" items={asItems(content)} />;
   if (moduleId === "captionsLibrary") return <ContentLibrariesView key="captions" kind="captions" items={asItems(content)} />;
@@ -359,6 +415,21 @@ function InvalidAccess() {
       </section>
     </main>
   );
+}
+
+function tourTargetForModule(moduleId: string) {
+  return ({
+    contentIdeas: "module-ideas",
+    hooksLibrary: "module-hooks",
+    captionsLibrary: "module-captions",
+    ctaLibrary: "module-ctas",
+    trends: "module-trends",
+    opportunities: "module-opportunities",
+    scripts: "module-scripts",
+    contentCalendar: "module-calendar",
+    benchmarks: "module-benchmarks",
+    monthlyRoadmap: "module-roadmap",
+  } as Record<string, string>)[moduleId] || `module-${moduleId}`;
 }
 
 function isModuleIncludedInPlan(module: PortalModule, planId: ClientPortal["activePlan"]) {
