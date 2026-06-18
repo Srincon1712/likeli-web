@@ -142,14 +142,25 @@ function hasExplicitRelation(a: LikeliOutputItem, b: LikeliOutputItem) {
 }
 
 function relationIds(item: LikeliOutputItem) {
+  const linkedIdea = asRecord(firstDefined(item.idea, item.linkedIdea, item.relatedIdea, item.sourceIdea, item.parentIdea));
   return [
     item.id,
+    item.title,
+    item.name,
     item.itemId,
     item.ideaId,
+    item.linkedIdeaId,
+    item.idea_id,
+    item.ideaTitle,
+    item.tituloIdea,
+    item.ideaRelacionada,
     item.contentIdeaId,
     item.relatedIdeaId,
     item.relatedScriptId,
     item.scriptId,
+    linkedIdea.id,
+    linkedIdea.title,
+    linkedIdea.name,
     ...asArray(item.relatedIdeaIds),
     ...asArray(item.relatedScriptIds),
   ]
@@ -186,6 +197,10 @@ function numericDay(item: LikeliOutputItem) {
 
 function asItems(value: unknown): LikeliOutputItem[] {
   return Array.isArray(value) ? (value as LikeliOutputItem[]) : [];
+}
+
+function asRecord(value: unknown): LikeliOutputItem {
+  return value && typeof value === "object" && !Array.isArray(value) ? value as LikeliOutputItem : {};
 }
 
 function asArray(value: unknown) {

@@ -219,6 +219,8 @@ async function toClientPortal(portal: StoredPortal, includeOutput: boolean): Pro
     businessType: portal.businessType || "",
     activePlan,
     accessKey: portal.accessKey || `lk_${portal.slug}`,
+    createdAt: portal.createdAt,
+    lastPaymentDate: portal.lastPaymentDate,
     lastUpdate: (portal.updatedAt || portal.createdAt).slice(0, 10),
     nextPaymentAt: portal.nextPaymentAt || "",
     billingDueInDays: portal.billingDueInDays ?? 30,

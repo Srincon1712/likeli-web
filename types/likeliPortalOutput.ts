@@ -42,6 +42,8 @@ export interface ClientPortal {
   businessType: string;
   activePlan: PortalPlanId;
   accessKey: string;
+  createdAt?: string;
+  lastPaymentDate?: string;
   lastUpdate: string;
   nextPaymentAt?: string;
   billingDueInDays?: number;
