@@ -8,6 +8,7 @@ import { getModuleByView, PORTAL_MODULES, type PortalModule } from "@/data/porta
 import { getPlan } from "@/data/plans";
 import { ModuleCard } from "@/components/ModuleCard";
 import { ModuleIcon } from "@/components/ModuleIcon";
+import { ContentIdeasView } from "@/components/ContentIdeasView";
 import { buildEnrichedCalendar, buildEnrichedScripts, type EnrichedScript } from "@/lib/likeli-output/enrichment";
 import { getPortalOutputSections } from "@/lib/likeli-output/getPortalOutputSections";
 import type { ClientPortal, LikeliClientPortalOutput, LikeliOutputItem } from "@/types/likeliPortalOutput";
@@ -268,9 +269,9 @@ function renderModuleContent(
     return <CalendarView items={buildEnrichedCalendar(context.output, { importedAt: context.client.likeliOutput?.importedAt || context.client.lastUpdate })} />;
   }
   if (moduleId === "monthlyRoadmap") return <RoadmapView items={asItems(content)} />;
+  if (moduleId === "contentIdeas") return <ContentIdeasView items={asItems(content)} />;
 
   const fieldsByModule: Record<string, string[]> = {
-    contentIdeas: ["title", "concept", "format", "objective", "priority", "estimatedImpact"],
     hooksLibrary: ["hook", "hookType", "bestForFormat", "psychologicalTrigger"],
     captionsLibrary: ["caption", "tone", "bestFor"],
     ctaLibrary: ["cta", "ctaType", "bestFor", "conversionIntent"],
