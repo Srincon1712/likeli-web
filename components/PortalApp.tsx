@@ -9,6 +9,7 @@ import { getPlan } from "@/data/plans";
 import { ModuleCard } from "@/components/ModuleCard";
 import { ModuleIcon } from "@/components/ModuleIcon";
 import { ContentIdeasView } from "@/components/ContentIdeasView";
+import { ContentLibrariesView } from "@/components/ContentLibrariesView";
 import { buildEnrichedCalendar, buildEnrichedScripts, type EnrichedScript } from "@/lib/likeli-output/enrichment";
 import { getPortalOutputSections } from "@/lib/likeli-output/getPortalOutputSections";
 import type { ClientPortal, LikeliClientPortalOutput, LikeliOutputItem } from "@/types/likeliPortalOutput";
@@ -270,11 +271,11 @@ function renderModuleContent(
   }
   if (moduleId === "monthlyRoadmap") return <RoadmapView items={asItems(content)} />;
   if (moduleId === "contentIdeas") return <ContentIdeasView items={asItems(content)} />;
+  if (moduleId === "hooksLibrary") return <ContentLibrariesView key="hooks" kind="hooks" items={asItems(content)} />;
+  if (moduleId === "ctaLibrary") return <ContentLibrariesView key="ctas" kind="ctas" items={asItems(content)} />;
+  if (moduleId === "captionsLibrary") return <ContentLibrariesView key="captions" kind="captions" items={asItems(content)} />;
 
   const fieldsByModule: Record<string, string[]> = {
-    hooksLibrary: ["hook", "hookType", "bestForFormat", "psychologicalTrigger"],
-    captionsLibrary: ["caption", "tone", "bestFor"],
-    ctaLibrary: ["cta", "ctaType", "bestFor", "conversionIntent"],
     trends: ["title", "description", "strategicImplication"],
     opportunities: ["title", "description", "recommendedAction", "priority"],
     benchmarks: ["title", "summary", "lesson", "evidenceUsed"],
