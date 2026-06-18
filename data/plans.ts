@@ -1,4 +1,5 @@
 import type { PortalPlanId } from "@/types/likeliPortalOutput";
+import { PORTAL_PLAN_RULES } from "@/lib/portalSchema";
 
 export const planOrder: PortalPlanId[] = ["signals", "signals-pro", "signals-elite"];
 
@@ -9,7 +10,7 @@ export const plans = {
     price: "199.000 COP / mes",
     level: "Base",
     objective: "Claridad mensual sobre que publicar, con ideas y senales listas para ejecutar.",
-    deliverables: { contentIdeas: 20, hooks: 20, captions: 20, ctas: 20, trends: 4, opportunities: 4, scripts: 0 },
+    deliverables: toDeliverables(PORTAL_PLAN_RULES.signals),
   },
   "signals-pro": {
     id: "signals-pro",
@@ -17,7 +18,7 @@ export const plans = {
     price: "599.000 COP / mes",
     level: "Pro",
     objective: "Estrategia avanzada para priorizar, validar y organizar contenido antes de producir.",
-    deliverables: { contentIdeas: 30, hooks: 30, captions: 30, ctas: 30, trends: 4, opportunities: 4, scripts: 12 },
+    deliverables: toDeliverables(PORTAL_PLAN_RULES.signals_pro),
   },
   "signals-elite": {
     id: "signals-elite",
@@ -25,7 +26,7 @@ export const plans = {
     price: "1.199.000 COP / mes",
     level: "Elite",
     objective: "Inteligencia avanzada con mayor volumen de entregables y foco operativo.",
-    deliverables: { contentIdeas: 40, hooks: 40, captions: 40, ctas: 40, trends: 4, opportunities: 4, scripts: 16 },
+    deliverables: toDeliverables(PORTAL_PLAN_RULES.signals_elite),
   },
 } satisfies Record<PortalPlanId, {
   id: PortalPlanId;
@@ -35,6 +36,18 @@ export const plans = {
   objective: string;
   deliverables: Record<string, number>;
 }>;
+
+function toDeliverables(rules: (typeof PORTAL_PLAN_RULES)[keyof typeof PORTAL_PLAN_RULES]) {
+  return {
+    contentIdeas: rules.ideas,
+    hooks: rules.hooks,
+    captions: rules.captions,
+    ctas: rules.ctas,
+    trends: rules.trends,
+    opportunities: rules.opportunities,
+    scripts: rules.scripts,
+  };
+}
 
 export function getPlan(planId?: string) {
   return plans[(planId as PortalPlanId) || "signals"] || plans.signals;

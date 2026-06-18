@@ -1,5 +1,19 @@
 [
   {
+    "id": "glamping-rocks",
+    "slug": "glamping-rocks",
+    "name": "Glamping Rocks",
+    "clientName": "Glamping Rocks",
+    "businessType": "Glamping",
+    "plan": "signals-elite",
+    "activePlan": "signals-elite",
+    "status": "active",
+    "accessKey": "lk_F4bQUFfoVmw",
+    "createdAt": "2026-06-18T15:06:45.616Z",
+    "updatedAt": "2026-06-18T15:06:45.616Z",
+    "billingDueInDays": 30
+  },
+  {
     "id": "my-glamping",
     "slug": "my-glamping",
     "name": "My Glamping",

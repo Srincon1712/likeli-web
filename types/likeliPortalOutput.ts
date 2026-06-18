@@ -4,9 +4,15 @@ export type PortalPlanId = "signals" | "signals-pro" | "signals-elite";
 export type LikeliOutputItem = Record<string, unknown> & { id?: string };
 
 export interface LikeliClientPortalOutput {
+  schemaVersion?: string;
+  generatedAt?: string;
+  portal?: Record<string, unknown>;
+  businessContext?: Record<string, unknown>;
+  analysis?: Record<string, unknown>;
+  modules?: import("./portalSchema").CanonicalPortalModules;
   meta?: Record<string, unknown>;
   clientProfile?: Record<string, unknown>;
-  plan?: { id?: OutputPlanId | string; planId?: OutputPlanId | string; label?: string };
+  plan?: Record<string, unknown> & { id?: OutputPlanId | string; planId?: OutputPlanId | string; label?: string };
   executiveSummary?: Record<string, unknown>;
   diagnosis?: Record<string, unknown>;
   trends?: LikeliOutputItem[];
@@ -24,6 +30,9 @@ export interface LikeliClientPortalOutput {
   prioritizationMatrix?: LikeliOutputItem[];
   reviewChecklists?: Record<string, unknown>;
   finalRecommendation?: Record<string, unknown>;
+  caseLibraries?: import("./portalSchema").PortalCaseLibraries;
+  successCases?: LikeliOutputItem[];
+  failureCases?: LikeliOutputItem[];
 }
 
 export interface StoredLikeliOutput {

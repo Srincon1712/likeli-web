@@ -1,16 +1,19 @@
-import { defaultContent } from "@/data/defaultContent";
+import { adaptPortalOutput } from "@/lib/portalDataAdapter";
 import type { ClientPortal, LikeliClientPortalOutput } from "@/types/likeliPortalOutput";
 
 export function getPortalOutputSections(client: ClientPortal) {
-  const output = client.likeliOutput?.output;
+  const rawOutput = client.likeliOutput?.output;
+  const output = rawOutput
+    ? adaptPortalOutput(rawOutput, { createdAt: client.createdAt, plan: client.activePlan }).output
+    : undefined;
   const premiumEnabled = client.activePlan !== "signals";
-  const source = (output || defaultContent) as LikeliClientPortalOutput & typeof defaultContent;
+  const source = (output || {}) as LikeliClientPortalOutput;
 
   return {
     overview: {
       executiveSummary: output?.executiveSummary || {},
       diagnosis: output?.diagnosis || {},
-      finalRecommendation: output?.finalRecommendation || defaultContent.likeliScore,
+      finalRecommendation: output?.finalRecommendation || {},
     },
     trends: source.trends || [],
     opportunities: source.opportunities || [],
@@ -27,6 +30,7 @@ export function getPortalOutputSections(client: ClientPortal) {
     prioritization: output?.prioritizationMatrix || [],
     checklists: output?.reviewChecklists || {},
     finalRecommendation: output?.finalRecommendation || {},
+    caseLibraries: output?.caseLibraries || { successCases: [], failureCases: [] },
     hasImportedOutput: Boolean(output),
   };
 }

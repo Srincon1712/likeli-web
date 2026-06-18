@@ -2,6 +2,8 @@ import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import path from "path";
 import { randomBytes } from "crypto";
 import { mockClients } from "@/data/portalData";
+import { adaptPortalOutput } from "@/lib/portalDataAdapter";
+import { canonicalToPortalPlan } from "@/lib/portalSchema";
 import type { ClientPortal, LikeliClientPortalOutput, PortalPlanId, StoredLikeliOutput } from "@/types/likeliPortalOutput";
 
 export type PortalStatus = "active" | "inactive";
@@ -158,13 +160,14 @@ export async function savePortalOutput(slug: string, output: LikeliClientPortalO
   const portal = await getPortalBySlug(slug, { includeMocks: true, includeOutputs: false });
   if (!portal) return null;
   const normalizedPlan = normalizePlan(portalPlanId);
+  const adapted = adaptPortalOutput(output, { createdAt: portal.createdAt, plan: normalizedPlan }).output;
 
   const stored: StoredLikeliOutput = {
     outputType: "LIKELI_CLIENT_PORTAL_OUTPUT",
     importedAt: new Date().toISOString(),
-    version: String(output.meta?.version || "1.0"),
+    version: String(adapted.schemaVersion || adapted.meta?.version || "2.0"),
     portalPlanId: normalizedPlan,
-    output,
+    output: adapted,
   };
 
   await ensurePortalStore();
@@ -284,7 +287,7 @@ function normalizeStatus(status: unknown): PortalStatus {
 
 function normalizePlan(plan: unknown): PortalPlanId {
   if (typeof plan === "string" && validPlans.has(plan as PortalPlanId)) return plan as PortalPlanId;
-  return "signals";
+  return canonicalToPortalPlan(plan);
 }
 
 function generateAccessKey() {

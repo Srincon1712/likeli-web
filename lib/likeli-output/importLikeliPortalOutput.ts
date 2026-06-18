@@ -1,6 +1,7 @@
+import { adaptPortalOutput, validatePortalOutput } from "@/lib/portalDataAdapter";
+import { normalizeCanonicalPlan, PORTAL_PLAN_RULES, portalToCanonicalPlan } from "@/lib/portalSchema";
 import type { LikeliClientPortalOutput, OutputPlanId, PortalPlanId } from "@/types/likeliPortalOutput";
 
-const outputPlanIds = new Set(["signals", "signals_pro", "signals_elite"]);
 export const portalToOutputPlan: Record<PortalPlanId, OutputPlanId> = {
   signals: "signals",
   "signals-pro": "signals_pro",
@@ -8,48 +9,36 @@ export const portalToOutputPlan: Record<PortalPlanId, OutputPlanId> = {
 };
 
 export const planRequirements = {
-  signals: { contentIdeas: 20, hooksLibrary: 20, captionsLibrary: 20, ctaLibrary: 20, trends: 4, opportunities: 4, scripts: 0, premium: false },
-  signals_pro: { contentIdeas: 30, hooksLibrary: 30, captionsLibrary: 30, ctaLibrary: 30, trends: 4, opportunities: 4, scripts: 12, premium: true },
-  signals_elite: { contentIdeas: 40, hooksLibrary: 40, captionsLibrary: 40, ctaLibrary: 40, trends: 4, opportunities: 4, scripts: 16, premium: true },
-};
-
-const arrayFields = [
-  "trends",
-  "opportunities",
-  "contentIdeas",
-  "hooksLibrary",
-  "captionsLibrary",
-  "ctaLibrary",
-  "scripts",
-  "contentCalendar",
-  "monthlyRoadmap",
-  "prioritizationMatrix",
-] as const;
-
-const objectFields = [
-  "meta",
-  "clientProfile",
-  "plan",
-  "executiveSummary",
-  "diagnosis",
-  "predictions",
-  "likeliScore",
-  "benchmarks",
-  "reviewChecklists",
-  "finalRecommendation",
-] as const;
-
-const idPrefixes: Record<(typeof arrayFields)[number], string> = {
-  contentIdeas: "idea",
-  hooksLibrary: "hook",
-  captionsLibrary: "caption",
-  ctaLibrary: "cta",
-  trends: "trend",
-  opportunities: "opportunity",
-  scripts: "script",
-  contentCalendar: "calendar",
-  monthlyRoadmap: "roadmap",
-  prioritizationMatrix: "priority",
+  signals: {
+    contentIdeas: PORTAL_PLAN_RULES.signals.ideas,
+    hooksLibrary: PORTAL_PLAN_RULES.signals.hooks,
+    captionsLibrary: PORTAL_PLAN_RULES.signals.captions,
+    ctaLibrary: PORTAL_PLAN_RULES.signals.ctas,
+    trends: PORTAL_PLAN_RULES.signals.trends,
+    opportunities: PORTAL_PLAN_RULES.signals.opportunities,
+    scripts: 0,
+    premium: false,
+  },
+  signals_pro: {
+    contentIdeas: PORTAL_PLAN_RULES.signals_pro.ideas,
+    hooksLibrary: PORTAL_PLAN_RULES.signals_pro.hooks,
+    captionsLibrary: PORTAL_PLAN_RULES.signals_pro.captions,
+    ctaLibrary: PORTAL_PLAN_RULES.signals_pro.ctas,
+    trends: PORTAL_PLAN_RULES.signals_pro.trends,
+    opportunities: PORTAL_PLAN_RULES.signals_pro.opportunities,
+    scripts: PORTAL_PLAN_RULES.signals_pro.scripts,
+    premium: true,
+  },
+  signals_elite: {
+    contentIdeas: PORTAL_PLAN_RULES.signals_elite.ideas,
+    hooksLibrary: PORTAL_PLAN_RULES.signals_elite.hooks,
+    captionsLibrary: PORTAL_PLAN_RULES.signals_elite.captions,
+    ctaLibrary: PORTAL_PLAN_RULES.signals_elite.ctas,
+    trends: PORTAL_PLAN_RULES.signals_elite.trends,
+    opportunities: PORTAL_PLAN_RULES.signals_elite.opportunities,
+    scripts: PORTAL_PLAN_RULES.signals_elite.scripts,
+    premium: true,
+  },
 };
 
 export function extractJsonFromText(input: string) {
@@ -62,7 +51,6 @@ export function extractJsonFromText(input: string) {
 
   const start = source.indexOf("{");
   if (start === -1) throw new Error("No se pudo leer el JSON. Verifica que el texto sea un JSON valido.");
-
   let depth = 0;
   let inString = false;
   let escaped = false;
@@ -83,12 +71,8 @@ export function extractJsonFromText(input: string) {
     }
     if (inString) continue;
     if (char === "{") depth += 1;
-    if (char === "}") {
-      depth -= 1;
-      if (depth === 0) return source.slice(start, index + 1);
-    }
+    if (char === "}" && --depth === 0) return source.slice(start, index + 1);
   }
-
   throw new Error("No se pudo leer el JSON. Verifica que el texto sea un JSON valido.");
 }
 
@@ -100,126 +84,40 @@ export function parseLikeliPortalOutput(input: string) {
   }
 }
 
-function isPlainObject(value: unknown): value is Record<string, unknown> {
-  return Boolean(value && typeof value === "object" && !Array.isArray(value));
-}
-
-function getOutputPlanId(data: LikeliClientPortalOutput) {
-  return String(data?.plan?.id || data?.plan?.planId || "");
-}
-
 export function validateLikeliPortalOutput(data: LikeliClientPortalOutput) {
-  const errors: string[] = [];
-  const warnings: string[] = [];
-
-  if (!isPlainObject(data)) {
-    return { ok: false, errors: ["El output debe ser un objeto JSON."], warnings, data: null };
-  }
-
-  if (!isPlainObject(data.meta)) {
-    errors.push("Falta meta.");
-  } else {
-    if (data.meta.outputType !== "LIKELI_CLIENT_PORTAL_OUTPUT") errors.push("outputType incorrecto. Debe ser LIKELI_CLIENT_PORTAL_OUTPUT.");
-    if (data.meta.version !== "1.0") errors.push("Version no soportada. Debe ser 1.0.");
-  }
-
-  const planId = getOutputPlanId(data);
-  if (!outputPlanIds.has(planId)) errors.push("plan.id debe ser signals, signals_pro o signals_elite.");
-
-  arrayFields.forEach((field) => {
-    if (!Array.isArray(data[field])) errors.push(`${field} debe ser array.`);
-  });
-
-  objectFields.forEach((field) => {
-    if (data[field] == null) warnings.push(`${field} esta vacio y sera normalizado.`);
-  });
-
-  if (outputPlanIds.has(planId)) validatePlanQuantities(data, planId as OutputPlanId, errors);
-
-  return { ok: errors.length === 0, errors, warnings, data };
+  const validation = validatePortalOutput(data);
+  return {
+    ok: validation.ok,
+    errors: validation.errors,
+    warnings: validation.warnings.map((warning) => warning.message),
+    data: validation.ok ? data : null,
+  };
 }
 
-function validatePlanQuantities(data: LikeliClientPortalOutput, planId: OutputPlanId, errors: string[]) {
-  const requirements = planRequirements[planId];
-  (["contentIdeas", "hooksLibrary", "captionsLibrary", "ctaLibrary", "trends", "opportunities"] as const).forEach((field) => {
-    const length = data[field]?.length || 0;
-    if (length < requirements[field]) errors.push(`${field} tiene menos items que el minimo del plan (${length}/${requirements[field]}).`);
-  });
-
-  if (planId === "signals") {
-    if ((data.scripts?.length || 0) > 0) errors.push("Signals debe tener scripts vacio.");
-    if (data.predictions?.enabled === true) errors.push("Signals debe tener predictions.enabled en false.");
-    if (data.likeliScore?.enabled === true) errors.push("Signals debe tener likeliScore.enabled en false.");
-    if (data.benchmarks?.enabled === true) errors.push("Signals debe tener benchmarks.enabled en false.");
-    if ((data.contentCalendar?.length || 0) > 0) errors.push("Signals debe tener contentCalendar vacio.");
-    if ((data.monthlyRoadmap?.length || 0) > 0) errors.push("Signals debe tener monthlyRoadmap vacio.");
-    return;
-  }
-
-  if ((data.scripts?.length || 0) < requirements.scripts) errors.push(`scripts tiene menos items que el minimo del plan (${data.scripts?.length || 0}/${requirements.scripts}).`);
-  if (data.predictions?.enabled !== true) errors.push(`${planId} debe tener predictions.enabled en true.`);
-  if (data.likeliScore?.enabled !== true) errors.push(`${planId} debe tener likeliScore.enabled en true.`);
-  if (data.benchmarks?.enabled !== true) errors.push(`${planId} debe tener benchmarks.enabled en true.`);
-  if ((data.contentCalendar?.length || 0) === 0) errors.push(`${planId} debe traer contentCalendar con contenido.`);
-  if ((data.monthlyRoadmap?.length || 0) === 0) errors.push(`${planId} debe traer monthlyRoadmap con contenido.`);
-}
-
-function normalizeValue(value: unknown): unknown {
-  if (value == null) return "";
-  if (Array.isArray(value)) return value.map((item) => normalizeValue(item));
-  if (isPlainObject(value)) return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, normalizeValue(item)]));
-  return value;
-}
-
-function normalizeObject(value: unknown) {
-  return isPlainObject(value) ? (normalizeValue(value) as Record<string, unknown>) : {};
-}
-
-function normalizeItemArray(value: unknown, prefix: string) {
-  const items = Array.isArray(value) ? value : [];
-  const usedIds = new Set<string>();
-  return items.map((item, index) => {
-    const normalized = isPlainObject(item) ? (normalizeValue(item) as Record<string, unknown>) : { value: normalizeValue(item) };
-    const fallbackId = `${prefix}_${String(index + 1).padStart(3, "0")}`;
-    const rawId = String(normalized.id || "").trim();
-    const id = rawId && !usedIds.has(rawId) ? rawId : fallbackId;
-    usedIds.add(id);
-    return { ...normalized, id };
-  });
-}
-
-export function normalizeLikeliPortalOutput(data: LikeliClientPortalOutput): LikeliClientPortalOutput {
-  const output: LikeliClientPortalOutput = { ...data };
-  objectFields.forEach((field) => {
-    output[field] = normalizeObject(output[field]) as never;
-  });
-  arrayFields.forEach((field) => {
-    output[field] = normalizeItemArray(output[field], idPrefixes[field]) as never;
-  });
-  output.plan = { ...output.plan, id: getOutputPlanId(output) };
-  return output;
+export function normalizeLikeliPortalOutput(data: LikeliClientPortalOutput, options: { createdAt?: string; plan?: unknown } = {}) {
+  return adaptPortalOutput(data, options).output;
 }
 
 export function validatePlanCompatibility(outputPlanId: string, portalPlanId: PortalPlanId) {
-  const normalizedPortalPlanId = portalToOutputPlan[portalPlanId];
-  if (!outputPlanIds.has(outputPlanId)) return { ok: false, message: "El plan del JSON no es valido." };
-  if (outputPlanId !== normalizedPortalPlanId) {
-    return { ok: false, message: `El plan del JSON (${outputPlanId}) no coincide con el plan actual del portal (${portalPlanId}).` };
+  const outputPlan = normalizeCanonicalPlan(outputPlanId);
+  const portalPlan = portalToCanonicalPlan(portalPlanId);
+  if (outputPlan !== portalPlan) {
+    return { ok: false, message: `El plan del JSON (${outputPlan}) no coincide con el plan actual del portal (${portalPlan}).` };
   }
   return { ok: true, message: "Plan compatible." };
 }
 
 export function buildImportPreview(output: LikeliClientPortalOutput, portalPlanId: PortalPlanId) {
-  const portalOutputPlanId = portalToOutputPlan[portalPlanId];
-  const requirements = planRequirements[portalOutputPlanId] || planRequirements.signals;
-  const clientProfile = output.clientProfile || {};
+  const outputPlanId = normalizeCanonicalPlan(output.portal?.plan || output.plan?.id);
+  const requirements = planRequirements[portalToOutputPlan[portalPlanId]];
+  const profile = output.portal || output.clientProfile || {};
   return {
-    clientName: String(clientProfile.businessName || clientProfile.clientName || "No especificado"),
-    outputPlanId: String(output.plan?.id || ""),
-    outputPlanLabel: String(output.plan?.label || output.plan?.id || ""),
+    clientName: String(profile.businessName || profile.clientName || "No especificado"),
+    outputPlanId,
+    outputPlanLabel: PORTAL_PLAN_RULES[outputPlanId].label,
     portalPlanId,
-    version: String(output.meta?.version || ""),
-    generatedAt: String(output.meta?.generatedAt || ""),
+    version: String(output.schemaVersion || output.meta?.version || ""),
+    generatedAt: String(output.generatedAt || output.meta?.generatedAt || ""),
     counts: {
       contentIdeas: output.contentIdeas?.length || 0,
       hooksLibrary: output.hooksLibrary?.length || 0,
@@ -235,17 +133,24 @@ export function buildImportPreview(output: LikeliClientPortalOutput, portalPlanI
 
 export function readAndValidateLikeliPortalOutput(rawInput: string, portalPlanId: PortalPlanId) {
   const parsed = parseLikeliPortalOutput(rawInput);
-  const validation = validateLikeliPortalOutput(parsed);
-  if (!validation.ok || !validation.data) {
-    return { ok: false, errors: validation.errors, warnings: validation.warnings, output: null, preview: null };
+  const validation = validatePortalOutput(parsed);
+  if (!validation.ok) {
+    return {
+      ok: false,
+      errors: validation.errors,
+      warnings: validation.warnings.map((warning) => warning.message),
+      output: null,
+      preview: null,
+    };
   }
 
-  const normalized = normalizeLikeliPortalOutput(validation.data);
-  const planCompatibility = validatePlanCompatibility(String(normalized.plan?.id || ""), portalPlanId);
-  const preview = buildImportPreview(normalized, portalPlanId);
+  const adapted = adaptPortalOutput(parsed, { plan: portalPlanId });
+  const planCompatibility = validatePlanCompatibility(String(adapted.output.portal.plan || ""), portalPlanId);
+  const warnings = [...validation.warnings, ...adapted.warnings].map((warning) => warning.message);
+  const preview = buildImportPreview(adapted.output, portalPlanId);
+
   if (!planCompatibility.ok) {
-    return { ok: false, errors: [planCompatibility.message], warnings: validation.warnings, output: normalized, preview };
+    return { ok: false, errors: [planCompatibility.message], warnings, output: adapted.output, preview };
   }
-
-  return { ok: true, errors: [], warnings: validation.warnings, output: normalized, preview };
+  return { ok: true, errors: [], warnings, output: adapted.output, preview };
 }
