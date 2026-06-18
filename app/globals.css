@@ -4369,3 +4369,851 @@
     transition: none;
   }
 }
+
+/* Trends radar */
+.portal-scope .trends-radar {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+
+.portal-scope .radar-summary {
+  display: grid;
+  grid-template-columns: 150px minmax(230px, 1fr) minmax(280px, auto);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(159, 183, 255, 0.14);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(159, 183, 255, 0.1), transparent 22rem),
+    linear-gradient(135deg, rgba(20, 24, 34, 0.97), rgba(10, 12, 18, 0.96));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.045);
+  padding: clamp(20px, 3vw, 30px);
+}
+
+.portal-scope .radar-summary__visual {
+  position: relative;
+  display: grid;
+  width: 140px;
+  height: 140px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(159, 183, 255, 0.18);
+  border-radius: 999px;
+  background:
+    linear-gradient(rgba(159, 183, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(159, 183, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(159, 183, 255, 0.07), rgba(8, 11, 17, 0.72) 68%);
+  background-size: 23px 23px, 23px 23px, auto;
+  box-shadow: inset 0 0 38px rgba(0, 0, 0, 0.42), 0 0 38px rgba(159, 183, 255, 0.05);
+}
+
+.portal-scope .radar-summary__visual::before,
+.portal-scope .radar-summary__visual::after {
+  content: "";
+  position: absolute;
+  background: rgba(159, 183, 255, 0.14);
+}
+
+.portal-scope .radar-summary__visual::before {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 1px;
+}
+
+.portal-scope .radar-summary__visual::after {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+
+.portal-scope .radar-ring {
+  position: absolute;
+  border: 1px solid rgba(159, 183, 255, 0.15);
+  border-radius: 999px;
+}
+
+.portal-scope .radar-ring--one { width: 108px; height: 108px; }
+.portal-scope .radar-ring--two { width: 74px; height: 74px; }
+.portal-scope .radar-ring--three { width: 38px; height: 38px; }
+
+.portal-scope .radar-sweep {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 66px;
+  height: 66px;
+  transform-origin: 0 0;
+  background: conic-gradient(from 4deg, rgba(159, 183, 255, 0.24), transparent 34%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  animation: radarSweep 4.8s linear infinite;
+}
+
+.portal-scope .radar-summary__visual > svg {
+  z-index: 3;
+  color: rgba(220, 228, 255, 0.74);
+  filter: drop-shadow(0 0 9px rgba(159, 183, 255, 0.38));
+}
+
+.portal-scope .radar-summary__visual i {
+  position: absolute;
+  z-index: 2;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #a9c0ff;
+  box-shadow: 0 0 8px rgba(159, 183, 255, 0.86);
+}
+
+.portal-scope .radar-summary__visual i:nth-of-type(1) { top: 28px; left: 86px; }
+.portal-scope .radar-summary__visual i:nth-of-type(2) { top: 47px; left: 114px; }
+.portal-scope .radar-summary__visual i:nth-of-type(3) { top: 92px; left: 103px; }
+.portal-scope .radar-summary__visual i:nth-of-type(4) { top: 112px; left: 58px; }
+.portal-scope .radar-summary__visual i:nth-of-type(5) { top: 76px; left: 30px; }
+.portal-scope .radar-summary__visual i:nth-of-type(6) { top: 42px; left: 45px; }
+.portal-scope .radar-summary__visual i:nth-of-type(7) { top: 79px; left: 78px; }
+
+.portal-scope .radar-summary__content {
+  min-width: 0;
+}
+
+.portal-scope .radar-summary__content h3 {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.14;
+}
+
+.portal-scope .radar-summary__content > p:last-child {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.portal-scope .radar-summary__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(112px, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.portal-scope .radar-metric {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.028);
+  padding: 10px;
+}
+
+.portal-scope .radar-metric svg {
+  grid-row: 1 / 3;
+  align-self: center;
+  color: var(--accent-2);
+}
+
+.portal-scope .radar-metric strong {
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
+.portal-scope .radar-metric span {
+  overflow: hidden;
+  color: var(--soft);
+  font-size: 0.62rem;
+  font-weight: 760;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.portal-scope .trend-filters {
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 1px 1px 5px;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+  scrollbar-width: thin;
+}
+
+.portal-scope .trend-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 720;
+  padding: 7px 10px 7px 13px;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+}
+
+.portal-scope .trend-filters button:hover,
+.portal-scope .trend-filters button:focus-visible,
+.portal-scope .trend-filters button.is-active {
+  border-color: rgba(159, 183, 255, 0.28);
+  background: rgba(159, 183, 255, 0.09);
+  color: #e3e9ff;
+  outline: none;
+}
+
+.portal-scope .trend-filters small {
+  display: inline-grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: inherit;
+  font-size: 0.62rem;
+}
+
+.portal-scope .trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+  gap: 15px;
+  min-width: 0;
+}
+
+.portal-scope .trend-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  min-height: 355px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(20, 24, 34, 0.96), rgba(11, 13, 19, 0.95));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.portal-scope .trend-card:hover,
+.portal-scope .trend-card:focus-visible {
+  border-color: rgba(159, 183, 255, 0.28);
+  box-shadow: 0 25px 58px rgba(0, 0, 0, 0.29), 0 0 0 1px rgba(159, 183, 255, 0.035);
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.portal-scope .trend-card__beam {
+  position: absolute;
+  z-index: -1;
+  top: -130px;
+  right: -140px;
+  width: 300px;
+  height: 300px;
+  border-radius: 999px;
+  background: conic-gradient(from 210deg, transparent, rgba(159, 183, 255, 0.1), transparent 35%);
+  transform: rotate(-15deg);
+  transition: transform 500ms ease;
+}
+
+.portal-scope .trend-card:hover .trend-card__beam {
+  transform: rotate(18deg);
+}
+
+.portal-scope .trend-card > header,
+.portal-scope .trend-card > footer,
+.portal-scope .trend-drawer__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.portal-scope .trend-card > header > svg {
+  flex: 0 0 auto;
+  color: rgba(245, 247, 251, 0.45);
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.portal-scope .trend-card:hover > header > svg {
+  color: var(--accent-2);
+  transform: translate(2px, -2px);
+}
+
+.portal-scope .trend-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+
+.portal-scope .trend-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  max-width: 100%;
+  border: 1px solid rgba(159, 183, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(159, 183, 255, 0.07);
+  color: #dfe6ff;
+  font-size: 0.66rem;
+  font-weight: 760;
+  padding: 6px 9px;
+}
+
+.portal-scope .trend-tag.is-emerging {
+  border-color: rgba(141, 240, 198, 0.22);
+  background: rgba(141, 240, 198, 0.08);
+  color: #dcfff2;
+}
+
+.portal-scope .trend-tag.is-warning {
+  border-color: rgba(255, 177, 117, 0.23);
+  background: rgba(255, 177, 117, 0.08);
+  color: #ffd5b3;
+}
+
+.portal-scope .trend-tag.is-stable {
+  border-color: rgba(163, 170, 184, 0.2);
+  background: rgba(163, 170, 184, 0.07);
+  color: #c9cfda;
+}
+
+.portal-scope .trend-tag.is-evidence {
+  border-color: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+}
+
+.portal-scope .trend-card__title {
+  display: grid;
+  gap: 9px;
+  margin: 29px 0 20px;
+}
+
+.portal-scope .trend-card__title > span {
+  color: var(--soft);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-card__title h3 {
+  display: -webkit-box;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: clamp(1.18rem, 2.2vw, 1.45rem);
+  line-height: 1.22;
+  overflow: hidden;
+}
+
+.portal-scope .trend-card__title p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.portal-scope .trend-card__title p svg {
+  flex: 0 0 auto;
+  color: var(--accent-2);
+}
+
+.portal-scope .trend-card__signal {
+  min-width: 0;
+  border: 1px solid rgba(159, 183, 255, 0.11);
+  border-radius: 12px;
+  background: rgba(159, 183, 255, 0.04);
+  padding: 12px;
+}
+
+.portal-scope .trend-card__signal > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #bfcdf6;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-card__signal p {
+  display: -webkit-box;
+  margin: 7px 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.52;
+  overflow: hidden;
+}
+
+.portal-scope .trend-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.portal-scope .trend-card__metrics > div {
+  min-width: 0;
+  border-left: 2px solid rgba(141, 240, 198, 0.24);
+  background: rgba(255, 255, 255, 0.022);
+  padding: 8px 10px;
+}
+
+.portal-scope .trend-card__metrics span {
+  display: block;
+  color: var(--soft);
+  font-size: 0.61rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-card__metrics strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portal-scope .trend-card > footer {
+  min-width: 0;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
+  padding-top: 14px;
+}
+
+.portal-scope .trend-card > footer span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--soft);
+  font-size: 0.72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.portal-scope .trend-card > footer strong {
+  flex: 0 0 auto;
+  color: #bfcdf6;
+  font-size: 0.75rem;
+}
+
+.portal-scope .trend-drawer-backdrop {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: rgba(3, 5, 9, 0.7);
+  backdrop-filter: blur(10px);
+  animation: trendBackdropIn 190ms ease both;
+}
+
+.portal-scope .trend-drawer-backdrop.is-closing {
+  animation: trendBackdropOut 190ms ease both;
+}
+
+.portal-scope .trend-drawer {
+  display: flex;
+  width: min(100%, 720px);
+  height: 100dvh;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 1px solid rgba(159, 183, 255, 0.15);
+  background:
+    radial-gradient(circle at 100% 0, rgba(159, 183, 255, 0.09), transparent 28rem),
+    linear-gradient(145deg, rgba(18, 21, 30, 0.995), rgba(8, 10, 15, 0.995));
+  box-shadow: -32px 0 100px rgba(0, 0, 0, 0.52);
+  animation: trendDrawerIn 240ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.portal-scope .trend-drawer-backdrop.is-closing .trend-drawer {
+  animation: trendDrawerOut 190ms ease both;
+}
+
+.portal-scope .trend-drawer__header {
+  display: grid;
+  gap: 24px;
+  flex: 0 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.085);
+  background: linear-gradient(180deg, rgba(159, 183, 255, 0.035), transparent);
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.portal-scope .trend-drawer__topline > button {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.portal-scope .trend-drawer__topline > button:hover,
+.portal-scope .trend-drawer__topline > button:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  outline: none;
+}
+
+.portal-scope .trend-drawer__header h2 {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(1.65rem, 4vw, 2.55rem);
+  line-height: 1.08;
+}
+
+.portal-scope .trend-drawer__context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 16px;
+  margin-top: 14px;
+}
+
+.portal-scope .trend-drawer__context span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.portal-scope .trend-drawer__context svg {
+  color: var(--accent-2);
+}
+
+.portal-scope .trend-drawer__scores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.portal-scope .trend-drawer__scores > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 9px;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.028);
+  padding: 12px;
+}
+
+.portal-scope .trend-drawer__scores svg {
+  grid-row: 1 / 3;
+  align-self: center;
+  color: var(--accent);
+}
+
+.portal-scope .trend-drawer__scores span {
+  color: var(--soft);
+  font-size: 0.63rem;
+  font-weight: 780;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-drawer__scores strong {
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.portal-scope .trend-drawer__content {
+  display: grid;
+  gap: 13px;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(15px, 3vw, 27px);
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: thin;
+}
+
+.portal-scope .trend-drawer-section {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: clamp(15px, 2.5vw, 20px);
+}
+
+.portal-scope .trend-drawer-section.is-accent {
+  border-color: rgba(159, 183, 255, 0.13);
+  background: linear-gradient(135deg, rgba(159, 183, 255, 0.05), rgba(159, 183, 255, 0.015));
+}
+
+.portal-scope .trend-drawer-section > header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+}
+
+.portal-scope .trend-drawer-section > header > span {
+  display: inline-grid;
+  width: 31px;
+  height: 31px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(159, 183, 255, 0.17);
+  border-radius: 9px;
+  background: rgba(159, 183, 255, 0.07);
+  color: var(--accent-2);
+}
+
+.portal-scope .trend-drawer-section h3 {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.portal-scope .trend-drawer-section p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+  white-space: pre-line;
+}
+
+.portal-scope .trend-drawer__lead,
+.portal-scope .trend-action-copy {
+  color: #e8ecf7 !important;
+  font-size: 0.94rem;
+}
+
+.portal-scope .trend-evidence,
+.portal-scope .trend-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.portal-scope .trend-evidence span,
+.portal-scope .trend-chip-list span {
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  font-size: 0.69rem;
+  line-height: 1.25;
+  padding: 7px 9px;
+  overflow-wrap: anywhere;
+}
+
+.portal-scope .trend-derived-ideas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.portal-scope .trend-derived-ideas article {
+  display: grid;
+  grid-template-columns: 27px minmax(0, 1fr);
+  gap: 9px;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 11px;
+}
+
+.portal-scope .trend-derived-ideas article > span {
+  display: inline-grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(159, 183, 255, 0.08);
+  color: var(--accent-2);
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.portal-scope .trend-derived-ideas p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.portal-scope .trend-application-grid,
+.portal-scope .trend-timing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.portal-scope .trend-detail-label {
+  display: block;
+  color: var(--soft);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-text-block p {
+  margin-top: 5px;
+  font-size: 0.84rem;
+}
+
+.portal-scope .trend-drawer-section blockquote {
+  margin: 0;
+  border-left: 2px solid rgba(159, 183, 255, 0.3);
+  color: #e7eaf2;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  padding-left: 14px;
+}
+
+.portal-scope .trend-risk-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.portal-scope .trend-risk-list li {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.portal-scope .trend-next-step {
+  border: 1px solid rgba(141, 240, 198, 0.18);
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(141, 240, 198, 0.08), rgba(141, 240, 198, 0.025));
+  padding: 17px;
+}
+
+.portal-scope .trend-next-step > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.portal-scope .trend-next-step p {
+  margin: 8px 0 0;
+  color: #e5fff5;
+  font-size: 0.94rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+@keyframes radarSweep {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes trendBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes trendBackdropOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes trendDrawerIn {
+  from { opacity: 0; transform: translateX(45px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes trendDrawerOut {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(35px); }
+}
+
+@media (max-width: 1060px) {
+  .portal-scope .radar-summary {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .portal-scope .radar-summary__visual {
+    width: 124px;
+    height: 124px;
+  }
+
+  .portal-scope .radar-summary__metrics {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .portal-scope .radar-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-scope .radar-summary__visual {
+    width: 112px;
+    height: 112px;
+  }
+
+  .portal-scope .radar-summary__metrics {
+    grid-column: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portal-scope .trend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-scope .trend-card {
+    min-height: 325px;
+  }
+
+  .portal-scope .trend-drawer {
+    width: calc(100% - 10px);
+    height: calc(100dvh - 10px);
+    margin: 5px;
+    border: 1px solid rgba(159, 183, 255, 0.15);
+    border-radius: 20px;
+  }
+
+  .portal-scope .trend-drawer__scores,
+  .portal-scope .trend-derived-ideas,
+  .portal-scope .trend-application-grid,
+  .portal-scope .trend-timing {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-scope .radar-sweep,
+  .portal-scope .trend-card,
+  .portal-scope .trend-card__beam,
+  .portal-scope .trend-drawer-backdrop,
+  .portal-scope .trend-drawer {
+    animation: none;
+    transition: none;
+  }
+}
