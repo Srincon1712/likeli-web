@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArrowLeft, ArrowRight, Check, X } from "lucide-react";
 import { PORTAL_TUTORIAL_STEPS, type PortalTutorialStep } from "@/data/portalTutorial";
 
@@ -10,6 +10,35 @@ type TargetRect = {
   width: number;
   height: number;
 };
+
+type PanelPlacement = "left" | "right" | "above" | "below";
+
+type PanelSize = {
+  width: number;
+  height: number;
+};
+
+const PANEL_PLACEMENTS: PanelPlacement[] = [
+  "left",
+  "right",
+  "left",
+  "below",
+  "right",
+  "right",
+  "below",
+  "below",
+  "below",
+  "below",
+  "below",
+  "below",
+  "above",
+  "below",
+  "below",
+  "below",
+  "below",
+  "left",
+  "left",
+];
 
 type TutorialCapabilities = {
   hasCaseLibrary: boolean;
@@ -41,6 +70,7 @@ export function PortalTutorial({
   );
   const [stepIndex, setStepIndex] = useState(0);
   const [targetRect, setTargetRect] = useState<TargetRect | null>(null);
+  const [panelSize, setPanelSize] = useState<PanelSize>({ width: 274, height: 267 });
   const panelRef = useRef<HTMLElement>(null);
   const step = steps[stepIndex];
   const isLastStep = stepIndex === steps.length - 1;
@@ -133,9 +163,35 @@ export function PortalTutorial({
     panelRef.current?.focus({ preventScroll: true });
   }, [stepIndex]);
 
+  useLayoutEffect(() => {
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const updatePanelSize = () => {
+      const scale = Number.parseFloat(window.getComputedStyle(panel).scale) || 1;
+      const width = panel.offsetWidth * scale;
+      const height = panel.offsetHeight * scale;
+      setPanelSize((current) => (
+        Math.abs(current.width - width) < 0.5 && Math.abs(current.height - height) < 0.5
+          ? current
+          : { width, height }
+      ));
+    };
+
+    const resizeObserver = new ResizeObserver(updatePanelSize);
+    resizeObserver.observe(panel);
+    updatePanelSize();
+
+    return () => resizeObserver.disconnect();
+  }, [step]);
+
   if (!step) return null;
 
-  const panelStyle = getPanelPosition(targetRect);
+  const panelStyle = getPanelPosition(
+    targetRect,
+    panelSize,
+    PANEL_PLACEMENTS[stepIndex] ?? "below",
+  );
 
   const finish = () => {
     try {
@@ -236,25 +292,47 @@ function isVisible(element: HTMLElement | null): element is HTMLElement {
   return style.display !== "none" && style.visibility !== "hidden";
 }
 
-function getPanelPosition(target: TargetRect | null): CSSProperties {
+function getPanelPosition(
+  target: TargetRect | null,
+  panel: PanelSize,
+  placement: PanelPlacement,
+): CSSProperties {
   if (!target || typeof window === "undefined" || window.innerWidth <= 700) return {};
 
-  const panelWidth = 410;
-  const panelGap = 22;
+  const panelGap = 12;
   const margin = 20;
-  const estimatedHeight = Math.min(540, window.innerHeight - margin * 2);
-  let left = target.left + target.width + panelGap;
+  const targetRight = target.left + target.width;
+  const targetBottom = target.top + target.height;
+  const centeredLeft = target.left + (target.width - panel.width) / 2;
+  const centeredTop = target.top + (target.height - panel.height) / 2;
 
-  if (left + panelWidth > window.innerWidth - margin) {
-    left = target.left - panelWidth - panelGap;
-  }
-  if (left < margin) {
-    left = Math.min(window.innerWidth - panelWidth - margin, Math.max(margin, target.left));
+  if (placement === "left") {
+    return {
+      left: target.left - panel.width - panelGap,
+      top: clamp(centeredTop, margin, window.innerHeight - panel.height - margin),
+    };
   }
 
-  const top = Math.min(
-    window.innerHeight - estimatedHeight - margin,
-    Math.max(margin, target.top + Math.min(36, target.height / 3)),
-  );
-  return { left, top: Math.max(margin, top) };
+  if (placement === "right") {
+    return {
+      left: targetRight + panelGap,
+      top: clamp(centeredTop, margin, window.innerHeight - panel.height - margin),
+    };
+  }
+
+  if (placement === "above") {
+    return {
+      left: clamp(centeredLeft, margin, window.innerWidth - panel.width - margin),
+      top: target.top - panel.height - panelGap,
+    };
+  }
+
+  return {
+    left: clamp(centeredLeft, margin, window.innerWidth - panel.width - margin),
+    top: targetBottom + panelGap,
+  };
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), Math.max(min, max));
 }
