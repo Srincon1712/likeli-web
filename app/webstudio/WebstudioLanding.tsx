@@ -1,183 +1,207 @@
 "use client";
 
-import type { CSSProperties } from "react";
-import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
-import {
-  ArrowRight,
-  Check,
-  CircleDot,
-  Clock3,
-  Eye,
-  Gauge,
-  Layers3,
-  MousePointer2,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Check, ChevronDown, MessageCircle } from "lucide-react";
+import { useEffect } from "react";
 import styles from "./webstudio.module.css";
 
-type CursorStyle = CSSProperties & {
-  "--cursor-x": string;
-  "--cursor-y": string;
+const WHATSAPP_URL = "https://wa.link/33rwr3";
+
+type BasePlan = {
+  name: string;
+  intro: string;
+  includesTitle: string;
+  includes: string[];
+  fitTitle?: string;
+  fit?: string[];
+  note?: string;
 };
 
-const services = [
-  {
-    name: "Landing Express",
-    price: "79.000 COP",
-    eyebrow: "Entrada inteligente",
-    description:
-      "Una landing enfocada en presentarte con claridad, capturar interes y validar rapidamente una oferta sin invertir de mas.",
-    features: [
-      "Una pagina responsive",
-      "Copy base y estructura comercial",
-      "CTA directo a contacto",
-      "Entrega agil para lanzar rapido",
-    ],
-    note: "Si luego compras un plan profesional, los 79.000 COP se descuentan completamente.",
-  },
-  {
-    name: "Web Profesional",
-    price: "649.000 COP",
-    eyebrow: "Presencia completa",
-    description:
-      "Un sitio pulido para negocios que necesitan explicar, vender y transmitir confianza desde el primer scroll.",
-    features: [
-      "Arquitectura de contenido",
-      "Diseno visual a medida",
-      "Desarrollo responsive",
-      "SEO tecnico basico",
-    ],
-  },
-  {
-    name: "Web Profesional Plus",
-    price: "949.000 COP",
-    eyebrow: "Sistema de conversion",
-    description:
-      "Una experiencia mas estrategica, con mayor profundidad visual, secciones avanzadas y mejor preparacion para escalar.",
-    features: [
-      "Direccion creativa extendida",
-      "Microinteracciones premium",
-      "Mas secciones y profundidad",
-      "Optimización de confianza y conversion",
-    ],
-    featured: true,
-  },
-  {
-    name: "Personalizado",
-    price: "Cotizar",
-    eyebrow: "Proyecto especial",
-    description:
-      "Para marcas, productos o experiencias que necesitan algo fuera de paquete: landing, sistema visual, plataforma o experimento.",
-    features: [
-      "Alcance definido contigo",
-      "Experiencia a medida",
-      "Integraciones segun necesidad",
-      "Direccion estrategica completa",
-    ],
-  },
-];
+type FixedPricePlan = BasePlan & {
+  price: string;
+  range?: never;
+};
 
-const stats = [
+type RangePricePlan = BasePlan & {
+  price?: never;
+  range: [string, string, string, string];
+};
+
+type Plan = FixedPricePlan | RangePricePlan;
+
+const whyItems = [
   {
-    value: "2.5s",
-    label: "LCP recomendado",
-    body: "Google recomienda que el contenido principal cargue en 2.5 segundos o menos para una buena experiencia.",
-    source: "web.dev Core Web Vitals",
-    icon: Gauge,
+    title: "Credibilidad",
+    body: "Una web bien construida elimina la sensación de improvisación y ayuda a que tu negocio se perciba serio desde el primer contacto.",
   },
   {
-    value: "10-20s",
-    label: "Ventana critica",
-    body: "Nielsen Norman Group explica que muchos usuarios abandonan paginas durante los primeros segundos si no ven valor claro.",
-    source: "Nielsen Norman Group",
-    icon: Eye,
+    title: "Google",
+    body: "Cuando alguien te busca, tu página puede ordenar la información, explicar tu oferta y convertir una búsqueda en una conversación.",
   },
   {
-    value: "70.22%",
-    label: "Carritos abandonados",
-    body: "Baymard Institute calcula este promedio a partir de 50 estudios sobre abandono de carrito en ecommerce.",
-    source: "Baymard Institute 2026",
-    icon: MousePointer2,
+    title: "WhatsApp",
+    body: "Las redes llaman la atención; una web preparada lleva a la persona al mensaje correcto y facilita que escriba con confianza.",
   },
   {
-    value: "0.1",
-    label: "CLS saludable",
-    body: "La estabilidad visual tambien se mide: un CLS menor o igual a 0.1 es el umbral recomendado por Core Web Vitals.",
-    source: "web.dev Core Web Vitals",
-    icon: ShieldCheck,
+    title: "Activo propio",
+    body: "Las redes sociales cambian constantemente. Una página web es un espacio propio para tu marca, tus clientes y tu presencia digital.",
   },
 ];
 
 const processSteps = [
-  ["Formulario", "Recojo contexto, objetivos, oferta, referentes y prioridades reales del negocio."],
-  ["Diseño", "Convierto la informacion en una direccion visual clara, editorial y orientada a confianza."],
-  ["Desarrollo", "Construyo una experiencia responsive, rapida y cuidada en cada interaccion."],
-  ["Entrega", "Revisamos, ajustamos y dejamos el sitio listo para presentarse con seguridad."],
-  ["Publicacion", "El sitio queda online, medible y preparado para convertirse en tu primera impresion."],
+  ["Conocemos el proyecto", "Entiendo tu negocio, tu oferta, tus prioridades y el tipo de confianza que necesitas transmitir."],
+  ["Analizamos necesidades", "Ordenamos contenido, público, objetivos y decisiones clave antes de pensar en pantallas."],
+  ["Diseño", "Construyo una dirección visual limpia, moderna y coherente con lo que quieres proyectar."],
+  ["Desarrollo", "Paso el diseño a una experiencia rápida, responsive y cuidada en los detalles."],
+  ["Revisión", "Revisamos textos, jerarquía, ajustes visuales y funcionamiento antes de publicar."],
+  ["Publicación", "Dejo la página lista para compartir y empezar a recibir visitas con seguridad."],
 ];
 
-const portfolio = [
+const benefits = [
+  "Diseño moderno",
+  "Alto rendimiento",
+  "Responsive",
+  "SEO",
+  "Atención personalizada",
+  "Comunicación directa",
+  "Sin intermediarios",
+  "Código limpio",
+  "Optimización",
+];
+
+const plans: Plan[] = [
   {
-    title: "Atelier Aurora",
-    type: "Placeholder ficticio",
-    description: "Concepto visual para una marca de interiorismo boutique. Reemplazar por proyecto real.",
+    name: "WEB EXPRESS",
+    price: "$99.900 COP",
+    intro: "Tu negocio online en pocos días.",
+    includesTitle: "Incluye",
+    includes: [
+      "Landing page",
+      "Diseño limpio y moderno",
+      "Adaptada para computador y celular",
+      "Información organizada",
+      "Optimización básica",
+      "Entrega rápida",
+    ],
+    fitTitle: "Perfecto para",
+    fit: ["Emprendedores", "Negocios nuevos", "Validar presencia digital"],
+    note: "Si posteriormente decides contratar un plan superior, este valor se descuenta completamente.",
   },
   {
-    title: "Norte Cafe Studio",
-    type: "Placeholder ficticio",
-    description: "Exploracion editorial para un cafe de especialidad. Reemplazar por proyecto real.",
+    name: "WEB PROFESIONAL",
+    price: "$599.900 COP",
+    intro: "La imagen que tu empresa merece.",
+    includesTitle: "Incluye",
+    includes: [
+      "Landing profesional",
+      "Dominio primer año",
+      "Hosting",
+      "Publicación",
+      "Google Workspace primer mes",
+      "Correos empresariales",
+      "SEO",
+      "Google",
+      "WhatsApp",
+      "Animaciones",
+      "Favicon",
+      "Diseño personalizado",
+      "Carga rápida",
+    ],
+    fitTitle: "Ideal para",
+    fit: ["Empresas que buscan transmitir confianza y conseguir clientes."],
   },
   {
-    title: "Casa Lirio",
-    type: "Placeholder ficticio",
-    description: "Direccion web para alojamiento premium. Reemplazar por proyecto real.",
+    name: "WEB PROFESIONAL PLUS",
+    price: "$899.900 COP",
+    intro: "Una experiencia digital premium.",
+    includesTitle: "Incluye",
+    includes: [
+      "Todo el plan profesional",
+      "Hasta 5 páginas",
+      "Animaciones premium",
+      "Diseño exclusivo",
+      "Mayor personalización",
+      "Arquitectura escalable",
+    ],
+  },
+  {
+    name: "PROYECTO PERSONALIZADO",
+    intro: "Para desarrollos especiales que necesitan una definición a medida.",
+    range: ["Desde", "$599.900", "hasta", "$1.999.900"],
+    includesTitle: "Puede incluir",
+    includes: [
+      "Sistemas",
+      "Landing",
+      "Corporativos",
+      "Automatizaciones",
+      "APIs",
+      "Paneles",
+      "Micrositios",
+      "Desarrollos especiales",
+    ],
+    fitTitle: "Proceso",
+    fit: ["Analizamos", "Diseñamos", "Cotizamos"],
   },
 ];
 
 const faqs = [
   [
-    "Que necesito para empezar?",
-    "Necesito entender tu negocio, tu oferta, el objetivo de la pagina y cualquier material existente: logo, colores, fotos, textos o referencias. Si no tienes todo listo, tambien puedo ayudarte a ordenar la base.",
+    "¿Cuánto tarda?",
+    "Depende del alcance. WEB EXPRESS está pensado para salir en pocos días; los planes profesionales requieren más cuidado de contenido, diseño, desarrollo y revisión.",
   ],
   [
-    "La Landing Express sirve para vender?",
-    "Sirve para presentar una oferta con claridad y llevar a una accion concreta. Es ideal para validar, lanzar rapido o tener una presencia inicial seria.",
+    "¿Necesito hosting?",
+    "En los planes profesionales el hosting está incluido. Si eliges WEB EXPRESS o un proyecto personalizado, lo definimos según el alcance.",
   ],
   [
-    "El valor de la Landing Express se pierde si luego quiero una web completa?",
-    "No. Si luego compras un plan profesional, los 79.000 COP se descuentan completamente del nuevo proyecto.",
+    "¿Incluye dominio?",
+    "WEB PROFESIONAL y WEB PROFESIONAL PLUS incluyen dominio durante el primer año. En otros casos se revisa según el proyecto.",
   ],
   [
-    "Incluye dominio y hosting?",
-    "Los paquetes se enfocan en diseno y desarrollo. Dominio, hosting o herramientas externas pueden cotizarse o configurarse segun el caso.",
+    "¿Puedo pedir cambios?",
+    "Sí. Cada proyecto pasa por una etapa de revisión para ajustar contenido, jerarquía, detalles visuales y funcionamiento antes de publicar.",
   ],
   [
-    "Puedo pedir cambios?",
-    "Si. Cada proyecto incluye una etapa de revision para ajustar contenido, jerarquia y detalles visuales antes de publicar.",
+    "¿Se adapta al celular?",
+    "Sí. La landing se diseña y desarrolla para computador, tablet y celular, cuidando que el contenido se vea claro en cada tamaño.",
   ],
   [
-    "Usas plantillas?",
-    "No como resultado final. Puedo usar referencias para entender direccion visual, pero la pagina se compone segun el negocio, la oferta y la experiencia que debe transmitir.",
+    "¿Ayudas después de publicar?",
+    "Si necesitas acompañamiento después de publicar, lo conversamos directamente y definimos lo que tenga sentido para tu página.",
   ],
 ];
 
-export default function WebstudioLanding() {
-  const [cursor, setCursor] = useState({ x: 50, y: 50 });
+function whatsappProps(label: string) {
+  return {
+    href: WHATSAPP_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": `${label} por WhatsApp`,
+  };
+}
 
+function hasRange(plan: Plan): plan is RangePricePlan {
+  return Array.isArray(plan.range);
+}
+
+export default function WebstudioLanding() {
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>(`.${styles.reveal}`));
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add(styles.isVisible));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible);
+            entry.target.classList.add(styles.isVisible);
             observer.unobserve(entry.target);
           }
         });
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.18 },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.16 },
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -185,335 +209,229 @@ export default function WebstudioLanding() {
     return () => observer.disconnect();
   }, []);
 
-  const cursorStyle = useMemo<CursorStyle>(
-    () => ({
-      "--cursor-x": `${cursor.x}%`,
-      "--cursor-y": `${cursor.y}%`,
-    }),
-    [cursor],
-  );
-
   return (
-    <main
-      className={styles.studio}
-      style={cursorStyle}
-      onPointerMove={(event) => {
-        const rect = event.currentTarget.getBoundingClientRect();
-        setCursor({
-          x: ((event.clientX - rect.left) / rect.width) * 100,
-          y: ((event.clientY - rect.top) / rect.height) * 100,
-        });
-      }}
-    >
-      <div className={styles.cursorGlow} aria-hidden="true" />
-      <HeroSection />
-      <WhoSection />
-      <PhilosophySection />
-      <StatsSection />
-      <ServicesSection />
-      <ComparisonSection />
-      <ProcessSection />
-      <PortfolioSection />
-      <FAQSection />
-      <FinalCTA />
-    </main>
-  );
-}
-
-function HeroSection() {
-  return (
-    <section className={styles.hero} aria-labelledby="webstudio-title">
-      <div className={styles.heroBackdrop} aria-hidden="true">
-        <Image
-          src="/webstudio/studio-hero.png"
-          alt=""
-          width={1536}
-          height={1024}
-          priority
-          sizes="(max-width: 820px) 88vw, 66vw"
-        />
-      </div>
-
-      <nav className={styles.nav} aria-label="Navegacion de Webstudio">
-        <a href="#inicio" className={styles.brand}>
-          <span>Webstudio</span>
-          <small>Digital presence</small>
+    <main className={styles.root}>
+      <header className={styles.header}>
+        <a className={styles.headerBrand} href="#inicio" aria-label="Ir al inicio de WEBSTUDIO">
+          WEBSTUDIO
         </a>
-        <a href="#servicios" className={styles.navLink}>
-          Servicios
-        </a>
-      </nav>
+        <nav className={styles.nav} aria-label="Navegacion principal">
+          <a href="#planes">Planes</a>
+          <a {...whatsappProps("Hablar con Sebastián")} className={styles.navCta}>
+            WhatsApp
+          </a>
+        </nav>
+      </header>
 
-      <div id="inicio" className={styles.heroInner}>
-        <div className={`${styles.reveal} ${styles.heroCopy}`}>
-          <span className={styles.kicker}>Estudio digital independiente</span>
-          <h1 id="webstudio-title">Paginas web con presencia de galeria.</h1>
-          <p>
-            Diseño y desarrollo experiencias digitales para negocios que no quieren verse
-            improvisados. Construyo sitios que se sienten claros, premium y dignos de confianza
-            desde el primer segundo.
+      <section id="inicio" className={styles.hero} aria-labelledby="hero-title">
+        <div className={`${styles.heroInner} ${styles.reveal}`}>
+          <p className={styles.heroKicker}>Desarrollo web freelance premium</p>
+          <h1 id="hero-title">WEBSTUDIO</h1>
+          <p className={styles.heroFounder}>Por Sebastián</p>
+          <p className={styles.heroPowered}>Powered by LIKELI</p>
+          <p className={styles.heroCopy}>
+            Páginas web limpias, rápidas y cuidadas personalmente para negocios que necesitan
+            verse confiables desde el primer segundo.
           </p>
-          <div className={styles.ctaRow}>
-            <a className={styles.primaryButton} href="#contacto">
-              Empezar mi web <ArrowRight aria-hidden="true" size={18} />
+          <div className={styles.heroActions}>
+            <a {...whatsappProps("Quiero mi página web")} className={styles.primaryButton}>
+              <MessageCircle aria-hidden="true" size={17} />
+              Quiero mi página web
             </a>
-            <a className={styles.secondaryButton} href="#servicios">
-              Ver servicios
+            <a {...whatsappProps("Ver planes")} className={styles.secondaryButton}>
+              Ver planes
+              <ArrowRight aria-hidden="true" size={17} />
             </a>
           </div>
         </div>
+      </section>
 
-        <div className={`${styles.reveal} ${styles.heroObject}`} aria-hidden="true">
-          <div className={styles.frameOne}>
-            <span>01</span>
-            <strong>Direccion visual</strong>
-          </div>
-          <div className={styles.frameTwo}>
-            <span>02</span>
-            <strong>Desarrollo limpio</strong>
-          </div>
-          <div className={styles.frameThree}>
-            <span>03</span>
-            <strong>Estrategia digital</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhoSection() {
-  return (
-    <section className={styles.section} aria-labelledby="quien-soy">
-      <div className={styles.split}>
-        <div className={styles.reveal}>
-          <span className={styles.kicker}>Quien soy</span>
-          <h2 id="quien-soy">Desarrollador, diseñador obsesivo y estratega de primeras impresiones.</h2>
-        </div>
-        <div className={`${styles.reveal} ${styles.richText}`}>
+      <section className={styles.section} aria-labelledby="por-que-web">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Presencia digital</span>
+          <h2 id="por-que-web">¿Por qué una página web?</h2>
           <p>
-            Construyo paginas web para negocios que entienden que internet no es solo un lugar
-            donde estar, sino un lugar donde ser percibidos.
-          </p>
-          <p>
-            Combino programacion, experiencia de usuario, criterio visual y estrategia comercial.
-            No vendo simplemente paginas. Creo presencia digital: una forma de que tu negocio se
-            vea mas claro, mas serio y mas deseable.
+            Porque hoy la confianza se forma antes de una llamada. Una web clara conecta tu marca,
+            Google, WhatsApp y tus clientes en un activo propio que no depende del cambio constante
+            de las redes sociales.
           </p>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function PhilosophySection() {
-  return (
-    <section className={`${styles.section} ${styles.philosophy}`} aria-labelledby="filosofia">
-      <div className={`${styles.reveal} ${styles.statement}`}>
-        <span className={styles.kicker}>Filosofia</span>
-        <h2 id="filosofia">
-          Una web no es un gasto. Es el momento exacto en que alguien decide si confiar.
-        </h2>
-        <p>
-          Muchas personas no leen todo. Escanean, sienten, comparan y deciden. La pagina correcta
-          reduce dudas, transmite profesionalismo y hace que el negocio parezca tan serio como
-          realmente es.
-        </p>
-      </div>
-      <div className={styles.philosophyLine} aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
-    </section>
-  );
-}
-
-function StatsSection() {
-  return (
-    <section className={styles.section} aria-labelledby="estadisticas">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>Evidencia</span>
-        <h2 id="estadisticas">El diseño tambien se mide.</h2>
-        <p>
-          Estas cifras funcionan como base editorial y tecnica para orientar decisiones de
-          velocidad, confianza y conversion.
-        </p>
-      </div>
-      <div className={styles.statsGrid}>
-        {stats.map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <article className={`${styles.reveal} ${styles.statCard}`} key={stat.label}>
-              <Icon aria-hidden="true" size={24} />
-              <strong>{stat.value}</strong>
-              <h3>{stat.label}</h3>
-              <p>{stat.body}</p>
-              <small>{stat.source}</small>
+        <div className={styles.whyGrid}>
+          {whyItems.map((item, index) => (
+            <article className={`${styles.reveal} ${styles.insightCard}`} key={item.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function ServicesSection() {
-  return (
-    <section id="servicios" className={styles.section} aria-labelledby="servicios-title">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>Servicios</span>
-        <h2 id="servicios-title">Paquetes claros para construir presencia sin ruido.</h2>
-      </div>
-      <div className={styles.serviceGrid}>
-        {services.map((service) => (
-          <article
-            className={`${styles.reveal} ${styles.serviceCard} ${
-              service.featured ? styles.featuredService : ""
-            }`}
-            key={service.name}
-          >
-            <span>{service.eyebrow}</span>
-            <h3>{service.name}</h3>
-            <strong>{service.price}</strong>
-            <p>{service.description}</p>
-            <ul>
-              {service.features.map((feature) => (
-                <li key={feature}>
-                  <Check aria-hidden="true" size={16} />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            {service.note ? <em>{service.note}</em> : null}
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function ComparisonSection() {
-  const rows = [
-    ["Objetivo", "Validar una oferta o presencia inicial", "Construir un sitio completo y confiable"],
-    ["Profundidad", "Una pagina enfocada", "Varias secciones con narrativa completa"],
-    ["Estrategia", "Mensaje central y CTA", "Arquitectura, jerarquia, confianza y conversion"],
-    ["Mejor para", "Lanzar rapido", "Negocios listos para verse profesionales"],
-  ];
-
-  return (
-    <section className={styles.section} aria-labelledby="comparativa">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>Comparativa</span>
-        <h2 id="comparativa">Landing Express vs Web Profesional.</h2>
-      </div>
-      <div className={`${styles.reveal} ${styles.compareWrap}`}>
-        <div className={styles.compareHeader}>
-          <span />
-          <strong>Landing</strong>
-          <strong>Web Profesional</strong>
+          ))}
         </div>
-        {rows.map(([label, landing, professional]) => (
-          <div className={styles.compareRow} key={label}>
-            <span>{label}</span>
-            <p>{landing}</p>
-            <p>{professional}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+      </section>
 
-function ProcessSection() {
-  return (
-    <section className={styles.section} aria-labelledby="proceso">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>Proceso</span>
-        <h2 id="proceso">Un camino limpio, sin improvisacion.</h2>
-      </div>
-      <ol className={styles.timeline}>
-        {processSteps.map(([title, body], index) => (
-          <li className={styles.reveal} key={title}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <div>
+      <section className={styles.section} aria-labelledby="quien-soy">
+        <div className={styles.aboutGrid}>
+          <div className={`${styles.reveal} ${styles.photoSlot}`} aria-label="Espacio reservado para una fotografía de Sebastián">
+            <span>Foto de Sebastián</span>
+          </div>
+          <div className={`${styles.reveal} ${styles.aboutCopy}`}>
+            <span className={styles.eyebrow}>Quién soy</span>
+            <h2 id="quien-soy">Soy Sebastián, freelancer especializado en desarrollo web.</h2>
+            <p>
+              Trabajo personalmente cada proyecto. No delego el desarrollo, no escondo el proceso y
+              no convierto tu página en una entrega más dentro de una fila anónima.
+            </p>
+            <p>
+              Cada cliente recibe atención personalizada, comunicación directa y una construcción
+              pensada para que el resultado se sienta propio, claro y profesional.
+            </p>
+            <p>
+              Mi prioridad es calidad antes que cantidad. Prefiero hacer pocos proyectos excelentes
+              que muchos mediocres.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="como-trabajo">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Proceso</span>
+          <h2 id="como-trabajo">¿Cómo trabajo?</h2>
+          <p>
+            Un proceso simple, directo y ordenado para que sepas qué está pasando en cada etapa.
+          </p>
+        </div>
+        <ol className={styles.processGrid}>
+          {processSteps.map(([title, body], index) => (
+            <li className={`${styles.reveal} ${styles.processCard}`} key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{title}</h3>
               <p>{body}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
+            </li>
+          ))}
+        </ol>
+      </section>
 
-function PortfolioSection() {
-  return (
-    <section className={styles.section} aria-labelledby="portafolio">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>Portafolio</span>
-        <h2 id="portafolio">Espacio reservado para proyectos reales.</h2>
-        <p>
-          Estos proyectos son placeholders ficticios. No representan clientes, testimonios ni
-          empresas reales.
-        </p>
-      </div>
-      <div className={styles.portfolioGrid}>
-        {portfolio.map((project, index) => (
-          <article className={`${styles.reveal} ${styles.projectCard}`} key={project.title}>
-            <div aria-hidden="true">
-              <Layers3 size={26} />
-              <span>{String(index + 1).padStart(2, "0")}</span>
-            </div>
-            <small>{project.type}</small>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FAQSection() {
-  return (
-    <section className={styles.section} aria-labelledby="faq">
-      <div className={styles.sectionHead}>
-        <span className={styles.kicker}>FAQ</span>
-        <h2 id="faq">Dudas normales antes de invertir en tu presencia digital.</h2>
-      </div>
-      <div className={styles.faqList}>
-        {faqs.map(([question, answer]) => (
-          <details className={`${styles.reveal} ${styles.faqItem}`} key={question}>
-            <summary>
-              <span>{question}</span>
-              <CircleDot aria-hidden="true" size={18} />
-            </summary>
-            <p>{answer}</p>
-          </details>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function FinalCTA() {
-  return (
-    <section id="contacto" className={`${styles.section} ${styles.finalCta}`} aria-labelledby="cta-final">
-      <div className={`${styles.reveal} ${styles.finalInner}`}>
-        <Sparkles aria-hidden="true" size={28} />
-        <h2 id="cta-final">Tu negocio ya existe. Ahora hagamos que se vea inevitable.</h2>
-        <p>
-          Si alguien va a juzgarte en segundos, que esos segundos trabajen a tu favor.
-        </p>
-        <a className={styles.primaryButton} href="mailto:hola@likeli.co?subject=Quiero%20crear%20mi%20web">
-          Quiero una pagina asi <ArrowRight aria-hidden="true" size={18} />
-        </a>
-        <div className={styles.availability}>
-          <Clock3 aria-hidden="true" size={16} />
-          <span>Cupos limitados para mantener direccion creativa real en cada proyecto.</span>
+      <section className={styles.section} aria-labelledby="por-que-elegirme">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Criterio</span>
+          <h2 id="por-que-elegirme">¿Por qué elegirme?</h2>
+          <p>
+            Porque tu página no necesita ruido. Necesita claridad, buen gusto, rendimiento y una
+            persona responsable de cuidarla de principio a fin.
+          </p>
         </div>
-      </div>
-    </section>
+        <div className={styles.benefitGrid}>
+          {benefits.map((benefit) => (
+            <div className={`${styles.reveal} ${styles.benefitItem}`} key={benefit}>
+              <Check aria-hidden="true" size={16} />
+              <span>{benefit}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="planes" className={styles.section} aria-labelledby="planes-title">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Planes</span>
+          <h2 id="planes-title">Elige el punto de partida correcto.</h2>
+          <p>
+            Tarjetas claras, sin tablas innecesarias. Si tienes dudas, lo conversamos directamente
+            por WhatsApp.
+          </p>
+        </div>
+        <div className={styles.planGrid}>
+          {plans.map((plan, index) => (
+            <article className={`${styles.reveal} ${styles.planCard}`} key={plan.name}>
+              <div className={styles.planTopline}>
+                <span>Plan {String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <h3>{plan.name}</h3>
+              {hasRange(plan) ? (
+                <div className={styles.priceRange} aria-label="Desde 599900 hasta 1999900 pesos">
+                  <span>{plan.range[0]}</span>
+                  <strong>{plan.range[1]}</strong>
+                  <span>{plan.range[2]}</span>
+                  <strong>{plan.range[3]}</strong>
+                </div>
+              ) : (
+                <p className={styles.planPrice}>{plan.price}</p>
+              )}
+              <p className={styles.planIntro}>{plan.intro}</p>
+
+              <div className={styles.planListGroup}>
+                <h4>{plan.includesTitle}</h4>
+                <ul>
+                  {plan.includes.map((item) => (
+                    <li key={item}>
+                      <Check aria-hidden="true" size={15} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {plan.fitTitle && plan.fit ? (
+                <div className={styles.planListGroup}>
+                  <h4>{plan.fitTitle}</h4>
+                  <ul>
+                    {plan.fit.map((item) => (
+                      <li key={item}>
+                        <Check aria-hidden="true" size={15} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {"note" in plan && plan.note ? <p className={styles.planNote}>{plan.note}</p> : null}
+
+              <a {...whatsappProps(`Hablar por WhatsApp sobre ${plan.name}`)} className={styles.planButton}>
+                Hablar por WhatsApp
+                <ArrowRight aria-hidden="true" size={16} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="faq-title">
+        <div className={styles.sectionIntro}>
+          <span className={styles.eyebrow}>Preguntas frecuentes</span>
+          <h2 id="faq-title">Dudas normales antes de empezar.</h2>
+        </div>
+        <div className={styles.faqList}>
+          {faqs.map(([question, answer]) => (
+            <details className={`${styles.reveal} ${styles.faqItem}`} key={question}>
+              <summary>
+                <span>{question}</span>
+                <ChevronDown aria-hidden="true" size={18} />
+              </summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.finalCta} aria-labelledby="cta-final">
+        <div className={`${styles.reveal} ${styles.finalCtaInner}`}>
+          <h2 id="cta-final">¿Listo para tener una página web que realmente represente tu negocio?</h2>
+          <a {...whatsappProps("Quiero hablar contigo")} className={styles.finalButton}>
+            <MessageCircle aria-hidden="true" size={18} />
+            Quiero hablar contigo
+          </a>
+        </div>
+      </section>
+
+      <footer className={styles.footer}>
+        <div>
+          <strong>WEBSTUDIO</strong>
+          <span>Por Sebastián</span>
+          <small>Powered by LIKELI</small>
+        </div>
+        <a {...whatsappProps("Contactar por WhatsApp")} className={styles.footerButton}>
+          WhatsApp
+        </a>
+      </footer>
+    </main>
   );
 }
