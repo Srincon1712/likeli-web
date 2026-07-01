@@ -1,11 +1,67 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import styles from "./webstudio.module.css";
 
 const WHATSAPP_URL = "https://wa.link/33rwr3";
+const MAX_SCROLL_SHIFT = 86;
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(Math.max(value, min), max);
+}
 
 export default function HeroWebstudio() {
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+
+    const updateFigureScroll = () => {
+      frame = 0;
+
+      if (mediaQuery.matches) {
+        hero.style.setProperty("--figure-scroll-y", "0px");
+        return;
+      }
+
+      const rect = hero.getBoundingClientRect();
+      const progress = clamp(-rect.top / rect.height, 0, 1);
+      hero.style.setProperty("--figure-scroll-y", `${Math.round(progress * MAX_SCROLL_SHIFT)}px`);
+    };
+
+    const requestUpdate = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(updateFigureScroll);
+    };
+
+    updateFigureScroll();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    mediaQuery.addEventListener("change", requestUpdate);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      mediaQuery.removeEventListener("change", requestUpdate);
+    };
+  }, []);
+
   return (
-    <section className={styles.hero} aria-labelledby="webstudio-title">
+    <section ref={heroRef} className={styles.hero} aria-labelledby="webstudio-title">
       <div className={styles.heroShell}>
         <h1 id="webstudio-title" className={styles.title}>
           WEBSTUDIO
